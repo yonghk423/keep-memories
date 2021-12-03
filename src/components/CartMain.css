@@ -1,0 +1,43 @@
+.CartContainer {
+  border: 1px solid black;
+  width: 800px;
+  height: 250px;
+  list-style: none;
+  display: flex;
+  position: relative;
+  right: -20px;
+}
+
+.Check {
+  margin: auto;
+  margin-left: 20px;
+}
+
+.CartImg {
+  width: 200px;
+  height: 200px;
+  background-color: cadetblue;
+  margin: auto;
+  margin-left: -80px;
+}
+
+.Item {
+  margin: auto;
+  margin-left: -80px;
+}
+
+.Settiing {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.DelBtn {
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.NumberSetting {
+  width: 100px;
+  height: 20px;
+}
