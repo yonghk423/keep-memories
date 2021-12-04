@@ -7,8 +7,7 @@ const Header = () => (
                <div className="ItemBox">
                  <div className="ItemList">상품 리스트</div>
                  <div className="ItemCount">장바구니 3개</div>
-               </div>
-             
+               </div>             
          </div>   
     );
 
