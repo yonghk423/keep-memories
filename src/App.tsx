@@ -7,6 +7,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import ShoppingCart from './page/ShoppingCart';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <Header/>    
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
+      <Route path="Main" element={<ShoppingCart/>}/>
     </Routes>
     </BrowserRouter>      
     </>
