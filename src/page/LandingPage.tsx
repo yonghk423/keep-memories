@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from '../components/Main';
 
-const landingPage = () => {
+const landingPage = (Props:any) => {
     
     return (
         <>          
