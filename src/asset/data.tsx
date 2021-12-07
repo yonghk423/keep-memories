@@ -59,3 +59,6 @@ export const initialState: Data =
   ]
   
 }
+console.log(initialState);
+console.log(initialState.items)
+console.log(initialState.items[0]);

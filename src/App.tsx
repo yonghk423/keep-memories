@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
     <Header/>    
     <Routes>
-      <Route path='/' element={<LandingPage {...Items}/>}/>
+      <Route path='/' element={<LandingPage Items={Items}/>}/>
       <Route path="Main" element={<ShoppingCart/>}/>
     </Routes>
     </BrowserRouter>      
