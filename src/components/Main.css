@@ -1,12 +1,17 @@
 .MainBox {
-  display: flex;
-  justify-content: space-evenly;
+  background-color: #bc9eff0e;
+  padding: 50px 50px 100px 100px;
+  display: table-cell;
+  width: 100%;
 }
 
 .Box {
-  border: 1px solid black;
-  width: 300px;
+  display: inline-block;
+  width: 250px;
   height: 300px;
+  border: solid rgb(238, 238, 238) 0.1rem;
+  margin: 30px;
+  background-color: white;
 }
 
 .ImgBox {

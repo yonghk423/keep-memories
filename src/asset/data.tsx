@@ -42,6 +42,20 @@ export const initialState: Data =
       "img": "",
       "price": 3900
     },
+
+    {
+      "id": 7,
+      "name": "Z플립",
+      "img": "",
+      "price": 4900
+    },
+
+    {
+      "id": 8,
+      "name": "Z폴드",
+      "img": "",
+      "price": 6900
+    }
   ],
   "cartItems": [
     {
