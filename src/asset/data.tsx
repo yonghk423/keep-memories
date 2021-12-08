@@ -59,20 +59,11 @@ export const initialState: Data =
   ],
   "cartItems": [
     {
-      "itemId": 1,
-      "quantity": 1
-    },
-    {
-      "itemId": 5,
-      "quantity": 7
-    },
-    {
-      "itemId": 2,
-      "quantity": 3
-    }
+      "id": 2,
+      "name": "아이폰",
+      "img": "",
+      "price": 12000
+    }    
   ]
   
 }
-console.log(initialState);
-console.log(initialState.items)
-console.log(initialState.items[0]);

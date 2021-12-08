@@ -1,9 +1,7 @@
 import React from 'react';
 import Main from '../components/Main';
 
-const landingPage = ( Items:any ) => {
-    console.log(Items)
-    console.log(Items.Items);
+const landingPage = ( Items:any ) => {   
     return (
         <>          
           <Main Items={Items} />

@@ -9,17 +9,19 @@ import { initialState } from './asset/data';
 export interface DataList {
   Items : object[];
 }
-function App() {
-  
+export interface CartDataList {
+  CartItems: object[];
+}
+function App() {    
   const [Items, setItems] = useState<DataList['Items']>(initialState.items);
-
+  const [CartItems, setCartItems] = useState<CartDataList['CartItems']>(initialState.cartItems)
   return (
     <>    
     <BrowserRouter>
-    <Header/>    
+    <Header CartItems={CartItems}/>    
     <Routes>
       <Route path='/' element={<LandingPage Items={Items}/>}/>
-      <Route path="Main" element={<ShoppingCart/>}/>
+      <Route path="Main" element={<ShoppingCart CartItems={CartItems} />}/>
     </Routes>
     </BrowserRouter>      
     </>
