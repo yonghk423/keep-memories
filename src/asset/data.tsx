@@ -1,6 +1,6 @@
 interface Data {
   items: object[]; //배열안에 객체
-  cartItems: object[]; 
+  cartItems: any; 
 }
 
 export const initialState: Data =

@@ -16,16 +16,16 @@ function App() {
   const [Items, setItems] = useState<DataList['Items']>(initialState.items);
   const [CartItems, setCartItems] = useState<CartDataList['CartItems']>(initialState.cartItems)
 
-  const AddCart = ( ItemId:any ) => {
-    const Find = CartItems.filter((ele:any) => (ele.ItemId === ItemId))
+  const AddCart = ( ItemId:number ) => {
+    const Find = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))
     if(Find) {
       SettingQuantity(ItemId, Find.quantity + 1)
     }
   }
 
-  const SettingQuantity = (ItemdId: any, quantity: any) => {
-    const Find = CartItems.filter((ele:any) => (ele.ItemId === ItemdId))
-    const Idx = CartItems.indexOf(Find)
+  const SettingQuantity = (ItemdId: number, quantity: number) => {
+    const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemdId))
+    const Idx:number = CartItems.indexOf(Find)
     const CartItemsSetting = { ItemdId, quantity }  
   }
 
