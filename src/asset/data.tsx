@@ -58,12 +58,7 @@ export const initialState: Data =
     }
   ],
   "cartItems": [
-    {
-      "id": 2,
-      "name": "아이폰",
-      "img": "",
-      "price": 12000
-    }    
+    
   ]
   
 }
