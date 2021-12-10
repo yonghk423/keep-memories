@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartMain.css';
 
-const CartMain = ( CartItems:any ) => {
+const CartMain = ( CartItems:any, CartAdd:any ) => {
   const CartItemsList:object[] = CartItems.CartItems.CartItems;
   
     return (
@@ -11,13 +11,13 @@ const CartMain = ( CartItems:any ) => {
             <input type="checkbox" id="scales" name="" checked/>
             <label>전체선택</label>
           </div>
-            {CartItemsList.map((ele:any) => (
-            <li className="CartContainer" key={ele.id}> 
+            {CartItemsList.map((item:any) => (
+            <li className="CartContainer" key={item.id}> 
               <input className="Check" type="checkbox" id="scales" name="" checked/>
-            <img className="CartImg" src={ele.img} alt=""/>
+            <img className="CartImg" src={item.img} alt=""/>
             <div className="Item">
-              <div>{ele.name}</div>
-              <div>{ele.price}</div>
+              <div>{item.name}</div>
+              <div>{item.price}</div>
             </div>
             <div className="Settiing">
               <button className="DelBtn">삭제</button>

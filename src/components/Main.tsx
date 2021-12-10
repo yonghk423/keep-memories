@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import './Main.css';
 
-const Main = ( Items: any ) => {  
+const Main = ( Items: any, AddCart:any ) => {  
   const data:object[] = Items.Items.Items
     return (          
         <div className="MainBox">          
-            {data.map((ele:any) => (
-            <div className="Box" key={ele.id}>  
-              <img className="ImgBox" src={ele.img} alt="" />
-              <div className="ItemInfo">{ele.name} {ele.price}원</div>
-              <button className="ItemBtn">장바구니 추가</button>
+            {data.map((item:any) => (
+            <div className="Box" key={item.id}>  
+              <img className="ImgBox" src={item.img} alt="" />
+              <div className="ItemInfo">{item.name} {item.price}원</div>
+              <button className="ItemBtn" onClick={(e) => AddCart(e, item.id)}>장바구니 추가</button>
             </div>              
             ))}                       
         </div>

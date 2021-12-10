@@ -19,7 +19,15 @@ function App() {
   const AddCart = ( ItemId:number ) => {
     const Find = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))
     if(Find) {
+      console.log('기존 리스트와 일치하는 상품')
       SettingQuantity(ItemId, Find.quantity + 1)
+    }
+    else{
+      console.log('새로운 상품 추가')
+      setCartItems( {
+        ItemId,
+        quantity: 1
+      })
     }
   }
 
