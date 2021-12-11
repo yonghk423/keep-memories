@@ -24,13 +24,16 @@ function App() {
     }
     else{
       console.log('새로운 상품 추가')
-      setCartItems( {
-        ItemId,
-        quantity: 1
-      })
+      setCartItems( 
+        [...CartItems,
+          {
+            ItemId,
+            quantity: 1
+          }
+        ])
     }
   }
-
+console.log(CartItems);
   const SettingQuantity = (ItemdId: number, quantity: number) => {
     const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemdId))
     const Idx:number = CartItems.indexOf(Find)
@@ -43,7 +46,7 @@ function App() {
     <Header CartItems={CartItems}/>    
     <Routes>
       <Route path='/' element={<LandingPage Items={Items} AddCart={AddCart} />}/>
-      <Route path="Main" element={<ShoppingCart CartItems={CartItems} />}/>
+      <Route path="Main" element={<ShoppingCart Items={Items} CartItems={CartItems} />}/>
     </Routes>
     </BrowserRouter>      
     </>

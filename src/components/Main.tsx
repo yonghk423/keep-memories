@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Main.css';
 
 const Main = ( Items: any, AddCart:any ) => {  
+  console.log(AddCart);
   const data:object[] = Items.Items.Items
     return (          
         <div className="MainBox">          

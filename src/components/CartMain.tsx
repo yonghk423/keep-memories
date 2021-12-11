@@ -1,9 +1,9 @@
 import React from 'react';
 import './CartMain.css';
 
-const CartMain = ( CartItems:any, CartAdd:any ) => {
+const CartMain = ( CartItems:any , Items:any ) => {
   const CartItemsList:object[] = CartItems.CartItems.CartItems;
-  
+  console.log(CartItemsList);
     return (
           <> 
           <div>장바구니</div>
