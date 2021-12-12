@@ -39,7 +39,7 @@ console.log(CartItems);
     const Idx:number = CartItems.indexOf(Find)
     const CartItemsSetting = { ItemdId, quantity }  
   }
-
+console.log(AddCart);
   return (
     <>    
     <BrowserRouter>

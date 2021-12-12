@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Main.css';
 
-const Main = ( Items: any, AddCart:any ) => {  
-  console.log(AddCart);
+const Main = ( Items: any ) => {
+  console.log(Items);
+  console.log(Items.Items.AddCart); 
+  const AddCart:any = Items.Items.AddCart
   const data:object[] = Items.Items.Items
     return (          
         <div className="MainBox">          

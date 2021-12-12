@@ -1,10 +1,12 @@
 import React from 'react';
 import Main from '../components/Main';
 
-const landingPage = ( Items:any, AddCart:any ) => {   
+const landingPage = ( Items:any ) => {
+console.log(Items); 
+console.log(Items.AddCart); 
     return (
         <>          
-          <Main Items={Items} AddCart={AddCart} />
+          <Main Items={Items} />
         </>
     )
 }
