@@ -15,10 +15,9 @@ export interface CartDataList {
 function App() {    
   const [Items, setItems] = useState<DataList['Items']>(initialState.items);
   const [CartItems, setCartItems] = useState<CartDataList['CartItems']>(initialState.cartItems)
-  console.log(Items);
+  
   const AddCart = ( ItemId:number ) => {
-    console.log(CartItems);
-    console.log(ItemId);
+    
     const Find = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
     console.log(Find);
     if(Find) {
@@ -36,21 +35,38 @@ function App() {
         ])
     }
   }
-console.log(CartItems);
 console.log(Items);
+console.log(CartItems);
   const SettingQuantity = (ItemdId: number, quantity: number) => {
     const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemdId))
+    console.log(Find);
     const Idx:number = CartItems.indexOf(Find)
+    console.log(Idx);
     const CartItemsSetting = { ItemdId, quantity }  
-  }
+    console.log(CartItemsSetting);  
+
+  setCartItems([
+    ...CartItems.slice(0, Idx),
+    CartItems,
+    ...CartItems.slice(Idx + 1)
+  ])
+console.log(SettingQuantity);  
 console.log(AddCart);
+  }
   return (
     <>    
     <BrowserRouter>
     <Header CartItems={CartItems}/>    
     <Routes>
-      <Route path='/' element={<LandingPage Items={Items} AddCart={AddCart} />}/>
-      <Route path="Main" element={<ShoppingCart Items={Items} CartItems={CartItems} />}/>
+      <Route path='/' element={
+      <LandingPage Items={Items} AddCart={AddCart}/>}/>
+      <Route path="Main" element={
+      <ShoppingCart 
+      Items={Items} 
+      CartItems={CartItems} 
+      SettingQuantity={SettingQuantity}
+      
+      />}/>
     </Routes>
     </BrowserRouter>      
     </>
