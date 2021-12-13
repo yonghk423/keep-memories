@@ -2,11 +2,11 @@ import React from 'react';
 import CartMain from '../components/CartMain';
 import OrderTotal from '../components/OrderTotal';
 
-const ShoppingCart = (CartItems:any ,Items:any) => {
-    console.log(CartItems);
+const ShoppingCart = ( Items:any ) => {
+    console.log(Items);
     return (
         <>
-        <CartMain CartItems={CartItems} Items={Items}/>
+        <CartMain Items={Items}/>
         <OrderTotal/>
         </>
     )

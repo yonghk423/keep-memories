@@ -12,7 +12,7 @@ const Main = ( Items: any ) => {
             <div className="Box" key={item.id}>  
               <img className="ImgBox" src={item.img} alt="" />
               <div className="ItemInfo">{item.name} {item.price}원</div>
-              <button className="ItemBtn" onClick={(e) => AddCart(e, item.id)}>장바구니 추가</button>
+              <button className="ItemBtn" onClick={() => AddCart(item.id)}>장바구니 추가</button>
             </div>              
             ))}                       
         </div>
