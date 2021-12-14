@@ -6,11 +6,13 @@ const CartMain = ( Items:any ) => {
   console.log(Items.Items.Items);
   console.log(Items.Items.CartItems);
   console.log(Items.Items.SettingQuantity);
+  console.log(Items.Items.RemoveCart);
 
   const ItemsList:object[] = Items.Items.Items;
   const CartItemsList:any = Items.Items.CartItems;
   const MatchingItems:object[] = ItemsList.filter((ele:any) => CartItemsList.map((ele:any) => ele.ItemId).indexOf(ele.id) > -1)
   const SettingQuantityData:any = Items.Items.SettingQuantity;
+  const RemoveCartSetting:any = Items.Items.RemoveCart;
   //다시 고민해보기
   console.log(MatchingItems);
   console.log(SettingQuantityData);
@@ -31,7 +33,7 @@ const CartMain = ( Items:any ) => {
               <div>{item.price}</div>
             </div>
             <div className="Settiing">
-              <button className="DelBtn">삭제</button>
+              <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
               <input 
               className="NumberSetting" 
               type="number"

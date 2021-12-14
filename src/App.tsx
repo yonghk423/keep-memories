@@ -52,6 +52,11 @@ console.log(Items);
       ...CartItems.slice(Idx + 1)
     ])
   }
+
+  const RemoveCart = (ItemId:number) => {
+    setCartItems(CartItems.filter((ele:any) => ele.ItemId !== ItemId ))
+  }  
+
   return (
     <>    
     <BrowserRouter>
@@ -62,7 +67,8 @@ console.log(Items);
       <ShoppingCart 
       Items={Items} 
       CartItems={CartItems} 
-      SettingQuantity={SettingQuantity} 
+      SettingQuantity={SettingQuantity}
+      RemoveCart={RemoveCart} 
       />}/>
     </Routes>
     </BrowserRouter>      
