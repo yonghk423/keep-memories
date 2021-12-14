@@ -3,9 +3,7 @@ import CartMain from '../components/CartMain';
 import OrderTotal from '../components/OrderTotal';
 
 const ShoppingCart = ( Items:any ) => {
-    console.log(Items);
-    console.log(Items.SettingQuantity);
-    return (
+       return (
         <>
         <CartMain Items={Items}/>
         <OrderTotal/>
