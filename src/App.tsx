@@ -23,7 +23,7 @@ function App() {
     console.log(Find);
     if(Find) {
       console.log('기존 리스트와 일치하는 상품')
-      SettingQuantity(ItemId, Find.quantity + 1)
+      SettingQuantity( Find.quantity + 1, ItemId )
     }
     else {
       console.log('새로운 상품 추가')
@@ -38,19 +38,32 @@ function App() {
   }
 console.log(CartItems);
 console.log(Items);
-  const SettingQuantity = (ItemdId: number, quantity: number) => {
-    const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemdId))
+  const SettingQuantity = ( quantity: number, ItemId: number) => {
+    const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
     const Idx:number = CartItems.indexOf(Find)
-    const CartItemsSetting = { ItemdId, quantity }  
+    const CartItemsSetting:object = { 
+      ItemId, 
+      quantity 
+    }  
+  
+    setCartItems([
+      ...CartItems.slice(0, Idx),
+      CartItemsSetting,
+      ...CartItems.slice(Idx + 1)
+    ])
   }
-console.log(AddCart);
   return (
     <>    
     <BrowserRouter>
     <Header CartItems={CartItems}/>    
     <Routes>
       <Route path='/' element={<LandingPage Items={Items} AddCart={AddCart} />}/>
-      <Route path="Main" element={<ShoppingCart Items={Items} CartItems={CartItems} />}/>
+      <Route path="Main" element={
+      <ShoppingCart 
+      Items={Items} 
+      CartItems={CartItems} 
+      SettingQuantity={SettingQuantity} 
+      />}/>
     </Routes>
     </BrowserRouter>      
     </>
