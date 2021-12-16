@@ -15,15 +15,9 @@ export interface CartDataList {
 function App() {    
   const [Items, setItems] = useState<DataList['Items']>(initialState.items);
   const [CartItems, setCartItems] = useState<CartDataList['CartItems']>(initialState.cartItems);  
-
-  console.log(Items);
-  console.log(CartItems);
   
-  const AddCart = ( ItemId:number ) => {
-    console.log(CartItems);
-    console.log(ItemId);
+  const AddCart = ( ItemId:number ) => {    
     const Find = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
-    console.log(Find);
     if(Find) {
       console.log('기존 리스트와 일치하는 상품')
       SettingQuantity( Find.quantity + 1, ItemId )
@@ -39,8 +33,6 @@ function App() {
         ])
     }
   }
-console.log(CartItems);
-console.log(Items);
   const SettingQuantity = ( quantity: number, ItemId: number) => {
     const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
     const Idx:number = CartItems.indexOf(Find)
@@ -55,10 +47,6 @@ console.log(Items);
       ...CartItems.slice(Idx + 1)
     ])
   }
-
-  // const RemoveCart = (ItemId:number) => {
-  //   setCartItems(CartItems.filter((ele:any) => ele.ItemId !== ItemId ))
-  // }  
   
   return (
     <>    
@@ -72,7 +60,6 @@ console.log(Items);
       CartItems={CartItems} 
       SettingQuantity={SettingQuantity}
       setCartItems={setCartItems}
-      // RemoveCart={RemoveCart} 
       />}/>
     </Routes>
     </BrowserRouter>      

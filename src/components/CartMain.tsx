@@ -7,23 +7,18 @@ const CartMain = ( Items:any ) => {
   console.log(Items.Items.CartItems);
   console.log(Items.Items.SettingQuantity);
   console.log(Items.Items.setCartItems)
-  const ItemsList:object[] = Items.Items.Items;
+  const ItemsList:any = Items.Items.Items;
   const CartItemsList:any = Items.Items.CartItems;
   const MatchingItems:object[] = ItemsList.filter((ele:any) => CartItemsList.map((ele:any) => ele.ItemId).indexOf(ele.id) > -1)
   const SettingQuantityData:any = Items.Items.SettingQuantity;
   const SetCartItems = Items.Items.setCartItems;
   let data = CartItemsList.map((ele:any) => (ele.ItemId))
-  console.log(data);
   const [CheckedItems, setCheckedItems] = useState(data);
 
   const RemoveCart = (ItemId:number) => {
     SetCartItems(CartItemsList.filter((ele:any) => ele.ItemId !== ItemId ))
     setCheckedItems(CheckedItems.filter((ele:any) => ele !== ItemId))
   }  
-
-  console.log(CheckedItems);  
-  console.log(MatchingItems);
-  console.log(SettingQuantityData);
     return (
           <> 
           <div>장바구니</div>
