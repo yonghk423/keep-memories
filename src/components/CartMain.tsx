@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import './CartMain.css';
 import OrderTotal from './OrderTotal';
 
-const CartMain = ( Items:any ) => {
-  console.log(Items);
-  console.log(Items.Items.Items);
-  console.log(Items.Items.CartItems);
-  console.log(Items.Items.SettingQuantity);
-  console.log(Items.Items.setCartItems)
+const CartMain = ( Items:any ) => {  
   const ItemsList:any = Items.Items.Items;
   const CartItemsList:any = Items.Items.CartItems;
   const MatchingItems:object[] = ItemsList.filter((ele:any) => CartItemsList.map((ele:any) => ele.ItemId).indexOf(ele.id) > -1)
@@ -71,35 +66,43 @@ const CartMain = ( Items:any ) => {
               />
             <label>전체선택</label>
           </div>
-            {MatchingItems.map((item:any ) => {
-            const quantity = CartItemsList.filter((ele:any) => ele.ItemId === item.id)[0].quantity  
-            return <li className="CartContainer" key={item.id}> 
-              <input 
-                className="Check" 
-                type="checkbox" 
-                checked={CheckedItems.includes(item.id) ? true : false}
-                onChange={(e) => {
-                  HandleCheckChange(e.target.checked, item.id)
-                }}
-              />
-            <img className="CartImg" src={item.img} alt=""/>
-            <div className="Item">
-              <div>{item.name}</div>
-              <div>{item.price}</div>
+          {!CartItemsList.length ? (
+            <div id="item-list-text">
+              장바구니에 아이템이 없습니다.
             </div>
-            <div className="Settiing">
-              <button className="DelBtn" onClick={() => {RemoveCart(item.id)}}>삭제</button>
-              <input 
-              className="NumberSetting" 
-              type="number"
-              value={quantity}
-              onChange={(e) => {
-                SettingQuantityData(Number(e.target.value), item.id)
-              }}
-              />
-            </div>
-            </li>
-            })}
+          ) : (
+              <>  
+                {MatchingItems.map((item:any ) => {
+                const quantity = CartItemsList.filter((ele:any) => ele.ItemId === item.id)[0].quantity  
+                return <li className="CartContainer" key={item.id}> 
+                  <input 
+                    className="Check" 
+                    type="checkbox" 
+                    checked={CheckedItems.includes(item.id) ? true : false}
+                    onChange={(e) => {
+                      HandleCheckChange(e.target.checked, item.id)
+                    }}
+                  />
+                <img className="CartImg" src={item.img} alt=""/>
+                <div className="Item">
+                  <div>{item.name}</div>
+                  <div>{item.price}</div>
+                </div>
+                <div className="Settiing">
+                  <button className="DelBtn" onClick={() => {RemoveCart(item.id)}}>삭제</button>
+                  <input 
+                  className="NumberSetting" 
+                  type="number"
+                  value={quantity}
+                  onChange={(e) => {
+                    SettingQuantityData(Number(e.target.value), item.id)
+                  }}
+                  />
+                </div>
+              </li>
+              })}
+              </>
+          )}
             <OrderTotal total={total.price} totalQuantity={total.quantity} />                               
           </>
     )

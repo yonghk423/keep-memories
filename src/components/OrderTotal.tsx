@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import './OrderTotal.css'
 
-const OrderTotal = ( total:any ,totalQuantity:any ) => {
-  console.log(total);
-  console.log(total.total)
-  console.log(total.totalQuantity)
+const OrderTotal = ( total:any ) => {  
   const Total:number = total.total;
   const Quantity:number = total.totalQuantity;
   
