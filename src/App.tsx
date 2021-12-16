@@ -14,8 +14,11 @@ export interface CartDataList {
 }
 function App() {    
   const [Items, setItems] = useState<DataList['Items']>(initialState.items);
-  const [CartItems, setCartItems] = useState<CartDataList['CartItems']>(initialState.cartItems)
+  const [CartItems, setCartItems] = useState<CartDataList['CartItems']>(initialState.cartItems);  
+
   console.log(Items);
+  console.log(CartItems);
+  
   const AddCart = ( ItemId:number ) => {
     console.log(CartItems);
     console.log(ItemId);
@@ -53,10 +56,10 @@ console.log(Items);
     ])
   }
 
-  const RemoveCart = (ItemId:number) => {
-    setCartItems(CartItems.filter((ele:any) => ele.ItemId !== ItemId ))
-  }  
-
+  // const RemoveCart = (ItemId:number) => {
+  //   setCartItems(CartItems.filter((ele:any) => ele.ItemId !== ItemId ))
+  // }  
+  
   return (
     <>    
     <BrowserRouter>
@@ -68,7 +71,8 @@ console.log(Items);
       Items={Items} 
       CartItems={CartItems} 
       SettingQuantity={SettingQuantity}
-      RemoveCart={RemoveCart} 
+      setCartItems={setCartItems}
+      // RemoveCart={RemoveCart} 
       />}/>
     </Routes>
     </BrowserRouter>      

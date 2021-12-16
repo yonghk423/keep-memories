@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CartMain.css';
 
 const CartMain = ( Items:any ) => {
@@ -6,14 +6,22 @@ const CartMain = ( Items:any ) => {
   console.log(Items.Items.Items);
   console.log(Items.Items.CartItems);
   console.log(Items.Items.SettingQuantity);
-  console.log(Items.Items.RemoveCart);
-
+  console.log(Items.Items.setCartItems)
   const ItemsList:object[] = Items.Items.Items;
   const CartItemsList:any = Items.Items.CartItems;
   const MatchingItems:object[] = ItemsList.filter((ele:any) => CartItemsList.map((ele:any) => ele.ItemId).indexOf(ele.id) > -1)
   const SettingQuantityData:any = Items.Items.SettingQuantity;
-  const RemoveCartSetting:any = Items.Items.RemoveCart;
-  //다시 고민해보기
+  const SetCartItems = Items.Items.setCartItems;
+  let data = CartItemsList.map((ele:any) => (ele.ItemId))
+  console.log(data);
+  const [CheckedItems, setCheckedItems] = useState(data);
+
+  const RemoveCart = (ItemId:number) => {
+    SetCartItems(CartItemsList.filter((ele:any) => ele.ItemId !== ItemId ))
+    setCheckedItems(CheckedItems.filter((ele:any) => ele !== ItemId))
+  }  
+
+  console.log(CheckedItems);  
   console.log(MatchingItems);
   console.log(SettingQuantityData);
     return (
@@ -33,7 +41,7 @@ const CartMain = ( Items:any ) => {
               <div>{item.price}</div>
             </div>
             <div className="Settiing">
-              <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
+              <button className="DelBtn" onClick={() => {RemoveCart(item.id)}}>삭제</button>
               <input 
               className="NumberSetting" 
               type="number"
