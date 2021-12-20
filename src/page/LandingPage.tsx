@@ -1,12 +1,11 @@
 import React from 'react';
 import Main from '../components/Main';
 
-const landingPage = ( Items:any ) => {
-console.log(Items); 
-console.log(Items.AddCart); 
+const landingPage = () => {
+
     return (
         <>          
-          <Main Items={Items} />
+          <Main/>
         </>
     )
 }

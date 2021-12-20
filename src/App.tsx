@@ -53,7 +53,7 @@ function App() {
     <BrowserRouter>
     <Header CartItems={CartItems}/>    
     <Routes>
-      <Route path='/' element={<LandingPage Items={Items} AddCart={AddCart} />}/>
+      <Route path='/' element={<LandingPage/>}/>
       <Route path="Main" element={
       <ShoppingCart 
       Items={Items} 
