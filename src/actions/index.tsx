@@ -2,6 +2,7 @@
 export const ADD_CART = "ADD_CART";
 
 export const AddCart = (itemId:any) => {
+    console.log(itemId);
     return {
         type: ADD_CART,
         payload : {

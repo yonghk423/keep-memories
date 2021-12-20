@@ -1,10 +1,10 @@
 import React from 'react';
 import CartMain from '../components/CartMain';
 
-const ShoppingCart = ( Items:any ) => {
+const ShoppingCart = ( ) => {
        return (
         <>
-        <CartMain Items={Items}/>
+        <CartMain />
         </>
     )
 }
