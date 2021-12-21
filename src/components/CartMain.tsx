@@ -15,7 +15,7 @@ const CartMain = () => {
   console.log({items, cartItems})
   // const ItemsList:any = Items.Items.Items;
   // const CartItemsList:any = Items.Items.CartItems;
-  // const MatchingItems:object[] = ItemsList.filter((ele:any) => CartItemsList.map((ele:any) => ele.ItemId).indexOf(ele.id) > -1)
+  const MatchingItems:object[] = items.filter((ele:any) => cartItems.map((ele:any) => ele.itemId).indexOf(ele.id) > -1)
   // const SettingQuantityData:any = Items.Items.SettingQuantity;
   // const SetCartItems = Items.Items.setCartItems;
   let data = cartItems.map((ele:any) => (ele.itemId))
@@ -66,32 +66,32 @@ const CartMain = () => {
 
     return (
           <> 
-          {/* <div>장바구니</div>
+          <div>장바구니</div>
           <div className="TotalCheck">
             <input 
               type="checkbox" 
-              checked={
-                CheckedItems.length === CartItemsList.length ? true : false
-              }
-              onChange={(e) => HandleAllCheck(e.target.checked)}
+              // checked={
+              //   CheckedItems.length === CartItemsList.length ? true : false
+              // }
+              // onChange={(e) => HandleAllCheck(e.target.checked)}
               />
             <label>전체선택</label>
           </div>
-          {!CartItemsList.length ? (
+          {!cartItems.length ? (
             <div id="item-list-text">
               장바구니에 아이템이 없습니다.
             </div>
           ) : (
               <>  
                 {MatchingItems.map((item:any ) => {
-                const quantity = CartItemsList.filter((ele:any) => ele.ItemId === item.id)[0].quantity  
+                const quantity = cartItems.filter((ele:any) => ele.itemId === item.id)[0].quantity  
                 return <li className="CartContainer" key={item.id}> 
                   <input 
                     className="Check" 
                     type="checkbox" 
-                    checked={CheckedItems.includes(item.id) ? true : false}
+                    // checked={CheckedItems.includes(item.id) ? true : false}
                     onChange={(e) => {
-                      HandleCheckChange(e.target.checked, item.id)
+                      // HandleCheckChange(e.target.checked, item.id)
                     }}
                   />
                 <img className="CartImg" src={item.img} alt=""/>
@@ -100,13 +100,13 @@ const CartMain = () => {
                   <div>{item.price}</div>
                 </div>
                 <div className="Settiing">
-                  <button className="DelBtn" onClick={() => {RemoveCart(item.id)}}>삭제</button>
+                  {/* <button className="DelBtn" onClick={() => {RemoveCart(item.id)}}>삭제</button> */}
                   <input 
                   className="NumberSetting" 
                   type="number"
                   value={quantity}
                   onChange={(e) => {
-                    SettingQuantityData(Number(e.target.value), item.id)
+                    // SettingQuantityData(Number(e.target.value), item.id)
                   }}
                   />
                 </div>
@@ -114,7 +114,7 @@ const CartMain = () => {
               })}
               </>
           )}
-            <OrderTotal total={total.price} totalQuantity={total.quantity} />                                */}
+            {/* <OrderTotal total={total.price} totalQuantity={total.quantity} />                                */}
           </>
     )
 }
