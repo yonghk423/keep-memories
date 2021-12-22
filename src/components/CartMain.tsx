@@ -59,23 +59,23 @@ const CartMain = () => {
   // }
   // const total = getTotal()
 
-  // const handleAllCheck = (checked:any) => {
-  //   if(checked) {
-  //     setCheckedItems(cartItems.map((ele:any)=> (ele.itemId)))
-  //   }
-  //   else {
-  //     setCheckedItems([]);
-  //   }
-  // }
+  const handleAllCheck = (checked:any) => {
+    if(checked) {
+      setCheckedItems(cartItems.map((ele:any)=> (ele.itemId)))
+    }
+    else {
+      setCheckedItems([]);
+    }
+  }
 
-  // const handleCheckChange = (checked:any, id:any) => {
-  //   if (checked) {
-  //     setCheckedItems([...CheckedItems, id]);
-  //   }
-  //   else {
-  //     setCheckedItems(CheckedItems.filter((ele:any) => ele !== id));
-  //   }
-  // };
+  const handleCheckChange = (checked:any, id:any) => {
+    if (checked) {
+      setCheckedItems([...checkedItems, id]);
+    }
+    else {
+      setCheckedItems(checkedItems.filter((ele:any) => ele !== id));
+    }
+  };
 
     return (
           <> 
@@ -86,7 +86,7 @@ const CartMain = () => {
               checked={
                 checkedItems.length === cartItems.length ? true : false
               }
-              // onChange={(e) => handleAllCheck(e.target.checked)}
+              onChange={(e) => handleAllCheck(e.target.checked)}
               />
             <label>전체선택</label>
           </div>
@@ -102,9 +102,9 @@ const CartMain = () => {
                   <input 
                     className="Check" 
                     type="checkbox" 
-                    // checked={CheckedItems.includes(item.id) ? true : false}
+                    checked={checkedItems.includes(item.id) ? true : false}
                     onChange={(e) => {
-                      // handleCheckChange(e.target.checked, item.id)
+                      handleCheckChange(e.target.checked, item.id)
                     }}
                   />
                 <img className="CartImg" src={item.img} alt=""/>
