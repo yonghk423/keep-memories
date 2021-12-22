@@ -9,7 +9,7 @@ export interface ItemReducer {
 
 const Main = () => {
   const state = useSelector<ItemReducer>(state=> state.ItemReducer);
-  const disPatch =useDispatch();
+  const dispatch =useDispatch();
   const {items, cartItems}:any = state;
   console.log({items, cartItems})
   
@@ -18,7 +18,7 @@ const Main = () => {
     if(!find) {
       console.log(find);
       console.log('새로운 상품 추가')
-      disPatch(AddCart(itemId))
+      dispatch(AddCart(itemId))
       // SettingQuantity( Find.quantity + 1, ItemId )
     }
     else {

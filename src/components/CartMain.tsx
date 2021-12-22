@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { RemoveCart } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.css';
 import OrderTotal from './OrderTotal';
@@ -10,7 +11,7 @@ export interface ItemReducer {
 const CartMain = () => {
   
   const state = useSelector<ItemReducer>(state=> state.ItemReducer);
-  const disPatch =useDispatch();
+  const dispatch = useDispatch();
   const {items, cartItems}:any = state;
   console.log({items, cartItems})
   // const ItemsList:any = Items.Items.Items;
@@ -21,23 +22,25 @@ const CartMain = () => {
   let data = cartItems.map((ele:any) => (ele.itemId))
   console.log(data);
   const [checkedItems, setCheckedItems] = useState(data);
+  console.log(checkedItems);
 
-  // const RemoveCart = (ItemId:number) => {
-  //   SetCartItems(CartItemsList.filter((ele:any) => ele.ItemId !== ItemId ))
-  //   setCheckedItems(CheckedItems.filter((ele:any) => ele !== ItemId))
-  // } 
+  const RemoveCartSetting = (itemId:number) => {
+    console.log(itemId)
+    setCheckedItems(checkedItems.filter((ele:any) => ele !== itemId))
+    dispatch(RemoveCart(itemId))
+  } 
   
   // const getTotal = () => {
-  //   let cartIdArr = CartItemsList.map((ele:any) => ele.ItemId)
+  //   let cartIdArr = cartItems.map((ele:any) => ele.ItemId)
   //   console.log(cartIdArr);
   //   let total = {
   //     price: 0,
   //     quantity: 0,
   //   }
   //   for (let i = 0; i < cartIdArr.length; i++) {
-  //     if (CheckedItems.indexOf(cartIdArr[i]) > -1) {
-  //       let quantity = CartItemsList[i].quantity
-  //       let price = ItemsList.filter((ele:any) => ele.id === CartItemsList[i].ItemId)[0].price        
+  //     if (checkedItems.indexOf(cartIdArr[i]) > -1) {
+  //       let quantity = cartItems[i].quantity
+  //       let price = items.filter((ele:any) => ele.id === cartItems[i].ItemId)[0].price        
   //       total.price = total.price + quantity * price
   //       total.quantity = total.quantity + quantity        
   //     }
@@ -46,9 +49,9 @@ const CartMain = () => {
   // }
   // const total = getTotal()
 
-  // const HandleAllCheck = (checked:any) => {
+  // const handleAllCheck = (checked:any) => {
   //   if(checked) {
-  //     setCheckedItems(CartItemsList.map((ele:any)=> (ele.ItemId)))
+  //     setCheckedItems(cartItems.map((ele:any)=> (ele.itemId)))
   //   }
   //   else {
   //     setCheckedItems([]);
@@ -70,10 +73,10 @@ const CartMain = () => {
           <div className="TotalCheck">
             <input 
               type="checkbox" 
-              // checked={
-              //   CheckedItems.length === CartItemsList.length ? true : false
-              // }
-              // onChange={(e) => HandleAllCheck(e.target.checked)}
+              checked={
+                checkedItems.length === cartItems.length ? true : false
+              }
+              // onChange={(e) => handleAllCheck(e.target.checked)}
               />
             <label>전체선택</label>
           </div>
@@ -100,7 +103,7 @@ const CartMain = () => {
                   <div>{item.price}</div>
                 </div>
                 <div className="Settiing">
-                  {/* <button className="DelBtn" onClick={() => {RemoveCart(item.id)}}>삭제</button> */}
+                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
                   <input 
                   className="NumberSetting" 
                   type="number"
