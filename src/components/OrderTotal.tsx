@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './OrderTotal.css'
 
 const OrderTotal = ( total:any ) => {  
+  console.log(total);
   const Total:number = total.total;
   const Quantity:number = total.totalQuantity;
   

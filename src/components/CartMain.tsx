@@ -14,11 +14,7 @@ const CartMain = () => {
   const dispatch = useDispatch();
   const {items, cartItems}:any = state;
   console.log({items, cartItems})
-  // const ItemsList:any = Items.Items.Items;
-  // const CartItemsList:any = Items.Items.CartItems;
   const MatchingItems:object[] = items.filter((ele:any) => cartItems.map((ele:any) => ele.itemId).indexOf(ele.id) > -1)
-  // const SettingQuantityData:any = Items.Items.SettingQuantity;
-  // const SetCartItems = Items.Items.setCartItems;
   let data = cartItems.map((ele:any) => (ele.itemId))
   console.log(data);
   const [checkedItems, setCheckedItems] = useState(data);
@@ -31,33 +27,27 @@ const CartMain = () => {
   } 
   
   const SetQuantitySetting = ( quantity: number, itemId: number) => {
-    dispatch(SetQuantity(quantity, itemId))
-    // const Find:number = cartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
-    // const Idx:number = cartItems.indexOf(Find)
-    // const CartItemsSetting:object = { 
-    //   ItemId, 
-    //   quantity 
-    // }  
+    dispatch(SetQuantity(quantity, itemId))    
   }  
 
-  // const getTotal = () => {
-  //   let cartIdArr = cartItems.map((ele:any) => ele.ItemId)
-  //   console.log(cartIdArr);
-  //   let total = {
-  //     price: 0,
-  //     quantity: 0,
-  //   }
-  //   for (let i = 0; i < cartIdArr.length; i++) {
-  //     if (checkedItems.indexOf(cartIdArr[i]) > -1) {
-  //       let quantity = cartItems[i].quantity
-  //       let price = items.filter((ele:any) => ele.id === cartItems[i].ItemId)[0].price        
-  //       total.price = total.price + quantity * price
-  //       total.quantity = total.quantity + quantity        
-  //     }
-  //   }
-  //   return total
-  // }
-  // const total = getTotal()
+  const getTotal = () => {
+    let cartIdArr = cartItems.map((ele:any) => ele.itemId)
+    console.log(cartIdArr);
+    let total = {
+      price: 0,
+      quantity: 0,
+    }
+    for (let i = 0; i < cartIdArr.length; i++) {
+      if (checkedItems.indexOf(cartIdArr[i]) > -1) {
+        let quantity = cartItems[i].quantity
+        let price = items.filter((ele:any) => ele.id === cartItems[i].itemId)[0].price        
+        total.price = total.price + quantity * price
+        total.quantity = total.quantity + quantity        
+      }
+    }
+    return total
+  }
+  const total = getTotal()
 
   const handleAllCheck = (checked:any) => {
     if(checked) {
@@ -127,7 +117,7 @@ const CartMain = () => {
               })}
               </>
           )}
-            {/* <OrderTotal total={total.price} totalQuantity={total.quantity} />                                */}
+            <OrderTotal total={total.price} totalQuantity={total.quantity} />                               
           </>
     )
 }
