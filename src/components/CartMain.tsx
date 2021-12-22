@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RemoveCart } from '../actions';
+import { RemoveCart, SetQuantity } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.css';
 import OrderTotal from './OrderTotal';
@@ -30,6 +30,16 @@ const CartMain = () => {
     dispatch(RemoveCart(itemId))
   } 
   
+  const SetQuantitySetting = ( quantity: number, itemId: number) => {
+    dispatch(SetQuantity(quantity, itemId))
+    // const Find:number = cartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
+    // const Idx:number = cartItems.indexOf(Find)
+    // const CartItemsSetting:object = { 
+    //   ItemId, 
+    //   quantity 
+    // }  
+  }  
+
   // const getTotal = () => {
   //   let cartIdArr = cartItems.map((ele:any) => ele.ItemId)
   //   console.log(cartIdArr);
@@ -58,7 +68,7 @@ const CartMain = () => {
   //   }
   // }
 
-  // const HandleCheckChange = (checked:any, id:any) => {
+  // const handleCheckChange = (checked:any, id:any) => {
   //   if (checked) {
   //     setCheckedItems([...CheckedItems, id]);
   //   }
@@ -94,7 +104,7 @@ const CartMain = () => {
                     type="checkbox" 
                     // checked={CheckedItems.includes(item.id) ? true : false}
                     onChange={(e) => {
-                      // HandleCheckChange(e.target.checked, item.id)
+                      // handleCheckChange(e.target.checked, item.id)
                     }}
                   />
                 <img className="CartImg" src={item.img} alt=""/>
@@ -109,7 +119,7 @@ const CartMain = () => {
                   type="number"
                   value={quantity}
                   onChange={(e) => {
-                    // SettingQuantityData(Number(e.target.value), item.id)
+                    SetQuantitySetting(Number(e.target.value), item.id)
                   }}
                   />
                 </div>

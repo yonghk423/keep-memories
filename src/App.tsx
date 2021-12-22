@@ -33,20 +33,20 @@ function App() {
   //       ])
   //   }
   // }
-  const SettingQuantity = ( quantity: number, ItemId: number) => {
-    const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
-    const Idx:number = CartItems.indexOf(Find)
-    const CartItemsSetting:object = { 
-      ItemId, 
-      quantity 
-    }  
+  // const SettingQuantity = ( quantity: number, ItemId: number) => {
+  //   const Find:number = CartItems.filter((ele:any):boolean => (ele.ItemId === ItemId))[0]
+  //   const Idx:number = CartItems.indexOf(Find)
+  //   const CartItemsSetting:object = { 
+  //     ItemId, 
+  //     quantity 
+  //   }  
   
-    setCartItems([
-      ...CartItems.slice(0, Idx),
-      CartItemsSetting,
-      ...CartItems.slice(Idx + 1)
-    ])
-  }
+  //   setCartItems([
+  //     ...CartItems.slice(0, Idx),
+  //     CartItemsSetting,
+  //     ...CartItems.slice(Idx + 1)
+  //   ])
+  // }
   
   return (
     <>    
