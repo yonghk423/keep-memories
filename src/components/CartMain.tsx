@@ -15,11 +15,16 @@ export interface Property {
 export interface DataSetting {  
   items: [{
     price:number;
+    id:number;
   }]
   cartItems: [{
     quantity:number;
     itemId:number;
   }]; //object 형식에 quantity itemdId price 속성이 없다는 오류 원인
+}
+
+export interface CheckedItems {
+  CheckedItems:Array<number>
 }
 
 const CartMain = () => {
@@ -28,15 +33,15 @@ const CartMain = () => {
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
   console.log({items, cartItems})
-  const MatchingItems:Array<object> = items.filter((ele:any) => cartItems.map((ele:any) => ele.itemId).indexOf(ele.id) > -1)
-  let data = cartItems.map((ele:any) => (ele.itemId))
+  const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.itemId).indexOf(ele.id) > -1)
+  let data = cartItems.map((ele) => (ele.itemId))
   console.log(data);
-  const [checkedItems, setCheckedItems] = useState(data);
+  const [checkedItems, setCheckedItems]= useState<CheckedItems['CheckedItems']>(data);
   console.log(checkedItems);
 
   const RemoveCartSetting = (itemId:number) => {
     console.log(itemId)
-    setCheckedItems(checkedItems.filter((ele:any) => ele !== itemId))
+    setCheckedItems(checkedItems.filter((ele) => ele !== itemId))
     dispatch(RemoveCart(itemId))
   } 
   
@@ -45,7 +50,7 @@ const CartMain = () => {
   }  
 
   const getTotal = () => {
-    let cartIdArr = cartItems.map((ele:any) => ele.itemId)
+    let cartIdArr = cartItems.map((ele) => ele.itemId)
     console.log(cartIdArr);
     let total = {
       price: 0,
@@ -54,7 +59,7 @@ const CartMain = () => {
     for (let i = 0; i < cartIdArr.length; i++) {
       if (checkedItems.indexOf(cartIdArr[i]) > -1) {
         let quantity = cartItems[i].quantity
-        let price = items.filter((ele:any) => ele.id === cartItems[i].itemId)[0].price        
+        let price = items.filter((ele) => ele.id === cartItems[i].itemId)[0].price        
         total.price = total.price + quantity * price
         total.quantity = total.quantity + quantity        
       }
@@ -65,7 +70,7 @@ const CartMain = () => {
 
   const handleAllCheck = (checked:any) => {
     if(checked) {
-      setCheckedItems(cartItems.map((ele:any)=> (ele.itemId)))
+      setCheckedItems(cartItems.map((ele)=> (ele.itemId)))
     }
     else {
       setCheckedItems([]);
@@ -77,7 +82,7 @@ const CartMain = () => {
       setCheckedItems([...checkedItems, id]);
     }
     else {
-      setCheckedItems(checkedItems.filter((ele:any) => ele !== id));
+      setCheckedItems(checkedItems.filter((ele) => ele !== id));
     }
   };
 
@@ -101,7 +106,7 @@ const CartMain = () => {
           ) : (
               <>  
                 {MatchingItems.map((item:any ) => {
-                const quantity = cartItems.filter((ele:any) => ele.itemId === item.id)[0].quantity  
+                const quantity = cartItems.filter((ele) => ele.itemId === item.id)[0].quantity  
                 return <li className="CartContainer" key={item.id}> 
                   <input 
                     className="Check" 
