@@ -4,7 +4,7 @@ export const REMOVE_CART = "REMOVE_CART";
 export const SET_QUANTITY ="SET_QUANTITY"
 
 //액션 생성 선언 함수
-export const AddCart = (itemId:any) => {
+export const AddCart = (itemId:number) => {
     console.log(itemId);
     return {
         type: ADD_CART,
@@ -15,7 +15,7 @@ export const AddCart = (itemId:any) => {
     }
 }
 
-export const RemoveCart = (itemId:any) => {
+export const RemoveCart = (itemId:number) => {
     console.log(itemId);
     return {
         type: REMOVE_CART,

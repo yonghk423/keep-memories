@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
 export interface ItemReducer {
-        ItemReducer : object[]
+        ItemReducer : Array<object>
 }
 
-const Header = ( ) => {
+const Header = () => {
     const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);
     console.log(state);
     console.log(state.cartItems.length)
