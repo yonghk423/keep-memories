@@ -10,7 +10,7 @@ export interface DataList {
   Items : object[];
 }
 export interface CartDataList {
-  CartItems: any;  
+  CartItems: object[];  
 }
 function App() {    
   const [Items, setItems] = useState<DataList['Items']>(initialState.items);

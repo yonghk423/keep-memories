@@ -5,16 +5,30 @@ import './CartMain.css';
 import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {
-        ItemReducer : object[]
+        ItemReducer : Array<object>
+}
+
+export interface Property {
+  qunatity:number;
+}
+
+export interface DataSetting {  
+  items: [{
+    price:number;
+  }]
+  cartItems: [{
+    quantity:number;
+    itemId:number;
+  }]; //object 형식에 quantity itemdId price 속성이 없다는 오류 원인
 }
 
 const CartMain = () => {
   
-  const state = useSelector<ItemReducer>(state=> state.ItemReducer);
+  const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
-  const {items, cartItems}:any = state;
+  const {items, cartItems}:DataSetting = state;
   console.log({items, cartItems})
-  const MatchingItems:object[] = items.filter((ele:any) => cartItems.map((ele:any) => ele.itemId).indexOf(ele.id) > -1)
+  const MatchingItems:Array<object> = items.filter((ele:any) => cartItems.map((ele:any) => ele.itemId).indexOf(ele.id) > -1)
   let data = cartItems.map((ele:any) => (ele.itemId))
   console.log(data);
   const [checkedItems, setCheckedItems] = useState(data);
