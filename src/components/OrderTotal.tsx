@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
 import './OrderTotal.css'
 
-const OrderTotal = ( total:any ) => {  
+export interface Total {
+  total : number;
+  totalQuantity : number;
+}
+
+const OrderTotal = ( total:Total) => {  
   console.log(total);
   const Total:number = total.total;
   const Quantity:number = total.totalQuantity;
