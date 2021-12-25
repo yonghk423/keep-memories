@@ -5,17 +5,17 @@ import './CartMain.css';
 import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {
-        ItemReducer : Array<object>
+  ItemReducer : Array<object>
 }
 
 export interface Property {
   qunatity:number;
 }
 
-export interface DataSetting {  
-  items: [{
+export interface DataSetting {
+    items: [{
     price:number;
-    id:number;
+    id:number;    
   }]
   cartItems: [{
     quantity:number;
@@ -27,6 +27,10 @@ export interface CheckedItems {
   CheckedItems:Array<number>
 }
 
+export interface Item {
+  id: number
+}
+
 const CartMain = () => {
   
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
@@ -34,6 +38,7 @@ const CartMain = () => {
   const {items, cartItems}:DataSetting = state;
   console.log({items, cartItems})
   const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.itemId).indexOf(ele.id) > -1)
+  console.log(MatchingItems);
   let data = cartItems.map((ele) => (ele.itemId))
   console.log(data);
   const [checkedItems, setCheckedItems]= useState<CheckedItems['CheckedItems']>(data);
@@ -77,7 +82,7 @@ const CartMain = () => {
     }
   }
 
-  const handleCheckChange = (checked:any, id:any) => {
+  const handleCheckChange = (checked:any, id:number) => {
     if (checked) {
       setCheckedItems([...checkedItems, id]);
     }
@@ -105,7 +110,7 @@ const CartMain = () => {
             </div>
           ) : (
               <>  
-                {MatchingItems.map((item:any ) => {
+                {MatchingItems.map((item:any) => {
                 const quantity = cartItems.filter((ele) => ele.itemId === item.id)[0].quantity  
                 return <li className="CartContainer" key={item.id}> 
                   <input 

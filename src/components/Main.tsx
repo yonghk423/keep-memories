@@ -32,7 +32,6 @@ const Main = () => {
       console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(itemId))
-      // SettingQuantity( Find.quantity + 1, ItemId )
     }
     else {
       console.log('기존 리스트와 일치하는 상품')
