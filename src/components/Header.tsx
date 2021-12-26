@@ -15,8 +15,8 @@ const Header = () => {
         <div className="HeaderBox">
              <div className="MarketName">YongHee Market</div>
                <div className="ItemBox">
-                 <Link to="/"><div className="ItemList">상품 리스트</div></Link>
-                 <Link to="Main"><div className="ItemCount">장바구니 {state.cartItems.length}개</div></Link>
+                 <Link to="/" style={{ textDecoration: 'none', color:'black' }}><div className="ItemList">상품 리스트</div></Link>
+                 <Link to="Main" style={{ textDecoration: 'none', color:'black' }}><div className="ItemCount">장바구니 {state.cartItems.length}개</div></Link>
                </div>             
          </div>
         )            

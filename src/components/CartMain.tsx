@@ -139,9 +139,9 @@ const CartMain = () => {
                 </div>
               </li>
               })}
+              <OrderTotal total={total.price} totalQuantity={total.quantity} />
               </>
           )}
-            <OrderTotal total={total.price} totalQuantity={total.quantity} />                               
           </>
     )
 }
