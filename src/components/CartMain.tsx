@@ -93,19 +93,18 @@ const CartMain = () => {
 
     return (
           <> 
-          <div>장바구니</div>
           <div className="TotalCheck">
-            <input 
+            <input className='TotalCheckBtn'
               type="checkbox" 
               checked={
                 checkedItems.length === cartItems.length ? true : false
               }
               onChange={(e) => handleAllCheck(e.target.checked)}
               />
-            <label>전체선택</label>
+            <label className='TotalCheckText'>전체선택</label>
           </div>
           {!cartItems.length ? (
-            <div id="item-list-text">
+            <div className="item-list-text">
               장바구니에 아이템이 없습니다.
             </div>
           ) : (

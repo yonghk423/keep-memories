@@ -1,5 +1,6 @@
 .CartContainer {
   border: 1px solid black;
+  margin-top: 20px;
   width: 800px;
   height: 250px;
   list-style: none;
@@ -16,7 +17,6 @@
 .CartImg {
   width: 200px;
   height: 200px;
-  background-color: cadetblue;
   margin: auto;
   margin-left: -80px;
 }
@@ -40,4 +40,25 @@
 .NumberSetting {
   width: 100px;
   height: 20px;
+}
+
+.item-list-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  font-size: 50px;
+}
+
+.TotalCheck {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.TotalCheckText {
+  font-size: 20px;
+}
+
+.TotalCheckBtn {
 }
