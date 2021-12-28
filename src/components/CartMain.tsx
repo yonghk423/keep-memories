@@ -130,6 +130,7 @@ const CartMain = () => {
                   <input 
                   className="NumberSetting" 
                   type="number"
+                  min={1}
                   value={quantity}
                   onChange={(e) => {
                     SetQuantitySetting(Number(e.target.value), item.id)
