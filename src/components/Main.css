@@ -21,6 +21,12 @@
   display: block;
   margin: auto;
 }
+.ImgBox:hover {
+  transform: scale(1.3);
+  transition: all 0.7s;
+  position: relative;
+  z-index: 1;
+}
 
 .ItemInfo {
   text-align: center;
@@ -32,4 +38,11 @@
   display: block;
   margin-top: 3px;
   background-color: #ffeeff;
+
+  transition: all 0.3s ease-in-out;
+  line-height: 40px;
+  border: 2px solid white;
+  text-transform: capitalize;
+  border-radius: 2px;
+  overflow: hidden;
 }

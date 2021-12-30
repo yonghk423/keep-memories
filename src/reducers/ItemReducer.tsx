@@ -4,9 +4,7 @@ console.log(initialState);
 
 const ItemReducer = (state = initialState, action:any) => {
     console.log(state);
-    console.log(action);
-    // payload: {quantity: 1, itemId: 2}
-    // type: "ADD_CART"
+    console.log(action);    
     switch (action.type) {
         case ADD_CART:
           return Object.assign({}, state, { cartItems: [...state.cartItems, action.payload]})
