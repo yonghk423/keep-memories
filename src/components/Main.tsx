@@ -44,7 +44,9 @@ const Main = () => {
             <div className="Box" key={item.id}>  
               <img className="ImgBox" src={item.img} alt="" />
               <div className="ItemInfo">{item.name} {item.price}원</div>
+              <div className='BtnBox'>
               <button className="ItemBtn" onClick={() => AddCartSetting(item.id)}>장바구니 추가</button>
+              </div>
             </div>              
             ))}                       
         </div>

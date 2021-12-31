@@ -1,7 +1,5 @@
 .MainBox {
   padding: 50px 50px 100px 100px;
-  /* display: table-cell; */
-  width: 100%;
 }
 
 .Box {
@@ -39,10 +37,37 @@
   margin-top: 3px;
   background-color: #ffeeff;
 
-  transition: all 0.3s ease-in-out;
-  line-height: 40px;
-  border: 2px solid white;
-  text-transform: capitalize;
-  border-radius: 2px;
+  display: block;
+  position: relative;
+  padding: 25px 0;
+  margin: 25px auto;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  width: 270px;
+  outline: none;
   overflow: hidden;
+  box-sizing: border-box;
+
+  overflow: hidden;
+  background-color: transparent;
+  /* border: 3px solid white; */
+  transition: all 0.3s ease;
+}
+.BtnBox {
+  background: #82b1ff;
+}
+
+.ItemBtn:hover {
+  background-color: white;
+  color: #0e83cd;
+}
+.ItemBtn {
+  transform: scale(1.1);
 }
