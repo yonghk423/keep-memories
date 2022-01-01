@@ -6,13 +6,13 @@
   display: inline-block;
   width: 250px;
   height: 300px;
-  border: solid rgb(238, 238, 238) 0.1rem;
+  border: 1px solid rgb(238, 238, 238);
   margin: 30px;
   background-color: #ffeeff;
 }
 
 .ImgBox {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: white;
   width: 250px;
   height: 250px;
@@ -28,29 +28,26 @@
 
 .ItemInfo {
   text-align: center;
-  background-color: #c48b9f;
+  /* background-color: #c48b9f; */
 }
 
 .ItemBtn {
   margin: auto;
   display: block;
-  margin-top: 3px;
-  background-color: #ffeeff;
 
   display: block;
   position: relative;
-  padding: 25px 0;
-  margin: 25px auto;
+  padding: 10px 0;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  color: white;
+  color: black;
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
-  width: 270px;
+  width: 250px;
   outline: none;
   overflow: hidden;
   box-sizing: border-box;
@@ -61,13 +58,10 @@
   transition: all 0.3s ease;
 }
 .BtnBox {
-  background: #82b1ff;
+  background: #ffc1e3;
 }
 
 .ItemBtn:hover {
-  background-color: white;
-  color: #0e83cd;
-}
-.ItemBtn {
-  transform: scale(1.1);
+  background-color: #f06292;
+  color: #ffee58;
 }
