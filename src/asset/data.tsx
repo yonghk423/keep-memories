@@ -33,7 +33,7 @@ export const initialState: Data =
     {
       "id": 5,
       "name": "갤럭시S",
-      "img": "https://img8.yna.co.kr/etc/inner/KR/2021/01/15/AKR20210115106500017_01_i_P2.jpg",
+      "img": "http://image.sportsseoul.com/2021/04/02/news/20210402110449_o.jpg",
       "price": 2900
     },
     {
