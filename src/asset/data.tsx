@@ -30,32 +30,32 @@ export const initialState: Data =
       "img": "http://img4.tmon.kr/cdn3/deals/2020/07/02/3900597058/3900597058_front_efd6b47b31.jpg",
       "price": 4900
     },
+    // {
+    //   "id": 5,
+    //   "name": "갤럭시S",
+    //   "img": "http://image.sportsseoul.com/2021/04/02/news/20210402110449_o.jpg",
+    //   "price": 2900
+    // },
     {
       "id": 5,
-      "name": "갤럭시S",
-      "img": "http://image.sportsseoul.com/2021/04/02/news/20210402110449_o.jpg",
-      "price": 2900
-    },
-    {
-      "id": 6,
       "name": "갤럭시 탭",
       "img": "http://th1.tmon.kr/thumbs/image/0a8/66f/97f/7ac293456_700x700_95_FIT.jpg",
       "price": 3900
     },
 
     {
-      "id": 7,
+      "id": 6,
       "name": "Z플립",
       "img": "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202109/16/0d93ca34-4f67-4e96-a024-4c8e839dd609.jpg",
       "price": 4900
     },
 
-    {
-      "id": 8,
-      "name": "Z폴드",
-      "img": "https://dimg.donga.com/wps/NEWS/IMAGE/2021/08/12/108512724.1.jpg",
-      "price": 6900
-    }
+    // {
+    //   "id": 8,
+    //   "name": "Z폴드",
+    //   "img": "https://dimg.donga.com/wps/NEWS/IMAGE/2021/08/12/108512724.1.jpg",
+    //   "price": 6900
+    // }
   ],
   "cartItems": [
     
