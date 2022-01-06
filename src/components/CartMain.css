@@ -38,12 +38,12 @@
   background-color: #fce4ec;
   border-radius: 9px;
   border-color: thistle;
-  box-shadow: 0px 6px red;
+  box-shadow: 0px 6px #f06292;
   border: none;
 }
 .DelBtn:hover {
   transform: translateY(3px);
-  box-shadow: 0px 3px #f06292;
+  box-shadow: 0px 3px #b4004e;
 }
 .DelBtn:active {
   transform: translateY(6px);
