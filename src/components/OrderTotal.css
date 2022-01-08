@@ -1,17 +1,3 @@
-@media (max-width: 1000px) {
-  .OrderTotalBox {
-    position: relative;
-    background-color: blue;
-    right: 100px;
-    top: -100px;
-    width: 400px;
-    height: 250px;
-    border: solid rgb(238, 238, 238) 0.2rem;
-    font-size: 25px;
-    font-weight: 600;
-  }
-}
-
 .OrderTotalBox {
   position: absolute;
   background-color: #fce4ec;
