@@ -1,0 +1,17 @@
+.serviceBox {  
+  display: flex;
+  height: 400px;
+  border: 1px solid black;
+}
+    
+.imgBox {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.infoBox {
+    width: 300px;
+    height: 300px;
+    border:1px solid black;
+}
