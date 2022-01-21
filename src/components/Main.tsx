@@ -1,7 +1,7 @@
 import React from 'react';
 import { AddCart } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import './Main.css';
+import './Main.scss';
 
 export interface ItemReducer {
         ItemReducer : Array<object>

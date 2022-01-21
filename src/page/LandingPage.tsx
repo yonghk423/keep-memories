@@ -4,7 +4,7 @@ import Main from '../components/Main';
 const landingPage = () => {
 
     return (
-        <>                
+        <>                    
           <Main/>
         </>
     )
