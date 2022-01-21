@@ -40,18 +40,21 @@ const Main = () => {
   }
 
     return (  
-            <div className="MainBox">          
+          <div className="slider">          
             {items.map((item) => (
-            <div className="Box" key={item.id}>  
-              <img className="ImgBox" src={item.img} alt="" />
-              <div className="ItemInfo">{item.name} {item.price}원</div>
-              <span className='Text'>{item.text}</span>
-              <div className='BtnBox'>
-              <button className="ItemBtn" onClick={() => AddCartSetting(item.id)}>장바구니 추가</button>
+            <div className="slider-thumb" key={item.id}>  
+              {/* <img className="ImgBox" src={item.img} alt=""/> */}
+              <label htmlFor={item.name} className="ItemInfo">{item.name}</label>
+              <div className='div'>
+                <input id={item.name} type="radio" name="slides" />
               </div>
+              {/* <span className='Text'>{item.text}</span> */}
+              {/* <div className='BtnBox'>
+              <button className="ItemBtn" onClick={() => AddCartSetting(item.id)}>장바구니 추가</button>
+              </div> */}
             </div>              
             ))}                       
-        </div>
+          </div>
     )
 }
 export default Main;
