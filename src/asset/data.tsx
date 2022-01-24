@@ -1,9 +1,5 @@
-interface Data {
-  items: Array<object>; //배열안에 객체
-  cartItems: Array<object>;
-}
 
-export const initialState: Data =
+export const initialState =
 {
   "items": [
     {
