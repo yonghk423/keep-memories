@@ -5,7 +5,10 @@ import './Main.scss';
 import { initialState } from '../asset/data'
 
 export interface DataList {
-  Items: string;  
+  fullImg: any;
+  setFullImg: any;
+  thumImg:any;
+  setThumImg:any;
 }
 
 export interface ItemReducer {
@@ -27,7 +30,8 @@ export interface DataSetting {
 }
 
 const Main = () => {
-  const [Items, setItems] = useState<DataList['Items']>(initialState.items[0].img);
+  const [fullImg, setFullImg] = useState<DataList['fullImg']>(initialState.items[0].img);
+  const [thumImg, setThumImg] = useState<DataList['thumImg']>(initialState.items)
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
@@ -44,13 +48,19 @@ const Main = () => {
       console.log('기존 리스트와 일치하는 상품')
     }
   }
-  
+  const onImgChange = (eleImg:any) => {
+   setFullImg(eleImg);
+  }
 
     return (
         <div className='total'>  
-          <div className="mainBox">
-          <img src={Items} alt=""></img>
-
+          <div className="fullImgBox">
+            <img src={fullImg} alt=""></img>
+          </div>
+          <div className='thumImgBox'>
+            {thumImg.map((ele:any)=> (
+              <img className='thumImg' src={ele.img} alt="" onClick={() => onImgChange(ele.img)}></img>
+            ))}
           </div>
         </div>    
     )
