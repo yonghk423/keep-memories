@@ -50,7 +50,7 @@ const Main = () => {
         <div className='total'>  
           <div className="mainBox">
           <img src={Items} alt=""></img>
-                                          
+
           </div>
         </div>    
     )
