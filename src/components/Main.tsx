@@ -49,7 +49,8 @@ const Main = () => {
     return (
         <div className='total'>  
           <div className="mainBox">
-          <img src={Items} alt=""></img>                                
+          <img src={Items} alt=""></img>
+                                          
           </div>
         </div>    
     )
