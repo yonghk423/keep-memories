@@ -1,4 +1,19 @@
-img {
-    width: 100px;
-    height: 100px;
+.fullImgBox {
+  
+  .fullImg {
+        height: 600px;
+        width: 1000px;
+    }
+}
+
+.thumImgBox {
+  
+  .thumImg {
+    position: relative;
+    height: 120px;
+    width: auto;
+    bottom: 100px;
+    z-index: 500;
+  }
+
 }
