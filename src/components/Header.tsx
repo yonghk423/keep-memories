@@ -13,10 +13,10 @@ const Header = () => {
     console.log(state.cartItems.length)
     return (
         <div className="HeaderBox">
-             <Link to="/" style={{ textDecoration: 'none', color:'#fff176' }}><div className="MarketName">YongHee Market</div></Link>
+             <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="MarketName">yongHee Market</div></Link>
                <div className="ItemBox">
-                 <Link to="/" style={{ textDecoration: 'none', color:'#fff176' }}><div className="ItemList">상품 리스트</div></Link>
-                 <Link to="Main" style={{ textDecoration: 'none', color:'#fff176' }}><div className="ItemCount">장바구니 {state.cartItems.length}개</div></Link>
+                 <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="ItemList">product list</div></Link>
+                 <Link to="Main" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="ItemCount">shopping cart {state.cartItems.length} </div></Link>
                </div>             
          </div>
         )            

@@ -1,9 +1,10 @@
 .fullImgBox {
 
   .fullImg {
+    position: relative;
+    top: 40px;
     display : block;
-    margin : auto;
-    height: 600px;
+    height: 550px;
     width: 1200px;
     margin: 0px auto;
     }
@@ -14,11 +15,14 @@
   position: relative;
   height: 100px;
   width: 100px;
-  bottom: 60px;
+  bottom: 20px;
   left: 150px;
   z-index: 500;
 
   &:hover {
-    filter: brightness(10%);
+    filter: brightness(105%);    
+    transform:scale(1.1);
+    transition: transform .5s;
+    z-index: 999;
   }
 }

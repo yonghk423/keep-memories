@@ -1,14 +1,14 @@
 .HeaderBox {
-  background-color: #9e9e9e;
+  background-color: #212121;
   display: flex;
   height: 80px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .MarketName {
-  color: #fff176;
+  color: white;
   font-size: 20px;
-  padding: 10px 8px;
+  padding: 20px 16px;
   width: 150px;
   height: 80px;
   /* border: 1px solid black; */
@@ -20,8 +20,10 @@
 }
 
 .ItemList {
+  position: relative;
+  left: 50px;
   font-size: 20px;
-  padding: 10px 8px;
+  padding: 20px 16px;
   width: 150px;
   height: 80px;
   /* border: 1px solid black; */
@@ -29,7 +31,7 @@
 
 .ItemCount {
   font-size: 20px;
-  padding: 10px 8px;
+  padding: 20px 16px;
   width: 150px;
   height: 80px;
   /* border: 1px solid black; */
