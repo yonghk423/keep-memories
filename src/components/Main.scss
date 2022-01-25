@@ -1,19 +1,24 @@
 .fullImgBox {
-  
+
   .fullImg {
-        height: 600px;
-        width: 1000px;
+    display : block;
+    margin : auto;
+    height: 600px;
+    width: 1200px;
+    margin: 0px auto;
     }
 }
 
-.thumImgBox {
-  
-  .thumImg {
-    position: relative;
-    height: 120px;
-    width: auto;
-    bottom: 100px;
-    z-index: 500;
-  }
+.thumImg {
+  filter: brightness(60%);
+  position: relative;
+  height: 100px;
+  width: 100px;
+  bottom: 60px;
+  left: 150px;
+  z-index: 500;
 
+  &:hover {
+    filter: brightness(10%);
+  }
 }

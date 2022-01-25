@@ -57,7 +57,7 @@ const Main = () => {
           <div className="fullImgBox">
             <img className='fullImg' src={fullImg} alt=""></img>
           </div>
-          <div className='thumImgBox'>
+          <div>
             {thumImg.map((ele:any)=> (
               <img className='thumImg' key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele.img)}></img>
             ))}

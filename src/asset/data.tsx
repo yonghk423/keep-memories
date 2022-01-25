@@ -5,7 +5,7 @@ export const initialState =
     {
       "id": 1,
       "name": "맥북",
-      "img": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp16-spacegray-select-202110_GEO_KR?wid=1808&hei=1686&fmt=jpeg&qlt=80&.v=1633657639000",
+      "img": "https://unsplash.it/1600/880/?random",
       "price": 9900,
       "text": '스타벅스 출입증'
     },
