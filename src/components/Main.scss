@@ -44,12 +44,17 @@
 
 .title {
   position: relative;
-  background-color: black;
+  background-color: #212121;
   text-align: center;
-  color: white;
+  color: #fafafa;
   width: 250px;
   height: 40px;
   font-size: 20px;  
   transform: translate(20%, -1100%);
   line-height: 40px;
+  &:hover {
+    background-color: #6d6d6d;
+    color: efebe9;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
 }
