@@ -56,6 +56,7 @@ const Main = () => {
         <div className='total'>  
           <div className="fullImgBox">
             <img className='fullImg' src={fullImg} alt=""></img>
+            <div className='title'>please click the picture</div>
           </div>
           <div>
             {thumImg.map((ele:any)=> (

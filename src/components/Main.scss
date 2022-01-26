@@ -1,3 +1,6 @@
+.total {
+  background: rgba(218, 218, 218, 1);
+}
 .fullImgBox {
   .fullImg {
     cursor: pointer;
@@ -26,7 +29,7 @@
   position: relative;
   height: 100px;
   width: 100px;
-  bottom: 20px;
+  bottom: 50px;
   left: 150px;
   z-index: 500;
   border-radius: 5px;
@@ -37,4 +40,16 @@
     transition: transform .5s;
     z-index: 999;
   }
+}
+
+.title {
+  position: relative;
+  background-color: black;
+  text-align: center;
+  color: white;
+  width: 250px;
+  height: 40px;
+  font-size: 20px;  
+  transform: translate(20%, -1100%);
+  line-height: 40px;
 }
