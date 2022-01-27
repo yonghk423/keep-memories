@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
 import './Main.scss';
 import { initialState } from '../asset/data'
+import { Link } from 'react-router-dom';
 
 export interface DataList {
   fullImg: any;
@@ -55,7 +56,9 @@ const Main = () => {
     return (
         <div className='total'>  
           <div className="fullImgBox">
+            <Link to="DetailPage">
             <img className='fullImg' src={fullImg} alt=""></img>
+            </Link>
             <div className='title'>please click the picture</div>
           </div>
           <div>

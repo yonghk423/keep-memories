@@ -3,6 +3,7 @@ import LandingPage from './page/LandingPage';
 import ShoppingCart from './page/ShoppingCart';
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DetailPage from './components/DetailPage';
 // import { initialState } from './asset/data';
 
 export interface DataList {
@@ -18,9 +19,8 @@ function App() {
     <Header/>    
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
-      <Route path="Main" element={
-      <ShoppingCart      
-      />}/>
+      <Route path="Main" element={<ShoppingCart/>}/>
+      <Route path="DetailPage" element={<DetailPage/>}></Route>
     </Routes>
     </BrowserRouter>      
     </>
