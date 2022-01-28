@@ -12,6 +12,8 @@ export interface DataList {
   setThumImg:any;
 }
 
+console.log(initialState.items[0])
+
 // export interface ItemReducer {
 //         ItemReducer : Array<object>
 // }
@@ -31,8 +33,14 @@ export interface DataList {
 // }
 
 const Main = () => {
-  const [fullImg, setFullImg] = useState<DataList['fullImg']>(initialState.items[0].img);
+  const [fullImg, setFullImg] = useState<DataList['fullImg']>(initialState.items[0]);
   const [thumImg] = useState<DataList['thumImg']>(initialState.items)
+
+  console.log(fullImg);
+  console.log(fullImg.id);
+  const imgData = fullImg.img
+  const idData = fullImg.id
+  
   // const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);
   // const dispatch = useDispatch();
   // const {items, cartItems}:DataSetting = state;
@@ -49,21 +57,24 @@ const Main = () => {
   //     console.log('기존 리스트와 일치하는 상품')
   //   }
   // }
-  const onImgChange = (eleImg:any) => {
-   setFullImg(eleImg);
+  const onImgChange = (ele:any) => {
+    console.log(ele);
+    setFullImg(ele);
   }
 
     return (
         <div className='total'>  
           <div className="fullImgBox">
-            <Link to="DetailPage">
-            <img className='fullImg' src={fullImg} alt=""></img>
+            <Link to={`/DetailPage/${idData}`}>
+              <img className='fullImg' src={imgData} alt=""></img>
             </Link>
             <div className='title'>please click the picture</div>
-          </div>
+          </div>          
           <div>
-            {thumImg.map((ele:any)=> (
-              <img className='thumImg' key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele.img)}></img>
+            {thumImg.map((ele:any)=> (                                     
+              <img className='thumImg' 
+                key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
+              </img>              
             ))}
           </div>
         </div>    
