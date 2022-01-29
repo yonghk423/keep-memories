@@ -36,11 +36,10 @@ const Main = () => {
   const [fullImg, setFullImg] = useState<DataList['fullImg']>(initialState.items[0]);
   const [thumImg] = useState<DataList['thumImg']>(initialState.items)
 
-  console.log(fullImg);
-  console.log(fullImg.id);
-  const imgData = fullImg.img
-  const idData = fullImg.id
   
+  const imgData = fullImg.img  
+  const idData = (fullImg.id)
+  console.log(idData);
   // const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);
   // const dispatch = useDispatch();
   // const {items, cartItems}:DataSetting = state;
