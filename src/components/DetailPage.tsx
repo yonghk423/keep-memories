@@ -30,8 +30,10 @@ const DetailPage = () => {
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;  
   
-  const data = items.find((ele):any => (ele.id === number))
+  const data:any = items.find((ele):any => (ele.id === number))
   console.log(data);
+  console.log(data.img)
+  
   const AddCartSetting = ( itemId:number ) => {    
     const find = cartItems.filter((ele):boolean => (ele.itemId === itemId))[0]
     if(!find) {
@@ -45,7 +47,9 @@ const DetailPage = () => {
   }
 
     return (
-        <></>
+        <>
+          <img src={data.img} alt=''/>
+        </>
     )
 }
 export default DetailPage;
