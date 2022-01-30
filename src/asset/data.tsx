@@ -60,8 +60,8 @@ export const initialState =
   
   "textBox": [
     {
-      text: '',
-      list: []
-    }   
+    id: 1,
+    text: '',
+  } 
   ]  
 }

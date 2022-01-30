@@ -2,8 +2,7 @@
 export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART";
 export const SET_QUANTITY ="SET_QUANTITY"
-export const CHANGE_TEXT = 'CHANGE_TEXT';
-export const ADD_TO_LIST = 'ADD_TO_LIST';
+export const ADD_TODO = 'ADD_TODO';
 
 
 //액션 생성 선언 함수
@@ -39,12 +38,11 @@ export const SetQuantity = (quantity:number, itemId:number) => {
     }
 }
 
-export const changeText = (text:any) => ({
-    type: CHANGE_TEXT,
-    text
-})
-
-export const addToList = (item:any) => ({
-    type: ADD_TO_LIST,
-    item
-})
+let nextId = 1; // todo 데이터에서 사용 할 고유 id
+export const addTodo = (text:any) => ({
+  type: ADD_TODO,
+  payload: {
+    id: nextId = nextId + 1, // 새 항목을 추가하고 nextId 값에 1을 더해줍니다.
+    text : text
+  }  
+});

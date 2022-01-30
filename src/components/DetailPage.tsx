@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { AddCart } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
+import TodosContainer from './TodosContainer/TodosContainer';
 import './DetailPage.scss';
 
 export interface ItemReducer {
@@ -60,6 +61,7 @@ const DetailPage = () => {
               <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>장바구니 추가</button>
           </div>
         </div>
+        <TodosContainer/>
       </div>  
     )
 }

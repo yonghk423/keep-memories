@@ -1,10 +1,11 @@
-import { ADD_CART, REMOVE_CART, SET_QUANTITY, CHANGE_TEXT, ADD_TO_LIST } from "../actions/index"
+import { ADD_CART, REMOVE_CART, SET_QUANTITY,  ADD_TODO} from "../actions/index"
 import { initialState } from '../asset/data'
 console.log(initialState);
 
 const ItemReducer = (state:any = initialState, action:any) => {
     console.log(state);
-    console.log(action);    
+    console.log(state.textBox);
+    console.log(action.payload);    
     switch (action.type) {
         case ADD_CART:
           return Object.assign({}, state, { cartItems: [...state.cartItems, action.payload]})
@@ -18,16 +19,8 @@ const ItemReducer = (state:any = initialState, action:any) => {
             cartItems: [...state.cartItems.slice(0, idx), action.payload,
             ...state.cartItems.slice(idx + 1)]
           });
-        case CHANGE_TEXT:
-          return {
-            ...state,
-            text: action.text
-          };
-        case ADD_TO_LIST:
-          return {
-            ...state,
-            list: state.textBox.list.concat(action.item)
-          }                  
+        case ADD_TODO:
+          return Object.assign({}, state, { textBox: [...state.textBox, action.payload ]})            
             default:
       return state;
         }
