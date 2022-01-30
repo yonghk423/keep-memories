@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    top: 40px;
+    display: flex;
+    justify-content: space-around;
+
+    .fullImgDetailBox {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+
+    .fullImg {
+        display: flex;
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+}
+
