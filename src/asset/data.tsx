@@ -1,3 +1,8 @@
+export interface textBox {
+  text:string;
+  list:Array<string>
+}
+
 
 export const initialState =
 {
@@ -47,8 +52,16 @@ export const initialState =
       "text": '갤럭시에도 감성이 생겼다'
     }    
   ],
+
   "cartItems": [
     
-  ]
+  ],
+
   
+  "textBox": [
+    {
+      text: '',
+      list: []
+    }   
+  ]  
 }
