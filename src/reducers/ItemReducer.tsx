@@ -22,15 +22,7 @@ const ItemReducer = (state:any = initialState, action:any) => {
         case ADD_TODO:
           let data = state.items.find((ele:any) => (ele.id === action.payload.id))
           console.log(data);
-          const dataTest = Object.assign({}, data, {textBox: [action.payload]})
-          console.log(dataTest);
-          for (let i = 0; i<state.items.length; i++ ) {
-            if(state.items[i].id === dataTest.id) {
-              
-            }
-          }
-          console.log(state.items);
-          console.log(state);
+          
           return state;       
             default:
       return state;

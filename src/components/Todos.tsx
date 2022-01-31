@@ -9,8 +9,8 @@ export interface ItemReducer {
 
 const Todos = (todos:any) => {  
   // console.log(todos);
-  console.log(todos.todos.textBox)
-  console.log(todos.todos.id)
+  // console.log(todos.todos.textBox)
+  // console.log(todos.todos.id)
   const todoss = todos.todos.textBox
   const id = todos.todos.id;
 
@@ -44,7 +44,7 @@ const Todos = (todos:any) => {
 //-------------------------------------------------------------------------
 
 const TodoList = React.memo(function TodoList(todoss:any) {
-  console.log(todoss);
+  // console.log(todoss);
   // console.log(todoss.onCreate);
   // console.log(todoss.todoss);
   
@@ -61,7 +61,7 @@ const TodoList = React.memo(function TodoList(todoss:any) {
 
 //-------------------------------------------------------------------------
 const TodoItem = React.memo(function TodoItem(todo:any) {
-  console.log(todo.todo);  
+  // console.log(todo.todo);  
   
   return (
     <div>
