@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { AddCart } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import TodosContainer from './TodosContainer/TodosContainer';
 import './DetailPage.scss';
+import Todos from './Todos';
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -25,7 +25,7 @@ export interface DataSetting {
 
 const DetailPage = () => {
   const idData:any = useParams()
-  console.log(idData.id)  
+  // console.log(idData.id)  
   const number = Number(idData.id)
 
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);  
@@ -33,13 +33,13 @@ const DetailPage = () => {
   const {items, cartItems}:DataSetting = state;  
   
   const data:any = items.find((ele):any => (ele.id === number))
-  console.log(data);
-  console.log(data.img)
+  // console.log(data);
+  // console.log(data.img)
   
   const AddCartSetting = ( itemId:number ) => {    
     const find = cartItems.filter((ele):boolean => (ele.itemId === itemId))[0]
     if(!find) {
-      console.log(find);
+      // console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(itemId))
     }
@@ -61,7 +61,7 @@ const DetailPage = () => {
               <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>장바구니 추가</button>
           </div>
         </div>
-        <TodosContainer/>
+        <Todos todos={data}/>
       </div>  
     )
 }

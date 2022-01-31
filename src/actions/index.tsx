@@ -38,11 +38,11 @@ export const SetQuantity = (quantity:number, itemId:number) => {
     }
 }
 
-let nextId = 1; // todo 데이터에서 사용 할 고유 id
-export const addTodo = (text:any) => ({
+
+export const addTodo = (text:any, id:any) => ({
   type: ADD_TODO,
   payload: {
-    id: nextId = nextId + 1, // 새 항목을 추가하고 nextId 값에 1을 더해줍니다.
+    id : id,
     text : text
   }  
 });

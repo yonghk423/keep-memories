@@ -9,8 +9,8 @@ export interface ItemReducer {
 
 const Header = () => {
     const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);
-    console.log(state);
-    console.log(state.cartItems.length)
+    // console.log(state);
+    // console.log(state.cartItems.length)
     return (
         <div className="HeaderBox">
              <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="MarketName">yongHee Market</div></Link>

@@ -12,7 +12,7 @@ export interface DataList {
   setThumImg:any;
 }
 
-console.log(initialState.items[0])
+// console.log(initialState.items[0])
 
 // export interface ItemReducer {
 //         ItemReducer : Array<object>
@@ -39,7 +39,7 @@ const Main = () => {
   
   const imgData = fullImg.img  
   const idData = (fullImg.id)
-  console.log(idData);
+  // console.log(idData);
   // const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);
   // const dispatch = useDispatch();
   // const {items, cartItems}:DataSetting = state;
