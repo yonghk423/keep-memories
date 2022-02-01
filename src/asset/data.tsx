@@ -9,6 +9,7 @@ export const initialState =
       "text": '스타벅스 출입증',
       "textBox": [{
                     id: 1,
+                    name: "맥북",
                     text: '',
                   }]  
     },
@@ -19,7 +20,8 @@ export const initialState =
       "price": 12000,
       "text": '시에라 블루로 더 멋진 감성을',
       "textBox": [{
-                    id: 2,
+                    id: 1,
+                    name: "아이폰",
                     text: '',
                   }]
     },
@@ -30,7 +32,8 @@ export const initialState =
       "price": 2900,
       "text": '노이즈 캔슬링으로 더 강한 몰입',
       "textBox": [{
-                    id: 3,
+                    id: 1,                    
+                    name: "에어팟",
                     text: '',
                   }]
     },
@@ -41,7 +44,8 @@ export const initialState =
       "price": 4900,
       "text": '노트북과 스마트폰의 장점',
       "textBox": [{
-                    id: 4,
+                    id: 1,
+                    name: "아애패드",
                     text: '',
                   }]
     },
@@ -53,7 +57,8 @@ export const initialState =
       "price": 3900,
       "text": '성능과 효율의 극대화',
       "textBox": [{
-                    id: 5,
+                    id: 1,
+                    name: "갤럭시 탭",
                     text: '',
                   }]
     },
@@ -65,7 +70,8 @@ export const initialState =
       "price": 4900,
       "text": '갤럭시에도 감성이 생겼다',
       "textBox": [{
-                    id: 6,
+                    id: 1,
+                    name: "Z플립",
                     text: '',
                   }]
     }    

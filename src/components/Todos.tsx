@@ -9,21 +9,21 @@ export interface ItemReducer {
 
 const Todos = (todos:any) => {  
   // console.log(todos);
-  // console.log(todos.todos.textBox)
-  // console.log(todos.todos.id)
+  console.log(todos.todos.textBox)
+  console.log(todos.todos.name)
   const todoss = todos.todos.textBox
-  const id = todos.todos.id;
+  const name = todos.todos.name;
 
   // const todos:any = useSelector<ItemReducer>(state => state.ItemReducer);
   const dispatch = useDispatch();
-  const onCreate = (text:any, id:any) => dispatch(addTodo(text, id));
+  const onCreate = (text:any, id:any) => dispatch(addTodo(text, name));
   // const onCreateId = (id:any) => dispatch(addTodo(id));
 
   const [text, setText] = useState('');
   const onChange = (e:any) => setText(e.target.value);
   const onSubmit = (e:any) => {
     e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
-    onCreate(text, id);
+    onCreate(text, name);
     setText(''); // 인풋 초기화
   };
 
