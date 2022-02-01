@@ -63,6 +63,7 @@ const DetailPage = () => {
             </div>
         </div> 
         <div className='todos'>
+          <div>Write your thoughts on the photo</div>
           <Todos todos={data}/>
       </div>             
       </div>      

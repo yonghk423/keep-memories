@@ -32,7 +32,7 @@ const Todos = (todos:any) => {
       <form onSubmit={onSubmit}>
         <input
           value={text}
-          placeholder="할 일을 입력하세요.."
+          placeholder=""
           onChange={onChange}
         />
         <button type="submit">등록</button>
