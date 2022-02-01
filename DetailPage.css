@@ -2,10 +2,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 24px;
 }
 
 .container .fullImgDetailBox .fullImg {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
 }
 /*# sourceMappingURL=DetailPage.css.map */

@@ -1,11 +1,12 @@
 .container {
     display: flex;
-    // justify-content: space-around;
+    justify-content: center;
+    padding: 30px 24px;
 
     .fullImgDetailBox {
     .fullImg {       
-        width: 500px;
-        height: 500px;
+        width: 600px;
+        height: 600px;
     }
     
 }
