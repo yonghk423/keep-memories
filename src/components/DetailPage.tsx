@@ -55,9 +55,9 @@ const DetailPage = () => {
           <img className='fullImg' src={data.img}  key={data.id} alt=''/>                   
         </div>
         <div className='infoBox'>
-            <div>{data.name}</div>
-            <div>{data.price}</div>
-            <div>{data.text}</div>
+            <div className='name'>{data.name}</div>
+            <div className='price'>{data.price}</div>
+            <div className='text'>{data.text}</div>
             <div className='BtnBox'>
               <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>장바구니 추가</button>
             </div>

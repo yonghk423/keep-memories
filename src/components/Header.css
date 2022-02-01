@@ -8,8 +8,8 @@
 .MarketName {
   color: white;
   font-size: 20px;
-  padding: 20px 16px;
-  width: 150px;
+  padding: 25px 20px;
+  width: 200px;
   height: 80px;
   /* border: 1px solid black; */
 }
@@ -18,7 +18,7 @@
   display: flex;
   margin-left: auto;
 }
-
+/* 
 .ItemList {
   position: relative;
   left: 50px;
@@ -26,12 +26,12 @@
   padding: 20px 16px;
   width: 150px;
   height: 80px;
-  /* border: 1px solid black; */
-}
+  border: 1px solid black;
+} */
 
 .ItemCount {
   font-size: 20px;
-  padding: 20px 16px;
+  padding: 25px 20px;
   width: 150px;
   height: 80px;
   /* border: 1px solid black; */
