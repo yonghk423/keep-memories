@@ -10,7 +10,7 @@ export const initialState =
       "textBox": [{
                     id: 1,
                     name: "맥북",
-                    text: 'test',
+                    text: '',
                   }]  
     },
     {

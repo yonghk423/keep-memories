@@ -49,20 +49,24 @@ const DetailPage = () => {
   }
 
     return (
+      <>
       <div className='container'>
         <div className='fullImgDetailBox'>
-          <img className='fullImg' src={data.img} alt=''/>
+          <img className='fullImg' src={data.img}  key={data.id} alt=''/>                   
         </div>
-        <div className='infoBox' key={data.id}>
-          <div>{data.name}</div>
-          <div>{data.price}</div>
-          <div>{data.text}</div>
-          <div className='BtnBox'>
+        <div className='infoBox'>
+            <div>{data.name}</div>
+            <div>{data.price}</div>
+            <div>{data.text}</div>
+            <div className='BtnBox'>
               <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>장바구니 추가</button>
-          </div>
-        </div>
-        <Todos todos={data}/>
-      </div>  
+            </div>
+        </div> 
+        <div className='todos'>
+          <Todos todos={data}/>
+      </div>             
+      </div>      
+      </>
     )
 }
 export default DetailPage;
