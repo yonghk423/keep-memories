@@ -20,14 +20,23 @@ const ItemReducer = (state:any = initialState, action:any) => {
             ...state.cartItems.slice(idx + 1)]
           });
         case ADD_TODO:
+          // name이 같은 데이터를 찾는다 
           let data = state.items.find((ele:any) => (ele.name === action.payload.name))
           console.log(data); 
-          // 데이터라는 변수에 action.payload 넣고
+          // data라는 변수에 action.payload 넣고
           const test = Object.assign({}, data, { textBox: [...data.textBox, action.payload]})
           console.log(test);
           // 데이터를 전체 state 값들과 합친다.
-                 Object.assign({}, state, {items : []})   
-          return state;       
+          const test2 = Object.assign({}, state, {items : [...state.items, test]})
+          console.log(test2);   
+              for (let i = 0; i<state.items.length; i++ ) {
+            if(state.items[i].name === test.name) {
+              state.items[i] = test
+            }
+          }
+          console.log(state);
+          console.log(state.items)
+          return Object.assign({}, state)      
             default:
       return state;
         }
