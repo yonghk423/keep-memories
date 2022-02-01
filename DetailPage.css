@@ -5,17 +5,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 30px 24px;
   position: relative;
-  width: 1000px;
+  width: 1200px;
   height: 580px;
   margin: auto;
-  top: 5px;
+  top: 35px;
   border: 1px solid black;
 }
 
 .container .fullImgDetailBox .fullImg {
-  width: 580px;
-  height: 580px;
+  position: relative;
+  left: -140px;
+  top: 40px;
+  width: 500px;
+  height: 500px;
 }
 /*# sourceMappingURL=DetailPage.css.map */
