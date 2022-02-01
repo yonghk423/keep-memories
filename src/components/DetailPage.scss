@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 1200px;
+    width: 1400px;
     height: 580px;
     margin: auto;
     top: 35px;    
@@ -22,7 +22,7 @@
   position: absolute;
   top:40px;
   left: 525px;
-  width: 300px;
+  width: 450px;
   height: 500px;
   border: 1px solid black;
   .name {}
@@ -38,9 +38,9 @@
 .todos {
   position: absolute;
   top: 40px;
-  width: 350px;
+  width: 400px;
   height: 500px;
-  left: 830px;
+  left: 980px;
   border: 1px solid black;
 
 }
