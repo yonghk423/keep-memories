@@ -32,24 +32,32 @@
 
 .container .infoBox .name {
   font-size: 40px;
+  padding: 10px 8px;
 }
 
 .container .infoBox .price {
   font-size: 30px;
+  padding: 10px 8px;
 }
 
 .container .infoBox .text {
   font-size: 30px;
+  padding: 10px 8px;
 }
 
 .container .infoBox .BtnBox .ItemBtn {
-  position: relative;
+  position: absolute;
   background-color: #212121;
   text-align: center;
   color: #fafafa;
   width: 250px;
   height: 40px;
   font-size: 20px;
+  top: 200px;
+  left: 50%;
+  top: 400px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   line-height: 40px;
 }
 
