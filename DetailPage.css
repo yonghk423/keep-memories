@@ -30,6 +30,36 @@
   border: 1px solid black;
 }
 
+.container .infoBox .name {
+  font-size: 40px;
+}
+
+.container .infoBox .price {
+  font-size: 30px;
+}
+
+.container .infoBox .text {
+  font-size: 30px;
+}
+
+.container .infoBox .BtnBox .ItemBtn {
+  position: relative;
+  background-color: #212121;
+  text-align: center;
+  color: #fafafa;
+  width: 250px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.container .infoBox .BtnBox .ItemBtn:hover {
+  background-color: #6d6d6d;
+  color: efebe9;
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .container .todos {
   position: absolute;
   top: 40px;

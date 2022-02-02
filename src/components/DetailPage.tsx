@@ -56,10 +56,10 @@ const DetailPage = () => {
         </div>
         <div className='infoBox'>
             <div className='name'>{data.name}</div>
-            <div className='price'>{data.price}</div>
+            <div className='price'>{data.price}₩</div>
             <div className='text'>{data.text}</div>
             <div className='BtnBox'>
-              <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>장바구니 추가</button>
+              <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>ADD TO CART</button>
             </div>
         </div> 
         <div className='todos'>
