@@ -68,4 +68,11 @@
   left: 980px;
   border: 1px solid black;
 }
+
+.container .todos .todosTitle {
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
 /*# sourceMappingURL=DetailPage.css.map */

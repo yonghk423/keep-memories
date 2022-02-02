@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,IAAI;EACV,GAAG,EAAE,IAAI;CAUZ;;AAbD,AAKI,UALM,CAKN,OAAO,CAAC;EAEJ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;CACf;;AAML,AAAA,KAAK,CAAC;EACF,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,KAAK;CACd",
+    "sources": [
+        "src/components/Todos.scss"
+    ],
+    "names": [],
+    "file": "Todos.css"
+}

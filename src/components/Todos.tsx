@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo } from '../actions';
-
+import './Todos.scss'
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -29,13 +29,13 @@ const Todos = (todos:any) => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
+      <form className='submitBox' onSubmit={onSubmit}>
+        <input className='onText'
           value={text}
           placeholder=""
           onChange={onChange}
         />
-        <button type="submit">등록</button>
+        <button className='btn' type="submit">Add</button>
       </form>
       <TodoList todoss={todoss}/>
     </div>
@@ -64,7 +64,7 @@ const TodoItem = React.memo(function TodoItem(todo:any) {
   // console.log(todo.todo);  
   
   return (
-    <div>
+    <div className='todo'>
       {todo.todo}
     </div>
   );

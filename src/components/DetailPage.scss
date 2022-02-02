@@ -36,15 +36,15 @@
   }
   .BtnBox {
     .ItemBtn{
-position: relative;
-background-color: #212121;
-text-align: center;
-color: #fafafa;
-width: 250px;
-height: 40px;
-font-size: 20px;
-// transform: translate(20%, -1100%);
-line-height: 40px;
+      position: relative;
+      background-color: #212121;
+      text-align: center;
+      color: #fafafa;
+      width: 250px;
+      height: 40px;
+      font-size: 20px;
+      // transform: translate(20%, -1100%);
+      line-height: 40px;
 
 &:hover {
   background-color: #6d6d6d;
@@ -62,7 +62,12 @@ line-height: 40px;
   height: 500px;
   left: 980px;
   border: 1px solid black;
-
+  .todosTitle {
+    font-size: 25px;
+    position: relative;
+    top: 10px;
+    text-align: center;
+  }
 }
 }
 
