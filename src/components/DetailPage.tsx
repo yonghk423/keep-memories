@@ -33,8 +33,7 @@ const DetailPage = () => {
   const {items, cartItems}:DataSetting = state;  
   
   const data:any = items.find((ele):any => (ele.id === number))
-  // console.log(data);
-  // console.log(data.img)
+  console.log(data);
   
   const AddCartSetting = ( itemId:number ) => {    
     const find = cartItems.filter((ele):boolean => (ele.itemId === itemId))[0]
@@ -42,6 +41,7 @@ const DetailPage = () => {
       // console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(itemId))
+      // dispatch(notify(`${item.name}`))
     }
     else {
       console.log('기존 리스트와 일치하는 상품')
