@@ -79,5 +79,9 @@ export const initialState =
 
   "cartItems": [
     
-  ],  
+  ], 
+  
+  "notifications": [
+
+  ] 
 }

@@ -4,6 +4,7 @@ import ShoppingCart from './page/ShoppingCart';
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetailPage from './components/DetailPage';
+import NofiticationCenter from './components/ NofiticationCenter/ NofiticationCenter'
 // import { initialState } from './asset/data';
 
 export interface DataList {
@@ -22,6 +23,7 @@ function App() {
       <Route path="Main" element={<ShoppingCart/>}/>
       <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>
     </Routes>
+    <NofiticationCenter/>    
     </BrowserRouter>      
     </>
   )

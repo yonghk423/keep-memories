@@ -1,0 +1,51 @@
+.notification {
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  -webkit-animation: toast-in-right 0.6s;
+          animation: toast-in-right 0.6s;
+  background: #4000c7;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  color: #000;
+  opacity: 0.9;
+  font-weight: 600;
+  height: 50px;
+  width: 360px;
+  color: #fff;
+  padding: 15px;
+  margin: 10px;
+}
+
+.fade-out {
+  opacity: 0;
+  -webkit-transform: opacity 2s;
+          transform: opacity 2s;
+}
+
+@-webkit-keyframes toast-in-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes toast-in-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=Toast.css.map */
