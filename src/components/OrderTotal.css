@@ -1,16 +1,19 @@
 .OrderTotalBox {
   position: absolute;
-  background-color: #fce4ec;
+  background-color: #212121;
   right: 100px;
-  top: 135px;
+  top: 175px;
   width: 400px;
   height: 250px;
   border: solid rgb(238, 238, 238) 0.2rem;
   font-size: 25px;
   font-weight: 600;
+
+  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .OrderTotalBox:hover {
-  background-color: #ffcdd2;
+  background-color: #212121;
   box-shadow: 3px 3px 3px #3f00c71a;
 }
 
