@@ -4,6 +4,8 @@ export const REMOVE_CART = "REMOVE_CART";
 export const SET_QUANTITY ="SET_QUANTITY"
 export const ADD_TODO = 'ADD_TODO';
 export const NOTIFY = 'NOTIFY';
+export const ENQUEUE_NOTIFICATION = "ENQUEUE_NOTIFICATION";
+export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION";
 
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
@@ -48,8 +50,30 @@ export const addTodo = (text:any, name:any) => ({
   }  
 });
 
-export const notify =(message: string) => {
-   return {
-       
-   }
+export const notify = (message: string, dismissTime:number = 5000) => (dispatch:any) => {
+   console.log(dispatch);
+  const uuid = Math.random()
+  console.log(message);
+  console.log(uuid);
+  dispatch(enqueueNotification(message, dismissTime, uuid))
+  setTimeout(() => {
+    dispatch(dequeueNotification())
+  }, dismissTime)
+}
+
+export const enqueueNotification = (message:string, dismissTime:number, uuid:number) => {
+  return {
+    type: ENQUEUE_NOTIFICATION,
+    payload: {
+      message,
+      dismissTime,
+      uuid
+    }
+  }
+}
+
+export const dequeueNotification = () => {
+  return {
+    type: DEQUEUE_NOTIFICATION
+  }
 }
