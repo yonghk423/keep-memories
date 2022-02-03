@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { AddCart } from '../actions';
+import { AddCart, notify } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
@@ -30,18 +30,22 @@ const DetailPage = () => {
 
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);  
   const dispatch = useDispatch();
-  const {items, cartItems}:DataSetting = state;  
+  const {items, cartItems}:DataSetting = state;
+  console.log(items) 
+  console.log(cartItems) 
   
   const data:any = items.find((ele):any => (ele.id === number))
-  console.log(data);
+  // console.log(data);
   
-  const AddCartSetting = ( itemId:number ) => {    
+  const AddCartSetting = ( itemId:number, itemName:string ) => {    
+    console.log(itemId);
+    console.log(itemName);
     const find = cartItems.filter((ele):boolean => (ele.itemId === itemId))[0]
     if(!find) {
       // console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(itemId))
-      // dispatch(notify(`${item.name}`))
+      dispatch(notify(`${itemName}`))
     }
     else {
       console.log('기존 리스트와 일치하는 상품')
@@ -59,7 +63,7 @@ const DetailPage = () => {
             <div className='price'>{data.price}₩</div>
             <div className='text'>{data.text}</div>
             <div className='BtnBox'>
-              <button className="ItemBtn" onClick={() => AddCartSetting(data.id)}>ADD TO CART</button>
+              <button className="ItemBtn" onClick={() => AddCartSetting(data.id, data.name)}>ADD TO CART</button>
             </div>
         </div> 
         <div className='todos'>

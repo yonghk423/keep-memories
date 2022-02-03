@@ -3,7 +3,7 @@ export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART";
 export const SET_QUANTITY ="SET_QUANTITY"
 export const ADD_TODO = 'ADD_TODO';
-
+export const NOTIFY = 'NOTIFY';
 
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
@@ -47,3 +47,9 @@ export const addTodo = (text:any, name:any) => ({
     text : text
   }  
 });
+
+export const notify =(message: string) => {
+   return {
+       
+   }
+}
