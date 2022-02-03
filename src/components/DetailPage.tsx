@@ -45,10 +45,11 @@ const DetailPage = () => {
       // console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(itemId))
-      dispatch(notify(`${itemName}`))
+      dispatch(notify(`${itemName}이(가) 추가 되었습니다.`))
     }
     else {
       console.log('기존 리스트와 일치하는 상품')
+      dispatch(notify(`이미 추가된 상품입니다.`))
     }
   }
 
