@@ -1,0 +1,33 @@
+.OrderTotalBox {
+    position: absolute;
+    background-color: #87A8A4;
+    right: 100px;
+    top: 175px;
+    width: 400px;
+    height: 250px;
+    border: solid rgb(238, 238, 238) 0.2rem;
+    font-size: 25px;
+    font-weight: 600;
+    box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:hover {
+        background-color: #718792;
+        box-shadow: 3px 3px 3px #3f00c71a;
+    }
+}
+
+.OrderTotal {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.OrderQuantity {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.OrderSummaryTotal {
+    text-align: center;
+    margin-top: 30px;
+}

@@ -5,16 +5,19 @@
   top: 175px;
   width: 400px;
   height: 250px;
-  border: solid rgb(238, 238, 238) 0.2rem;
+  border: solid #eeeeee 0.2rem;
   font-size: 25px;
   font-weight: 600;
-
-  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
 .OrderTotalBox:hover {
   background-color: #718792;
-  box-shadow: 3px 3px 3px #3f00c71a;
+  -webkit-box-shadow: 3px 3px 3px #3f00c71a;
+          box-shadow: 3px 3px 3px #3f00c71a;
 }
 
 .OrderTotal {
@@ -31,3 +34,4 @@
   text-align: center;
   margin-top: 30px;
 }
+/*# sourceMappingURL=OrderTotal.css.map */

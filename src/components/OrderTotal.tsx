@@ -1,4 +1,4 @@
-import './OrderTotal.css'
+import './OrderTotal.scss'
 
 export interface Total {
   total : number;

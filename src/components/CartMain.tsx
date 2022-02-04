@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RemoveCart, SetQuantity } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import './CartMain.css';
+import './CartMain.scss';
 import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {

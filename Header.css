@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap");
 .HeaderBox {
   font-family: 'EB Garamond', serif;
   background-color: #212121;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 80px;
   /* border: 1px solid black; */
@@ -18,9 +19,12 @@
 }
 
 .ItemBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: auto;
 }
+
 /* 
 .ItemList {
   position: relative;
@@ -31,7 +35,6 @@
   height: 80px;
   border: 1px solid black;
 } */
-
 .ItemCount {
   font-size: 20px;
   padding: 25px 20px;
@@ -39,3 +42,4 @@
   height: 80px;
   /* border: 1px solid black; */
 }
+/*# sourceMappingURL=Header.css.map */
