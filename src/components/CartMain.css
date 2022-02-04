@@ -1,5 +1,9 @@
+.container {
+    /* background: rgba(218, 218, 218, 1); */
+}
 .CartContainer {
-  border: 8px solid #212121;
+  /* border: 8px solid #212121; */
+  border: solid rgb(238, 238, 238) 0.2rem;
   margin-top: 20px;
   width: 800px;
   height: 250px;
@@ -15,7 +19,7 @@
 }
 .CartContainer:hover {
    /* filter: grayscale(100%) contrast(120%); */
-   box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
+   /* box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1); */
    /* margin-top: 0; */
  }
 
@@ -45,14 +49,17 @@
   margin-bottom: 10px;
   width: 100px;
   height: 50px;
-  background-color: #212121;
+  background-color: #373737;
   border-radius: 9px;
-  border-color: #212121;
-  box-shadow: 0px 6px #9e9e9e;
+  border-color: 90a4ae;
+  box-shadow: 0px 6px #87A8A4;
   border: none;
+  color: white;
 }
 .DelBtn:hover {
   transform: translateY(3px);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
   box-shadow: 0px 3px #9e9e9e;
 }
 .DelBtn:active {
@@ -61,7 +68,7 @@
 }
 
 .NumberSetting {
-  width: 100px;
+  width: 95px;
   height: 20px;
 }
 
@@ -81,7 +88,12 @@
 
 .TotalCheckText {
   font-size: 20px;
+  
 }
 
-/* .TotalCheckBtn {
+.TotalCheckBtn {
+  
+}
+/* input[type=checkbox] {
+  display: none;
 } */
