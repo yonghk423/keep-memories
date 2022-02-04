@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap");
 .total {
+  font-family: 'EB Garamond', serif;
   background: #dadada;
 }
 

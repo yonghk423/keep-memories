@@ -68,7 +68,7 @@ const DetailPage = () => {
             </div>
         </div> 
         <div className='todos'>
-          <div className='todosTitle'>Please leave your thoughts <br/> on the photo</div>
+          <div className='todosTitle'>Please leave your thoughts on the photo</div>
           <Todos todos={data}/>
         </div>             
       </div>      

@@ -1,10 +1,7 @@
-.submitBox {
-  position: relative;
-  left: 5px;
-  top: 30px;
-}
-
 .submitBox .onText {
+  position: relative;
+  left: 15px;
+  top: 30px;
   width: 380px;
   height: 30px;
 }
@@ -17,8 +14,8 @@
   width: 100px;
   height: 40px;
   font-size: 20px;
-  left: 285px;
-  top: 10px;
+  left: 300px;
+  top: 40px;
   line-height: 40px;
 }
 

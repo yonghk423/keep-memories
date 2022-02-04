@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap');
+
 .HeaderBox {
+  font-family: 'EB Garamond', serif;
   background-color: #212121;
   display: flex;
   height: 80px;

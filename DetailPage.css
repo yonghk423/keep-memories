@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap");
 .container {
+  font-family: 'EB Garamond', serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,7 +27,7 @@
   position: absolute;
   top: 40px;
   left: 525px;
-  width: 450px;
+  width: 420px;
   height: 500px;
   border: 1px solid black;
 }
@@ -70,15 +72,16 @@
 
 .container .todos {
   position: absolute;
+  overflow: auto;
   top: 40px;
-  width: 400px;
+  width: 420px;
   height: 500px;
-  left: 980px;
+  left: 960px;
   border: 1px solid black;
 }
 
 .container .todos .todosTitle {
-  font-size: 15px;
+  font-size: 20px;
   position: relative;
   top: 10px;
   text-align: center;

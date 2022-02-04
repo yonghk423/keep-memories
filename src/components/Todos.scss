@@ -1,10 +1,9 @@
-.submitBox {
-    position: relative;
-    left: 5px;
-    top: 30px;
-    // border: 1px solid black;
+.submitBox {    
     .onText {
         // border: 1px solid black;
+        position: relative;
+        left: 15px;
+        top: 30px;
         width: 380px; 
         height: 30px;          
     }
@@ -16,8 +15,8 @@
        width: 100px;
        height: 40px;
        font-size: 20px;
-       left: 285px;
-       top: 10px;
+       left: 300px;
+       top: 40px;
        // transform: translate(20%, -1100%);
        line-height: 40px;
        &:hover {
