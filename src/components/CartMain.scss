@@ -89,8 +89,33 @@
     font-size: 20px;
 }
 
-.TotalCheckBtn {}
+.TotalCheckBtn {
+    
+}
 
-/* input[type=checkbox] {
-  display: none;
-} */
+.TotalCheckSub {
+  // input[type=checkbox] { display: none; }  
+  
+  .item-list-text {
+    border: solid rgb(238, 238, 238) 0.2rem;
+    // margin-top: 20px;
+    width: 800px;
+    height: 250px;
+    list-style: none;
+    display: flex;
+    position: relative;
+    right: -40px;
+    top: 300px;
+    box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover {
+      // filter: grayscale(100%) contrast(120%);
+      box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
+      background-color: #819ca9;
+      // margin-top: 0;
+    }
+    .noItemText {
+        margin: auto;
+    }
+}
+}

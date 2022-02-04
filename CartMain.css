@@ -105,7 +105,30 @@
   font-size: 20px;
 }
 
-/* input[type=checkbox] {
-  display: none;
-} */
+.TotalCheckSub .item-list-text {
+  border: solid #eeeeee 0.2rem;
+  width: 800px;
+  height: 250px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  right: -40px;
+  top: 300px;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.TotalCheckSub .item-list-text:hover {
+  -webkit-box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #819ca9;
+}
+
+.TotalCheckSub .item-list-text .noItemText {
+  margin: auto;
+}
 /*# sourceMappingURL=CartMain.css.map */

@@ -9,25 +9,35 @@
     height: 580px;
     margin: auto;
     top: 35px;    
-    border: 1px solid black;
+    // border: 1px solid black;
 
     .fullImgDetailBox {
-    .fullImg {   
-        position: absolute;
-        left: 20px;
-        top: 40px;
-        width: 500px;
-        height: 500px;
+    .fullImg {
+      border: solid rgb(238, 238, 238) 0.2rem;
+      list-style: none;
+      box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+      transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      width: 500px;
+      height: 500px;
     }
     
 }
 .infoBox {
+  border: solid rgb(238, 238, 238) 0.2rem;  
+  list-style: none;  
+  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
   position: absolute;
   top:40px;
   left: 525px;
-  width: 420px;
+  width: 425px;
   height: 500px;
-  border: 1px solid black;
+  // border: 1px solid black;
   .name {
     font-size: 40px;
     padding: 10px 8px;
@@ -66,13 +76,18 @@
 }
 
 .todos {
+  border: solid rgb(238, 238, 238) 0.2rem;
+  list-style: none;
+  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
   position: absolute;
   overflow: auto;
   top: 40px;
   width: 420px;
   height: 500px;
   left: 960px;
-  border: 1px solid black;
+  // border: 1px solid black;
   .todosTitle {
     font-size: 20px;
     position: relative;

@@ -12,10 +12,15 @@
   height: 580px;
   margin: auto;
   top: 35px;
-  border: 1px solid black;
 }
 
 .container .fullImgDetailBox .fullImg {
+  border: solid #eeeeee 0.2rem;
+  list-style: none;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: absolute;
   left: 20px;
   top: 40px;
@@ -24,12 +29,17 @@
 }
 
 .container .infoBox {
+  border: solid #eeeeee 0.2rem;
+  list-style: none;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: absolute;
   top: 40px;
   left: 525px;
-  width: 420px;
+  width: 425px;
   height: 500px;
-  border: 1px solid black;
 }
 
 .container .infoBox .name {
@@ -71,13 +81,18 @@
 }
 
 .container .todos {
+  border: solid #eeeeee 0.2rem;
+  list-style: none;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: absolute;
   overflow: auto;
   top: 40px;
   width: 420px;
   height: 500px;
   left: 960px;
-  border: 1px solid black;
 }
 
 .container .todos .todosTitle {

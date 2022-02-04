@@ -101,12 +101,14 @@ const CartMain = () => {
               }
               onChange={(e) => handleAllCheck(e.target.checked)}
               />
-            <label className='TotalCheckText'>전체선택</label>
+            <label className='TotalCheckText'>Select All</label>
           </div>
           {!cartItems.length ? (
+          <div className='TotalCheckSub'>  
             <div className="item-list-text">
-              장바구니에 아이템이 없습니다.
+              <div className='noItemText'>There are no items in your cart</div>
             </div>
+          </div>  
           ) : (
               <>  
                 {MatchingItems.map((item:any) => {

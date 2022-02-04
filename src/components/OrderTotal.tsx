@@ -12,10 +12,10 @@ const OrderTotal = ( total:Total) => {
   
     return (
       <div className="OrderTotalBox">
-          <div className='OrderTotal'>주문 합계</div>
-          <div className='OrderQuantity'>총 아이템 개수: {Quantity}개</div>
+          <div className='OrderTotal'>order total</div>
+          <div className='OrderQuantity'>Total number of products: {Quantity}</div>
           <hr></hr>
-          <div className='OrderSummaryTotal'>합계: {Total}원</div>
+          <div className='OrderSummaryTotal'>Sum: {Total}₩</div>
       </div>
     )
 }
