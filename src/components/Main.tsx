@@ -3,30 +3,42 @@ import './Main.scss';
 import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
 
-export interface DataList {
-  id:number;
-  name:string;
-  img:string;
-  textBox:Array<object>;
-}
-
-export interface ThumDataList {
-  thumImg : Array<object>
-}
-
 const Main = () => {
-  const [fullImg, setFullImg] = useState<DataList>(initialState.items[0]);
-  const [thumImg] = useState<ThumDataList['thumImg']>(initialState.items);
-
+  const [fullImg, setFullImg] = useState(initialState.items[0]);
+  const [thumImg] = useState(initialState.items);
   
-  const imgData = fullImg.img  
-  const idData = (fullImg.id)
+  const imgData:string = fullImg.img  
+  const idData:number = fullImg.id
   
-  const onImgChange = (ele:any) => {
+//   interface Click {
+//   id : number;
+//   name: string;
+//   img: string;
+//   price: number;
+//   text: string;
+//   textBox : [{
+//     id: number;
+//     name: string;
+//     text:  string;
+//   }]
+// }
+ const onImgChange = (ele: {
+    id: number;
+    name: string;
+    img: string;
+    price: number;
+    text: string;
+    textBox: {
+        id: number;
+        name: string;
+        text: string;
+    }[];
+}): void => {
     console.log(ele);
     setFullImg(ele);
   }
 
+  
     return (
         <div className='total'>  
           <div className="fullImgBox">
@@ -36,7 +48,7 @@ const Main = () => {
             <div className='title'>please click the picture</div>
           </div>          
           <div>
-            {thumImg.map((ele:any)=> (                                     
+            {thumImg.map((ele)=> (                                     
               <img className='thumImg' 
                 key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
               </img>              
