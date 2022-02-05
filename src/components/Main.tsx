@@ -4,15 +4,21 @@ import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
 
 export interface DataList {
-  fullImg: any;
-  setFullImg: any;
-  thumImg:any;
-  setThumImg:any;
+  id:number;
+  name:string;
+  img:string;
+  textBox:Array<object>;
+}
+
+export interface ThumDataList {
+  thumImg : Array<object>
 }
 
 const Main = () => {
-  const [fullImg, setFullImg] = useState<DataList['fullImg']>(initialState.items[0]);
-  const [thumImg] = useState<DataList['thumImg']>(initialState.items)  
+  const [fullImg, setFullImg] = useState<DataList>(initialState.items[0]);
+  const [thumImg] = useState<ThumDataList['thumImg']>(initialState.items);
+
+  
   const imgData = fullImg.img  
   const idData = (fullImg.id)
   
