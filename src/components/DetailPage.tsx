@@ -16,6 +16,11 @@ export interface DataSetting {
     img:string;
     name:string;
     text:string;
+    textBox: {
+        id: number;
+        name: string;
+        text: string;
+    }[];
   }]
   cartItems: [{
     quantity:number;
@@ -24,17 +29,32 @@ export interface DataSetting {
 }
 
 const DetailPage = () => {
-  const idData:any = useParams()
-  // console.log(idData.id)  
-  const number = Number(idData.id)
+  const idData = useParams()
+  console.log(idData)  
+  const number:number = Number(idData.id)
+  console.log(number);
 
-  const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);  
+  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);  
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
   console.log(items) 
   console.log(cartItems) 
   
-  const data:any = items.find((ele):any => (ele.id === number))
+  interface Data {
+    id: number;
+    name: string;
+    img: string;
+    price: number;
+    text: string;
+    textBox: {
+        id: number;
+        name: string;
+        text: string;
+    }[];
+  }  
+  
+
+  const data:Data|any = items.find((ele) => (ele.id === number))
   // console.log(data);
   
   const AddCartSetting = ( itemId:number, itemName:string ) => {    

@@ -1,11 +1,11 @@
 //액션 타입 선언
-export const ADD_CART = "ADD_CART";
-export const REMOVE_CART = "REMOVE_CART";
-export const SET_QUANTITY ="SET_QUANTITY"
-export const ADD_TODO = 'ADD_TODO';
-export const NOTIFY = 'NOTIFY';
-export const ENQUEUE_NOTIFICATION = "ENQUEUE_NOTIFICATION";
-export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION";
+export const ADD_CART = "ADD_CART" as const;
+export const REMOVE_CART = "REMOVE_CART" as const;
+export const SET_QUANTITY ="SET_QUANTITY" as const;
+export const ADD_TODO = 'ADD_TODO' as const;
+export const NOTIFY = 'NOTIFY' as const;
+export const ENQUEUE_NOTIFICATION = "ENQUEUE_NOTIFICATION" as const;
+export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION" as const;
 
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
@@ -41,7 +41,7 @@ export const SetQuantity = (quantity:number, itemId:number) => {
 }
 
 let nextId = 1; // todo 데이터에서 사용 할 고유 id
-export const addTodo = (text:any, name:any) => ({
+export const addTodo = (text:any, name:string) => ({
   type: ADD_TODO,
   payload: {
     id: nextId = nextId + 1, // 새 항목을 추가하고 nextId 값에 1을 더해줍니다.
@@ -51,7 +51,7 @@ export const addTodo = (text:any, name:any) => ({
 });
 
 export const notify = (message: string, dismissTime:number = 5000) => (dispatch:any) => {
-   console.log(dispatch);
+  console.log(dispatch);
   const uuid = Math.random()
   console.log(message);
   console.log(uuid);
@@ -77,3 +77,12 @@ export const dequeueNotification = () => {
     type: DEQUEUE_NOTIFICATION
   }
 }
+
+export type Action =
+  | ReturnType<typeof AddCart>
+  | ReturnType<typeof RemoveCart>
+  | ReturnType<typeof SetQuantity>
+  | ReturnType<typeof addTodo>
+  | ReturnType<typeof notify>
+  | ReturnType<typeof enqueueNotification>
+  | ReturnType<typeof dequeueNotification>;

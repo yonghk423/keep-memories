@@ -9,20 +9,8 @@ const Main = () => {
   
   const imgData:string = fullImg.img  
   const idData:number = fullImg.id
-  
-//   interface Click {
-//   id : number;
-//   name: string;
-//   img: string;
-//   price: number;
-//   text: string;
-//   textBox : [{
-//     id: number;
-//     name: string;
-//     text:  string;
-//   }]
-// }
- const onImgChange = (ele: {
+ 
+  const onImgChange = (ele: {
     id: number;
     name: string;
     img: string;
