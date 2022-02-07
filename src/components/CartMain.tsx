@@ -41,7 +41,7 @@ const CartMain = () => {
   console.log(MatchingItems);
   let data = cartItems.map((ele) => (ele.itemId))
   console.log(data);
-  const [checkedItems, setCheckedItems]= useState<CheckedItems['CheckedItems']>(data);
+  const [checkedItems, setCheckedItems]= useState(data);
   console.log(checkedItems);
 
   const RemoveCartSetting = (itemId:number) => {
@@ -73,7 +73,8 @@ const CartMain = () => {
   }
   const total = getTotal()
 
-  const handleAllCheck = (checked:any) => {
+  const handleAllCheck = (checked:boolean) => {
+    console.log(checked)
     if(checked) {
       setCheckedItems(cartItems.map((ele)=> (ele.itemId)))
     }
@@ -82,7 +83,7 @@ const CartMain = () => {
     }
   }
 
-  const handleCheckChange = (checked:any, id:number) => {
+  const handleCheckChange = (checked:boolean, id:number) => {
     if (checked) {
       setCheckedItems([...checkedItems, id]);
     }

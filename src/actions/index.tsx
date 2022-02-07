@@ -12,7 +12,7 @@ export const AddCart = (itemId:number) => {
     console.log(itemId);
     return {
         type: ADD_CART,
-        payload : {
+        payload: {
             quantity: 1,
             itemId
         }

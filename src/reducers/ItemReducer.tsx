@@ -2,7 +2,7 @@ import { ADD_CART, REMOVE_CART, SET_QUANTITY,  ADD_TODO} from "../actions/index"
 import { initialState } from '../asset/data'
 import { Action } from "../actions/index"
 
-const ItemReducer = (state:any = initialState, action:any) => {
+const ItemReducer = (state:any  = initialState, action:any) => {
     console.log(state);
     console.log(state.items);
     console.log(action.payload);
