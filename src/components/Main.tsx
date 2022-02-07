@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Main.scss';
 import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
+import InfoUpload from './InfoUpload';
 
 const Main = () => {
   const [fullImg, setFullImg] = useState(initialState.items[0]);
@@ -42,6 +43,7 @@ const Main = () => {
               </img>              
             ))}
           </div>
+          <InfoUpload/>
         </div>    
     )
 }
