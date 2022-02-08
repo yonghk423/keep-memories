@@ -6,7 +6,7 @@ export const ADD_TODO = 'ADD_TODO' as const;
 export const NOTIFY = 'NOTIFY' as const;
 export const ENQUEUE_NOTIFICATION = "ENQUEUE_NOTIFICATION" as const;
 export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION" as const;
-
+export const ADD_INFO ="ADD_INFO" as const;
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
     console.log(itemId);
@@ -77,8 +77,24 @@ export const dequeueNotification = () => {
     type: DEQUEUE_NOTIFICATION
   }
 }
-
-export const addInfo = () => {
+let infoId = 6
+let textBoxId = 6
+export const addInfo = (name:any, price:any, text:any, textBox:any) => {
+  console.log(name, price, text, textBox)
+  return {
+    type: ADD_INFO,
+  payload : {
+    id: infoId = infoId + 1,
+    name: name,
+    price: price,
+    text: text,
+    textBox : [{
+      id: textBoxId = textBoxId + 1,
+      name: name,
+      text: text,
+    }]      
+  }
+  }
   
 }
 
@@ -89,4 +105,5 @@ export type Action =
   | ReturnType<typeof addTodo>
   | ReturnType<typeof notify>
   | ReturnType<typeof enqueueNotification>
-  | ReturnType<typeof dequeueNotification>;
+  | ReturnType<typeof dequeueNotification>
+  | ReturnType<typeof addInfo>;

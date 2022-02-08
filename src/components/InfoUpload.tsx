@@ -1,5 +1,6 @@
 import React, {useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { addInfo } from '../actions/index'
 
 const InfoUpload = () => {
   const dispatch = useDispatch()
@@ -8,38 +9,45 @@ const InfoUpload = () => {
     price: '',
     text:'',
     textBox:[{
-      id: '',
       name: '',
       text: '',
     }]    
   });
 
   const {name, price, text, textBox} = infoData;
-  console.log({name, price, textBox})
+  console.log({name, price, text, textBox})
    
   const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     
     const {name, value} = e.target;
     console.log({name, value});
+    
     setInfoData({
       ...infoData,
       [name]: value,
       [price]: value,
       [text]: value,
+      textBox:[{
+      name: '',
+      text: '',
+    }]    
     })
   }
 
-  const onInfo = (name:string, price:string, text:string) => dispatch(())
+  const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
 
   const infoSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onInfo(name, price, text);
+    
+    onInfo(name, price, text, textBox);
+    
+    console.log(name, price, text, textBox)
+    
     setInfoData({
-      name:'',
+     name:'',
     price: '',
     text:'',
     textBox:[{
-      id: '',
       name: '',
       text: '',
     }]    

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addTodo } from '../actions';
 import './Todos.scss'
 
@@ -8,16 +8,13 @@ export interface ItemReducer {
 }
 
 const Todos = (todos:any) => {  
-  // console.log(todos);
   console.log(todos.todos.textBox)
   console.log(todos.todos.name)
   const todoss = todos.todos.textBox
   const name = todos.todos.name;
 
-  // const todos:any = useSelector<ItemReducer>(state => state.ItemReducer);
   const dispatch = useDispatch();
   const onCreate = (text:any, id:any) => dispatch(addTodo(text, name));
-  // const onCreateId = (id:any) => dispatch(addTodo(id));
 
   const [text, setText] = useState('');
   const onChange = (e:any) => setText(e.target.value);
