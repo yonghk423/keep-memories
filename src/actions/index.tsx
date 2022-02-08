@@ -78,6 +78,10 @@ export const dequeueNotification = () => {
   }
 }
 
+export const addInfo = () => {
+  
+}
+
 export type Action =
   | ReturnType<typeof AddCart>
   | ReturnType<typeof RemoveCart>
