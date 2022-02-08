@@ -13,15 +13,15 @@ const InfoUpload = () => {
     }]    
   });
 
-  const {id, name, price, textBox} = infoData;
+  const {id, name, price, text, textBox} = infoData;
   console.log({id, name, price, textBox})
-
-  // const {name, img, price, text, textBox} = infoData;
-  
+   
   return (
         <div>
-            <form>
-                test
+            <form className='submitInfo'>
+                <input name='name' value={name}/>
+                <input name='price' value={price}/>                                
+                <input name='text' value={text}/>              
             </form>
         </div>
     ) 
