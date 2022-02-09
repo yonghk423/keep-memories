@@ -1,6 +1,11 @@
 import React, {useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
+console.log(firebase);
 
 const InfoUpload = () => {
   const dispatch = useDispatch()
