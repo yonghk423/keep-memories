@@ -1,11 +1,13 @@
 import React, {useState } from 'react';
+import { v4 as uuidv4} from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
-import { dbService } from '../service/Firebase';
+import { storage } from '../service/firebase';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
-const InfoUpload = () => {
+const InfoUpload = () => { 
+  const [progress, setProgress] = useState(0);
   const dispatch = useDispatch()
-  const [attachment, setAttachment] = useState()
   const [infoData, setInfoData] = useState({
     name:'',
     price: '',
@@ -34,23 +36,16 @@ const InfoUpload = () => {
   }
 
   const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
     const { files }:any  = e.target;
-    const theFile = files[0];
-    console.log(theFile);
-    const reader = new FileReader();
-    reader.onload = (finishedEvent) => {
-      const { 
-        currentTarget: {result} 
-      }:any = finishedEvent;
-      setAttachment(result)
-    }
-    reader.readAsDataURL(theFile);
+    const file = files[0];
+    upLoadFiles(file);      
   }
 
+
   const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
+
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();      
+    e.preventDefault();    
     onInfo(name, price, text, textBox);    
     console.log(name, price, text, textBox)    
     setInfoData({
@@ -62,20 +57,35 @@ const InfoUpload = () => {
       text: '',
     }]    
     });
-  }
-  
-  
+  }  
+
+  const upLoadFiles = (file:any) => {
+    if(!file) return
+    const storageRef = ref(storage, `/files/${file.name}`); 
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on("state_changed", (snapshot) => {
+      const prog = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      );
+      setProgress(prog)
+    }, (err) => console.log(err),
+    () => {
+      getDownloadURL(uploadTask.snapshot.ref).then((url) => console.log(url))
+    }
+    );
+  };
 
   return (
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
-              <input type="file" accept="image/*" onChange={onFileChange}/>
-              {attachment && <img src={attachment} alt='' width="100px" height="100px"/>}
+              <input type="file" accept="image/*" onChange={onFileChange}/>                         
               <input name='name' value={name} onChange={onChange}/>
               <input name='price' value={price} onChange={onChange}/>                                
               <input name='text' value={text} onChange={onChange}/>
               <button type='submit'>등록</button>              
-            </form>
+            </form> 
+            <h3>Uploaded {progress} %</h3>           
         </div>
     ) 
     
