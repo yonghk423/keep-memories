@@ -5,6 +5,7 @@ import { dbService } from '../service/Firebase';
 
 const InfoUpload = () => {
   const dispatch = useDispatch()
+  const [attachment, setAttachment] = useState()
   const [infoData, setInfoData] = useState({
     name:'',
     price: '',
@@ -35,8 +36,16 @@ const InfoUpload = () => {
   const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     console.log(e);
     const { files }:any  = e.target;
-    const theFIle = files[0];
-    console.log(theFIle);
+    const theFile = files[0];
+    console.log(theFile);
+    const reader = new FileReader();
+    reader.onload = (finishedEvent) => {
+      const { 
+        currentTarget: {result} 
+      }:any = finishedEvent;
+      setAttachment(result)
+    }
+    reader.readAsDataURL(theFile);
   }
 
   const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
@@ -61,6 +70,7 @@ const InfoUpload = () => {
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
               <input type="file" accept="image/*" onChange={onFileChange}/>
+              {attachment && <img src={attachment} alt='' width="100px" height="100px"/>}
               <input name='name' value={name} onChange={onChange}/>
               <input name='price' value={price} onChange={onChange}/>                                
               <input name='text' value={text} onChange={onChange}/>
