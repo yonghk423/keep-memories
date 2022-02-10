@@ -1,6 +1,7 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
+console.log(firebase);
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,4 +13,4 @@ const firebaseConfig = {
 };
 
 export default firebase.initializeApp(firebaseConfig);
-
+export const dbService = firebase.firestore(); 

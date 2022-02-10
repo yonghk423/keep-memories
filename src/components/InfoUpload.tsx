@@ -1,11 +1,7 @@
 import React, {useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
-import "firebase/compat/storage";
-console.log(firebase);
+import { dbService } from '../service/Firebase';
 
 const InfoUpload = () => {
   const dispatch = useDispatch()
@@ -18,15 +14,12 @@ const InfoUpload = () => {
       text: '',
     }]    
   });
-
   const {name, price, text, textBox} = infoData;
   console.log({name, price, text, textBox})
    
-  const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-    
+  const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {    
     const {name, value} = e.target;
-    console.log({name, value});
-    
+    console.log({name, value});    
     setInfoData({
       ...infoData,
       [name]: value,
@@ -39,17 +32,20 @@ const InfoUpload = () => {
     })
   }
 
-  const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
+  const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e);
+    const { files }:any  = e.target;
+    const theFIle = files[0];
+    console.log(theFIle);
+  }
 
-  const infoSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    onInfo(name, price, text, textBox);
-    
-    console.log(name, price, text, textBox)
-    
+  const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
+  const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();      
+    onInfo(name, price, text, textBox);    
+    console.log(name, price, text, textBox)    
     setInfoData({
-     name:'',
+    name:'',
     price: '',
     text:'',
     textBox:[{
@@ -63,11 +59,12 @@ const InfoUpload = () => {
 
   return (
         <div>
-            <form className='submitInfo' onSubmit={infoSubmit}>
-                <input name='name' value={name} onChange={onChange}/>
-                <input name='price' value={price} onChange={onChange}/>                                
-                <input name='text' value={text} onChange={onChange}/>
-                <button type='submit'>등록</button>              
+            <form className='submitInfo' onSubmit={onSubmit}>
+              <input type="file" accept="image/*" onChange={onFileChange}/>
+              <input name='name' value={name} onChange={onChange}/>
+              <input name='price' value={price} onChange={onChange}/>                                
+              <input name='text' value={text} onChange={onChange}/>
+              <button type='submit'>등록</button>              
             </form>
         </div>
     ) 
