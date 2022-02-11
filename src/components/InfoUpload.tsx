@@ -5,14 +5,15 @@ import { storage } from '../service/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 //데이터 url를 string 값으로 받는다(0)
-//onSubmti 할 때 dispatch로 action에 전달()
-//action 전달 성공()
-//reducer까지 값 받아 오기 성공()
+//onSubmti 할 때 dispatch로 action에 전달(0)
+//action 전달 성공(0)
+//reducer까지 값 받아 오기 성공(0)
+//코드 이해 및 정리()
 
 const InfoUpload = () => { 
   const [progress, setProgress] = useState(0);
-  const [data, setData] = useState('')
-  console.log(data);
+  const [imgUrl, setImgUrl] = useState('')
+  console.log(imgUrl);
   const dispatch = useDispatch()
   const [infoData, setInfoData] = useState({
     name:'',
@@ -33,7 +34,7 @@ const InfoUpload = () => {
     setInfoData({
       ...infoData,
       [name]: value,
-      [img]: data,
+      [img]: imgUrl,
       [price]: value,
       [text]: value,
       textBox:[{
@@ -61,18 +62,18 @@ const InfoUpload = () => {
     
     () =>  {
     getDownloadURL(uploadTask.snapshot.ref)
-      .then((response) => setData(response))  
+      .then((response) => setImgUrl(response))  
     }
     );
   };
 
-  const onInfo = (name:string, data:string, price:string, text:string, textBox:Array<object>) => 
-  dispatch(addInfo(name, data, price, text, textBox))
+  const onInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => 
+  dispatch(addInfo(name, imgUrl, price, text, textBox))
 
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();        
-    onInfo(name, data, price, text, textBox);    
-    console.log(name, data, price, text, textBox)    
+    onInfo(name, imgUrl, price, text, textBox);    
+    console.log(name, imgUrl, price, text, textBox)    
     setInfoData({
     name:'',
     img:'',

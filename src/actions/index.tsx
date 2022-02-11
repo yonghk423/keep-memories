@@ -79,14 +79,14 @@ export const dequeueNotification = () => {
 }
 let infoId = 6
 let textBoxId = 6
-export const addInfo = (name:any, data:any, price:any, text:any, textBox:any) => {
-  console.log(name, data, price, text, textBox)
+export const addInfo = (name:any, imgUrl:any, price:any, text:any, textBox:any) => {
+  console.log(name, imgUrl, price, text, textBox)
   return {
     type: ADD_INFO,
   payload : {
     id: infoId = infoId + 1,
     name: name,
-    data: data,
+    img: imgUrl,
     price: price,
     text: text,
     textBox : [{
