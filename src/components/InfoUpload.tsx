@@ -1,7 +1,7 @@
 import React, {useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
-import { storage } from '../service/firebase';
+import { storage } from '../service/Firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 //데이터 url를 string 값으로 받는다(0)
