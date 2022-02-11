@@ -4,6 +4,11 @@ import { addInfo } from '../actions/index'
 import { storage } from '../service/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
+//데이터 url를 string 값으로 받는다(0)
+//onSubmti 할 때 dispatch로 action에 전달()
+//action 전달 성공()
+//reducer까지 값 받아 오기 성공()
+
 const InfoUpload = () => { 
   const [progress, setProgress] = useState(0);
   const [data, setData] = useState('')
@@ -11,6 +16,7 @@ const InfoUpload = () => {
   const dispatch = useDispatch()
   const [infoData, setInfoData] = useState({
     name:'',
+    img:'',
     price: '',
     text:'',
     textBox:[{
@@ -18,8 +24,8 @@ const InfoUpload = () => {
       text: '',
     }]    
   });
-  const {name, price, text, textBox} = infoData;
-  console.log({name, price, text, textBox})
+  const {name, img, price, text, textBox} = infoData;
+  console.log({name, img, price, text, textBox})
    
   const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {    
     const {name, value} = e.target;
@@ -27,6 +33,7 @@ const InfoUpload = () => {
     setInfoData({
       ...infoData,
       [name]: value,
+      [img]: data,
       [price]: value,
       [text]: value,
       textBox:[{
@@ -59,14 +66,16 @@ const InfoUpload = () => {
     );
   };
 
-  const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
+  const onInfo = (name:string, data:string, price:string, text:string, textBox:Array<object>) => 
+  dispatch(addInfo(name, data, price, text, textBox))
 
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();        
-    onInfo(name, price, text, textBox);    
-    console.log(name, price, text, textBox)    
+    onInfo(name, data, price, text, textBox);    
+    console.log(name, data, price, text, textBox)    
     setInfoData({
     name:'',
+    img:'',
     price: '',
     text:'',
     textBox:[{
