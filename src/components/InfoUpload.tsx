@@ -1,5 +1,4 @@
 import React, {useState } from 'react';
-import { v4 as uuidv4} from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
 import { storage } from '../service/firebase';
@@ -7,6 +6,8 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 const InfoUpload = () => { 
   const [progress, setProgress] = useState(0);
+  const [data, setData] = useState('')
+  console.log(data);
   const dispatch = useDispatch()
   const [infoData, setInfoData] = useState({
     name:'',
@@ -40,12 +41,28 @@ const InfoUpload = () => {
     const file = files[0];
     upLoadFiles(file);      
   }
+  const upLoadFiles = async (file:any) => {
+    if(!file) return
+    const storageRef = ref(storage, `/files/${file.name}`); 
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
+    uploadTask.on("state_changed", (snapshot) => {
+      const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      setProgress(prog)
+    }, 
+    (err) => console.log(err),
+    
+    () =>  {
+    getDownloadURL(uploadTask.snapshot.ref)
+      .then((response) => setData(response))  
+    }
+    );
+  };
 
   const onInfo = (name:string, price:string, text:string, textBox:Array<object>) => dispatch(addInfo(name, price, text, textBox))
 
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();    
+    e.preventDefault();        
     onInfo(name, price, text, textBox);    
     console.log(name, price, text, textBox)    
     setInfoData({
@@ -59,23 +76,9 @@ const InfoUpload = () => {
     });
   }  
 
-  const upLoadFiles = (file:any) => {
-    if(!file) return
-    const storageRef = ref(storage, `/files/${file.name}`); 
-    const uploadTask = uploadBytesResumable(storageRef, file);
-
-    uploadTask.on("state_changed", (snapshot) => {
-      const prog = Math.round(
-        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-      );
-      setProgress(prog)
-    }, (err) => console.log(err),
-    () => {
-      getDownloadURL(uploadTask.snapshot.ref).then((url) => console.log(url))
-    }
-    );
-  };
-
+  
+  
+  
   return (
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
