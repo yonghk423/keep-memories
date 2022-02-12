@@ -3,6 +3,7 @@ import './Main.scss';
 import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
 import InfoUpload from './InfoUpload';
+console.log(initialState);
 
 const Main = () => {
   const [fullImg, setFullImg] = useState(initialState.items[0]);

@@ -87,12 +87,12 @@ export const addInfo = (name:any, imgUrl:any, price:any, text:any, textBox:any) 
     id: infoId = infoId + 1,
     name: name,
     img: imgUrl,
-    price: price,
+    price: Number(price),
     text: text,
     textBox : [{
       id: textBoxId = textBoxId + 1,
-      name: name,
-      text: text,
+      name: '',
+      text: ''
     }]      
   }
   }
