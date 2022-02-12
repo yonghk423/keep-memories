@@ -37,10 +37,10 @@ const InfoUpload = () => {
       [img]: imgUrl,
       [price]: value,
       [text]: value,
-      textBox:[{
-      name: '',
-      text: '',
-    }]    
+    //   textBox:[{
+    //   name: '',
+    //   text: '',
+    // }]    
     })
   }
 
