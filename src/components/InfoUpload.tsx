@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
 import { storage } from '../service/Firebase';
@@ -13,7 +13,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 const InfoUpload = () => { 
   const [progress, setProgress] = useState(0);
   const [imgUrl, setImgUrl] = useState('')
-  console.log(imgUrl);
   const dispatch = useDispatch()
   const [infoData, setInfoData] = useState({
     name:'',
@@ -67,9 +66,10 @@ const InfoUpload = () => {
     );
   };
 
-  const onInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => 
+  const onInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => (     
   dispatch(addInfo(name, imgUrl, price, text, textBox))
-
+  ) 
+  
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();        
     onInfo(name, imgUrl, price, text, textBox);    

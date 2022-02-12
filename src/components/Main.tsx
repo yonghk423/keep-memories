@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import { useSelector} from 'react-redux';
 import './Main.scss';
 import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
 import InfoUpload from './InfoUpload';
-console.log(initialState);
 
+export interface ItemReducer {
+        ItemReducer : Array<object>
+}
 const Main = () => {
+  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);  
+  console.log(state.items);
+  const thumImg = state.items
   const [fullImg, setFullImg] = useState(initialState.items[0]);
-  const [thumImg] = useState(initialState.items);
+  console.log(thumImg)
   
   const imgData:string = fullImg.img  
   const idData:number = fullImg.id
@@ -27,7 +33,7 @@ const Main = () => {
     console.log(ele);
     setFullImg(ele);
   }
-
+  console.log(thumImg)
   
     return (
         <div className='total'>  
@@ -38,7 +44,7 @@ const Main = () => {
             <div className='title'>please click the picture</div>
           </div>          
           <div>
-            {thumImg.map((ele)=> (                                     
+            {thumImg.map((ele:any)=> (                                     
               <img className='thumImg' 
                 key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
               </img>              

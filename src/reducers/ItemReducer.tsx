@@ -28,7 +28,7 @@ const ItemReducer = (state:any  = initialState, action:any) => {
           const test = Object.assign({}, data, { textBox: [...data.textBox, action.payload]})
           console.log(test);
           // 데이터를 전체 state 값들과 합친다.
-          const test2 = Object.assign({}, state, {items : [...state.items, test]})
+          const test2 = Object.assign({}, state, { items: [...state.items, test]})
           console.log(test2);   
               for (let i = 0; i<state.items.length; i++ ) {
             if(state.items[i].name === test.name) {
@@ -41,7 +41,8 @@ const ItemReducer = (state:any  = initialState, action:any) => {
           
           case ADD_INFO:
             //받은 데이터를 items 배열에 추가 시킨다
-            return Object.assign({}, state, { items : [...state.items, action.payload]})
+            return Object.assign({}, state, { items : [...state.items, action.payload] })
+            return Object.assign({}, state, { cartItems: [...state.cartItems, action.payload]})
           //   console.log(info);
           //   console.log(state.items)   
           // return state;
