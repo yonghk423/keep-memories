@@ -43,14 +43,16 @@ const Main = () => {
             </Link>
             <div className='title'>please click the picture</div>
           </div>          
-          <div>
-            {thumImg.map((ele:any)=> (                                     
-              <img className='thumImg' 
-                key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
-              </img>              
+          <div className='thumBox'>
+            {thumImg.map((ele:any)=> (
+                <img className='thumImg' 
+                  key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
+                </img>  
             ))}
           </div>
-          <InfoUpload/>
+          <div className='infoBox'>
+            <InfoUpload/>
+          </div>
         </div>    
     )
 }
