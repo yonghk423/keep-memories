@@ -4,16 +4,10 @@ import { addInfo } from '../actions/index'
 import { storage } from '../service/Firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
-//데이터 url를 string 값으로 받는다(0)
-//onSubmti 할 때 dispatch로 action에 전달(0)
-//action 전달 성공(0)
-//reducer까지 값 받아 오기 성공(0)
-//코드 이해 및 정리()
-
 const InfoUpload = () => { 
+  const dispatch = useDispatch()
   const [progress, setProgress] = useState(0);
   const [imgUrl, setImgUrl] = useState('')
-  const dispatch = useDispatch()
   const [infoData, setInfoData] = useState({
     name:'',
     img:'',
@@ -26,7 +20,13 @@ const InfoUpload = () => {
   });
   const {name, img, price, text, textBox} = infoData;
   console.log({name, img, price, text, textBox})
-   
+   //-----------오류 메시지 상태---------------
+  const [nameMessage, setNameMessage] = useState('')
+   //-----------유효성 검사-------------------
+  const [isName, setIsName] = useState(false)
+
+
+  //----------------------------------------------------
   const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {    
     const {name, value} = e.target;
     console.log({name, value});    
@@ -39,10 +39,17 @@ const InfoUpload = () => {
       textBox:[{
       name: '',
       text: '',
-    }]    
+      }]    
     })
+    if(e.target.value.length < 2 || e.target.value.length > 5) {
+      setNameMessage('2글자 이상 5글자 미만으로 입력해주세요.')
+      setIsName(false);
+    } else {
+      setNameMessage('올바른 이름 형식입니다')
+      setIsName(true);
+    }
   }
-
+//-------------------------------------------------------
   const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { files }:any  = e.target;
     const file = files[0];
@@ -57,8 +64,7 @@ const InfoUpload = () => {
       const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
       setProgress(prog)
     }, 
-    (err) => console.log(err),
-    
+    (err) => console.log(err),    
     () =>  {
     getDownloadURL(uploadTask.snapshot.ref)
       .then((response) => setImgUrl(response))  
@@ -85,15 +91,12 @@ const InfoUpload = () => {
     }]    
     });
   }  
-
-  
-  
   
   return (
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
               <input type="file" accept="image/*" onChange={onFileChange}/>                         
-              <input name='name' value={name} onChange={onChange}/>
+              <input name='name' value={name} onChange={onChange}/>{nameMessage}             
               <input name='price' value={price} onChange={onChange}/>                                
               <input name='text' value={text} onChange={onChange}/>
               <button type='submit'>등록</button>              
