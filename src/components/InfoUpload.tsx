@@ -99,7 +99,9 @@ const InfoUpload = () => {
               <input name='name' value={name} onChange={onChange}/>{nameMessage}             
               <input name='price' value={price} onChange={onChange}/>                                
               <input name='text' value={text} onChange={onChange}/>
-              <button type='submit'>등록</button>              
+              <button type='submit'
+              disabled={!(isName)}
+              >등록</button>              
             </form> 
             <h3>Uploaded {progress} %</h3>           
         </div>
