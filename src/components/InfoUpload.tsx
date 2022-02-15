@@ -8,48 +8,87 @@ const InfoUpload = () => {
   const dispatch = useDispatch()
   const [progress, setProgress] = useState(0);
   const [imgUrl, setImgUrl] = useState('')
+  const [name, setName] = useState('')
+  const [price, setPrice] = useState('')
   const [infoData, setInfoData] = useState({
-    name:'',
+    // name:'',
     img:'',
-    price: '',
+    // price: '',
     text:'',
     textBox:[{
       name: '',
       text: '',
     }]    
   });
-  const {name, img, price, text, textBox} = infoData;
-  console.log({name, img, price, text, textBox})
+  const {img, text, textBox} = infoData;
    //-----------오류 메시지 상태---------------
   const [nameMessage, setNameMessage] = useState('')
+  const [priceMessage, setPriceMessage] = useState('')
+
    //-----------유효성 검사-------------------
   const [isName, setIsName] = useState(false)
+  const [isPrice, setIsPrice] = useState(false)
+
 
 
   //----------------------------------------------------
   const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {    
     const {name, value} = e.target;
+    // const priceVali = /^[a-z0-9_-]{1,10}$/
     console.log({name, value});    
     setInfoData({
       ...infoData,
-      [name]: value,
+      [name]: value, //???? 뭐지
       [img]: imgUrl,
-      [price]: value,
+      // [price]: value,
       [text]: value,
       textBox:[{
       name: '',
       text: '',
       }]    
     })
-    if(e.target.value.length < 2 || e.target.value.length > 5) {
+    // if(e.target.value.length < 2 || e.target.value.length > 5) {
+    //   console.log(e.target.value.length)
+    //   setNameMessage('2글자 이상 5글자 미만으로 입력해주세요.')
+    //   setIsName(false);
+    // } else {
+    //   setNameMessage('올바른 이름 형식입니다')
+    //   setIsName(true);
+    // }
+
+    // if (!priceVali.test(price)) {
+    //   setPriceMessage('1자리수 이상 10자리수 이하로 입력해주세요')
+    // } else {
+    //   setPriceMessage('올바른 형식입니다.')
+    //   setIsPrice(true);
+    // }
+  }
+
+  
+//-------------------------------------------------------
+  const onNmaeChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value)
+    if (e.target.value.length < 2 || e.target.value.length > 5) {
       setNameMessage('2글자 이상 5글자 미만으로 입력해주세요.')
-      setIsName(false);
+      setIsName(false)
     } else {
-      setNameMessage('올바른 이름 형식입니다')
-      setIsName(true);
+      setNameMessage('올바른 이름 형식입니다 :)')
+      setIsName(true)
+    }
+
+  }
+  const onPriceChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const priceVali =  /^[a-z0-9_-]{1,10}$/
+    const priceCurrent = e.target.value;
+    setPrice(priceCurrent)
+    if (!priceVali.test(priceCurrent)) {
+      setPriceMessage('1자리수 이상 10자리수 이하로 입력해주세요')
+    } else {
+      setPriceMessage('올바른 형식입니다.')
+      setIsPrice(true);
     }
   }
-//-------------------------------------------------------
+
   const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { files }:any  = e.target;
     const file = files[0];
@@ -77,13 +116,15 @@ const InfoUpload = () => {
   ) 
   
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();        
+    e.preventDefault();
     onInfo(name, imgUrl, price, text, textBox);    
-    console.log(name, imgUrl, price, text, textBox)    
+    console.log(name, imgUrl, price, text, textBox)
+    setName('')
+    setPrice('')    
     setInfoData({
-    name:'',
+    // name:'',
     img:'',
-    price: '',
+    // price: '',
     text:'',
     textBox:[{
       name: '',
@@ -96,11 +137,11 @@ const InfoUpload = () => {
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
               <input type="file" accept="image/*" onChange={onFileChange}/>                         
-              <input name='name' value={name} onChange={onChange}/>{nameMessage}             
-              <input name='price' value={price} onChange={onChange}/>                                
+              <input name='name' value={name} onChange={onNmaeChange}/>{nameMessage}             
+              <input name='price' value={price} onChange={onPriceChange}/>{priceMessage}                                
               <input name='text' value={text} onChange={onChange}/>
               <button type='submit'
-              disabled={!(isName)}
+              disabled={!(isName && isPrice)}
               >등록</button>              
             </form> 
             <h3>Uploaded {progress} %</h3>           
