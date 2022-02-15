@@ -41,7 +41,7 @@ export const SetQuantity = (quantity:number, itemId:number) => {
 }
 
 let nextId = 1; // todo 데이터에서 사용 할 고유 id
-export const addTodo = (text:any, name:string) => ({
+export const addTodo = (text:string, name:string) => ({
   type: ADD_TODO,
   payload: {
     id: nextId = nextId + 1, // 새 항목을 추가하고 nextId 값에 1을 더해줍니다.
@@ -79,7 +79,7 @@ export const dequeueNotification = () => {
 }
 let infoId = 6
 let textBoxId = 6
-export const addInfo = (name:any, imgUrl:any, price:any, text:any, textBox:any) => {
+export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => {
   console.log(name, imgUrl, price, text, textBox)
   return {
     type: ADD_INFO,

@@ -11,16 +11,15 @@ const InfoUpload = () => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
   const [infoData, setInfoData] = useState({
-    // name:'',
     img:'',
-    // price: '',
     text:'',
     textBox:[{
       name: '',
       text: '',
     }]    
-  });
+  });  
   const {img, text, textBox} = infoData;
+
    //-----------오류 메시지 상태---------------
   const [nameMessage, setNameMessage] = useState('')
   const [priceMessage, setPriceMessage] = useState('')
@@ -34,34 +33,17 @@ const InfoUpload = () => {
   //----------------------------------------------------
   const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {    
     const {name, value} = e.target;
-    // const priceVali = /^[a-z0-9_-]{1,10}$/
     console.log({name, value});    
     setInfoData({
       ...infoData,
       [name]: value, //???? 뭐지
       [img]: imgUrl,
-      // [price]: value,
       [text]: value,
       textBox:[{
       name: '',
       text: '',
       }]    
-    })
-    // if(e.target.value.length < 2 || e.target.value.length > 5) {
-    //   console.log(e.target.value.length)
-    //   setNameMessage('2글자 이상 5글자 미만으로 입력해주세요.')
-    //   setIsName(false);
-    // } else {
-    //   setNameMessage('올바른 이름 형식입니다')
-    //   setIsName(true);
-    // }
-
-    // if (!priceVali.test(price)) {
-    //   setPriceMessage('1자리수 이상 10자리수 이하로 입력해주세요')
-    // } else {
-    //   setPriceMessage('올바른 형식입니다.')
-    //   setIsPrice(true);
-    // }
+    })    
   }
 
   
@@ -118,13 +100,10 @@ const InfoUpload = () => {
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onInfo(name, imgUrl, price, text, textBox);    
-    console.log(name, imgUrl, price, text, textBox)
     setName('')
     setPrice('')    
     setInfoData({
-    // name:'',
     img:'',
-    // price: '',
     text:'',
     textBox:[{
       name: '',

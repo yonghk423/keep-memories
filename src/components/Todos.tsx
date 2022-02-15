@@ -7,18 +7,16 @@ export interface ItemReducer {
         ItemReducer : Array<object>
 }
 
-const Todos = (todos:any) => {  
-  console.log(todos.todos.textBox)
-  console.log(todos.todos.name)
-  const todoss = todos.todos.textBox
-  const name = todos.todos.name;
+const Todos = (todos:any) => {    
+  const todoss:string = todos.todos.textBox
+  const name:string = todos.todos.name;
 
   const dispatch = useDispatch();
-  const onCreate = (text:any, id:any) => dispatch(addTodo(text, name));
+  const onCreate = (text:string, name:string) => dispatch(addTodo(text, name));
 
   const [text, setText] = useState('');
-  const onChange = (e:any) => setText(e.target.value);
-  const onSubmit = (e:any) => {
+  const onChange = (e:React.ChangeEvent<HTMLInputElement>) => setText(e.target.value);
+  const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
     onCreate(text, name);
     setText(''); // 인풋 초기화
@@ -40,13 +38,8 @@ const Todos = (todos:any) => {
 }
 //-------------------------------------------------------------------------
 
-const TodoList = React.memo(function TodoList(todoss:any) {
-  // console.log(todoss);
-  // console.log(todoss.onCreate);
-  // console.log(todoss.todoss);
-  
-  const todosss = todoss.todoss;
-  
+const TodoList = React.memo(function TodoList(todoss:any) {  
+  const todosss = todoss.todoss;  
   return (
     <ul>
       {todosss.map((todo:any) => (
@@ -57,15 +50,12 @@ const TodoList = React.memo(function TodoList(todoss:any) {
 });
 
 //-------------------------------------------------------------------------
-const TodoItem = React.memo(function TodoItem(todo:any) {
-  // console.log(todo.todo);  
-  
+const TodoItem = React.memo(function TodoItem(todo:any) {  
   return (
     <div className='todo'>
       {todo.todo}
     </div>
   );
 });
-
 
 export default Todos;
