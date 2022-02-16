@@ -15,7 +15,7 @@ const Todos = (todos:any) => {
   const onCreate = (text:string, name:string) => dispatch(addTodo(text, name));
 
   const [text, setText] = useState('');
-  const onChange = (e:React.ChangeEvent<HTMLInputElement>) => setText(e.target.value);
+  const onChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value);
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
     onCreate(text, name);
@@ -25,7 +25,7 @@ const Todos = (todos:any) => {
   return (
     <div>
       <form className='submitBox' onSubmit={onSubmit}>
-        <input className='onText'
+        <textarea className='onText'
           value={text}
           placeholder=""
           onChange={onChange}

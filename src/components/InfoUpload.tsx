@@ -31,7 +31,7 @@ const InfoUpload = () => {
 
 
   //----------------------------------------------------
-  const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {    
+  const onChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {    
     const {name, value} = e.target;
     console.log({name, value});    
     setInfoData({
@@ -48,10 +48,10 @@ const InfoUpload = () => {
 
   
 //-------------------------------------------------------
-  const onNmaeChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const onNmaeChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     setName(e.target.value)
-    if (e.target.value.length < 2 || e.target.value.length > 5) {
-      setNameMessage('2글자 이상 5글자 미만으로 입력해주세요.')
+    if (e.target.value.length < 2 || e.target.value.length > 20) {
+      setNameMessage('2글자 이상 20글자 이하로 입력해주세요.')
       setIsName(false)
     } else {
       setNameMessage('올바른 이름 형식입니다 :)')
@@ -59,7 +59,7 @@ const InfoUpload = () => {
     }
 
   }
-  const onPriceChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const onPriceChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     const priceVali =  /^[a-z0-9_-]{1,10}$/
     const priceCurrent = e.target.value;
     setPrice(priceCurrent)
@@ -98,10 +98,11 @@ const InfoUpload = () => {
   ) 
   
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // e.preventDefault();
     onInfo(name, imgUrl, price, text, textBox);    
     setName('')
-    setPrice('')    
+    setPrice('')
+    setImgUrl('')    
     setInfoData({
     img:'',
     text:'',
@@ -115,13 +116,12 @@ const InfoUpload = () => {
   return (
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
-              <input type="file" accept="image/*" onChange={onFileChange}/>                         
-              <input name='name' value={name} onChange={onNmaeChange}/>{nameMessage}             
-              <input name='price' value={price} onChange={onPriceChange}/>{priceMessage}                                
-              <input name='text' value={text} onChange={onChange}/>
-              <button type='submit'
-              disabled={!(isName && isPrice)}
-              >등록</button>              
+              <input type="file" accept="image/*" onChange={onFileChange}/>
+              <img src={imgUrl} alt=""/>                         
+              <textarea name='name' value={name} onChange={onNmaeChange}/>{nameMessage}             
+              <textarea name='price' value={price} onChange={onPriceChange}/>{priceMessage}                                
+              <textarea name='text' value={text} onChange={onChange}/>
+              <button type='submit' disabled={!(isName && isPrice)}>등록</button>              
             </form> 
             <h3>Uploaded {progress} %</h3>           
         </div>
