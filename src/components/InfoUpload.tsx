@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
 import { storage } from '../service/Firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-
-const InfoUpload = () => { 
+import {v4 as uuidv4} from 'uuid';
+// uuidv4();
+const InfoUpload = () => {   
   const dispatch = useDispatch()
   const [progress, setProgress] = useState(0);
   const [imgUrl, setImgUrl] = useState('')
@@ -19,18 +20,24 @@ const InfoUpload = () => {
     }]    
   });  
   const {img, text, textBox} = infoData;
+//--------------localStorage-------------------------------------------------------------------
+  
 
-   //-----------오류 메시지 상태---------------
+
+
+
+
+   //-----------오류 메시지 상태--------------------------------------------
   const [nameMessage, setNameMessage] = useState('')
   const [priceMessage, setPriceMessage] = useState('')
 
-   //-----------유효성 검사-------------------
+   //-----------유효성 검사----------------------------------------------
   const [isName, setIsName] = useState(false)
   const [isPrice, setIsPrice] = useState(false)
 
 
 
-  //----------------------------------------------------
+  //-----------------------------------------------------------------
   const onChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {    
     const {name, value} = e.target;
     console.log({name, value});    
@@ -98,7 +105,7 @@ const InfoUpload = () => {
   ) 
   
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    // e.preventDefault();
+    e.preventDefault();
     onInfo(name, imgUrl, price, text, textBox);    
     setName('')
     setPrice('')
