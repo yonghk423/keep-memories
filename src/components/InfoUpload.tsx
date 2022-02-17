@@ -27,17 +27,17 @@ const InfoUpload = () => {
 
 
 
-   //-----------오류 메시지 상태--------------------------------------------
+   //-----------오류 메시지 상태------------------------------------------------
   const [nameMessage, setNameMessage] = useState('')
   const [priceMessage, setPriceMessage] = useState('')
 
-   //-----------유효성 검사----------------------------------------------
+   //-----------유효성 검사----------------------------------------------------
   const [isName, setIsName] = useState(false)
   const [isPrice, setIsPrice] = useState(false)
 
 
 
-  //-----------------------------------------------------------------
+  //-------------------------------------------------------------------------
   const onChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {    
     const {name, value} = e.target;
     console.log({name, value});    
