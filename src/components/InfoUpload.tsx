@@ -11,21 +11,11 @@ const InfoUpload = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
-  const [infoData, setInfoData] = useState({
-    img:'',
-    text:'',
-    textBox:[{
-      name: '',
-      text: '',
-    }]    
-  });  
+  const [infoData, setInfoData] = useState({ img:'', text:'', textBox:[{ name: '', text: '', }]});  
   const {img, text, textBox} = infoData;
-//--------------localStorage-------------------------------------------------------------------
+
+  //--------------localStorage-------------------------------------------------------------------
   
-
-
-
-
 
    //-----------오류 메시지 상태------------------------------------------------
   const [nameMessage, setNameMessage] = useState('')
@@ -40,16 +30,12 @@ const InfoUpload = () => {
   //-------------------------------------------------------------------------
   const onChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {    
     const {name, value} = e.target;
-    console.log({name, value});    
     setInfoData({
       ...infoData,
       [name]: value, //???? 뭐지
       [img]: imgUrl,
       [text]: value,
-      textBox:[{
-      name: '',
-      text: '',
-      }]    
+      textBox:[{ name: '', text: '', }]
     })    
   }
 
@@ -77,7 +63,7 @@ const InfoUpload = () => {
       setIsPrice(true);
     }
   }
-
+  //----------------------------------------------------------------------------
   const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { files }:any  = e.target;
     const file = files[0];
@@ -96,28 +82,22 @@ const InfoUpload = () => {
     () =>  {
     getDownloadURL(uploadTask.snapshot.ref)
       .then((response) => setImgUrl(response))  
-    }
-    );
+    });
   };
-
+  //---------------------------------------------------------------------------------------
   const onInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => (     
   dispatch(addInfo(name, imgUrl, price, text, textBox))
   ) 
   
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // e.preventDefault();
     onInfo(name, imgUrl, price, text, textBox);    
     setName('')
     setPrice('')
     setImgUrl('')    
-    setInfoData({
-    img:'',
-    text:'',
-    textBox:[{
-      name: '',
-      text: '',
-    }]    
-    });
+    setInfoData({ img:'', text:'', textBox:[{ name: '', text: '', }]});
+    //-------------------------------------------------------------------
+    
   }  
   
   return (
