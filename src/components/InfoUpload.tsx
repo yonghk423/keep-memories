@@ -57,7 +57,7 @@ const InfoUpload = () => {
     const priceCurrent = e.target.value;
     setPrice(priceCurrent)
     if (!priceVali.test(priceCurrent)) {
-      setPriceMessage('1자리수 이상 10자리수 이하로 입력해주세요')
+      setPriceMessage('숫자만 입력해주세요')
     } else {
       setPriceMessage('올바른 형식입니다.')
       setIsPrice(true);
