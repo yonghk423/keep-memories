@@ -38,7 +38,6 @@ const DetailPage = () => {
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
   console.log(items) 
-  console.log(cartItems) 
   
   interface Data {
     id: number;

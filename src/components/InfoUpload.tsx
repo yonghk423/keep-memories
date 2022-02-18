@@ -53,7 +53,7 @@ const InfoUpload = () => {
 
   }
   const onPriceChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
-    const priceVali =  /^[a-z0-9_-]{1,10}$/
+    const priceVali =  /^[0-9]+$/
     const priceCurrent = e.target.value;
     setPrice(priceCurrent)
     if (!priceVali.test(priceCurrent)) {
