@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { AddCart, notify } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
@@ -72,31 +71,29 @@ const DetailPage = () => {
       dispatch(notify(`이미 추가된 상품입니다.`))
     }
   }
-    
+
     return (
       <>
       <div className='container'>        
         {data &&
           <>
           <div className='fullImgDetailBox'>         
-          <img className='fullImg' src={data.img}  key={data.id} alt=''/>                   
-        </div>
-        <div className='infoBox'>
+            <img className='fullImg' src={data.img}  key={data.id} alt=''/>                   
+          </div>
+          <div className='infoBox'>
             <div className='name'>{data.name}</div>
             <div className='price'>{data.price}₩</div>
             <div className='text'>{data.text}</div>
             <div className='BtnBox'>
               <button className="ItemBtn" onClick={() => AddCartSetting(data.id, data.name)}>ADD TO CART</button>
             </div>
-        </div>
-        
-        
-        <div className='todos'>
-          <div className='todosTitle'>Please leave your thoughts on the photo</div>
-          <Todos todos={data}/>
-        </div>
-        </>
-}             
+          </div>       
+          <div className='todos'>
+            <div className='todosTitle'>Please leave your thoughts on the photo</div>
+            <Todos todos={data}/>
+          </div>
+          </>
+        }             
       </div>      
       </>
     )

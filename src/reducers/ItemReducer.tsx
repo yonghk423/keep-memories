@@ -1,4 +1,4 @@
-import { ADD_CART, REMOVE_CART, SET_QUANTITY, ADD_TODO, ADD_INFO} from "../actions/index"
+import { ADD_CART, REMOVE_CART, SET_QUANTITY, ADD_TODO, ADD_INFO, REMOVE_ITEM} from "../actions/index"
 import { initialState } from '../asset/data'
 import { Action } from "../actions/index"
 
@@ -42,7 +42,10 @@ const ItemReducer = (state:any  = initialState, action:any) => {
           case ADD_INFO:
             //받은 데이터를 items 배열에 추가 시킨다
             return Object.assign({}, state, { items : [...state.items, action.payload] })       
-
+          case REMOVE_ITEM:
+            return Object.assign({}, state, {
+            items: state.items.filter((ele:any) => ele.id !== action.payload.itemId )
+          })
           default: return state;
         }
     

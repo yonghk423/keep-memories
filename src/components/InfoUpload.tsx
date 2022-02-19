@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addInfo } from '../actions/index'
 import { storage } from '../service/Firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import {v4 as uuidv4} from 'uuid';
+// import {v4 as uuidv4} from 'uuid';
 // uuidv4();
 const InfoUpload = () => {   
   const dispatch = useDispatch()

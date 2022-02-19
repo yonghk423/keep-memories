@@ -31,8 +31,7 @@ export interface Item {
   id: number
 }
 
-const CartMain = () => {
-  
+const CartMain = () => {  
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;

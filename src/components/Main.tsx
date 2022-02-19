@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector} from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
+import { RemoveItem } from '../actions/index'
 import './Main.scss';
 import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
@@ -9,7 +10,8 @@ export interface ItemReducer {
         ItemReducer : Array<object>
 }
 const Main = () => {
-  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);  
+  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
+  const dispatch = useDispatch();  
   console.log(state.items);
   const thumImg = state.items
   const [fullImg, setFullImg] = useState(initialState.items[0]);
@@ -33,7 +35,11 @@ const Main = () => {
     console.log(ele);
     setFullImg(ele);
   }
-  console.log(thumImg)
+  
+  const RemoveItemSetting = (itemId:number) => {
+    console.log(itemId)
+    dispatch(RemoveItem(itemId))
+  }
   
     return (
         <div className='total'>  
@@ -45,9 +51,12 @@ const Main = () => {
           </div>          
           <div className='thumBox'>
             {thumImg.map((ele:any)=> (
-                <img className='thumImg' 
-                  key={ele.id} src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
-                </img>  
+                <div key={ele.id}>
+                  <img className='thumImg' 
+                    src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
+                  </img>
+                <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button>
+                </div>                
             ))}
           </div>
           <div className='infoBox'>

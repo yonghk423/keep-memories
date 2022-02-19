@@ -7,6 +7,7 @@ export const NOTIFY = 'NOTIFY' as const;
 export const ENQUEUE_NOTIFICATION = "ENQUEUE_NOTIFICATION" as const;
 export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION" as const;
 export const ADD_INFO ="ADD_INFO" as const;
+export const REMOVE_ITEM = "REMOVE_ITEM" as const;
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
     console.log(itemId);
@@ -77,6 +78,7 @@ export const dequeueNotification = () => {
     type: DEQUEUE_NOTIFICATION
   }
 }
+
 let infoId = 6
 let textBoxId = 6
 export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => {
@@ -99,6 +101,17 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
   
 }
 
+export const RemoveItem = (itemId:number) => {
+  console.log(itemId);
+  return {
+        type: REMOVE_ITEM,
+        payload : {
+            itemId: itemId
+        }
+    }
+}
+
+
 export type Action =
   | ReturnType<typeof AddCart>
   | ReturnType<typeof RemoveCart>
@@ -107,4 +120,5 @@ export type Action =
   | ReturnType<typeof notify>
   | ReturnType<typeof enqueueNotification>
   | ReturnType<typeof dequeueNotification>
-  | ReturnType<typeof addInfo>;
+  | ReturnType<typeof addInfo>
+  | ReturnType<typeof RemoveItem>;
