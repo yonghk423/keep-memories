@@ -4,8 +4,6 @@ import { AddCart, notify } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
-import {v4 as uuidv4} from 'uuid';
-// uuidv4();
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -31,11 +29,6 @@ export interface DataSetting {
 }
 
 const DetailPage = () => {  
-  // const [paramsData, setParamsData] = useState(
-  //   localStorage.paramsData ? JSON.parse(localStorage.paramsData) : []
-  // )
-  
-//--------------------------------------------------------------------------------
   const idData = useParams()
   console.log(idData)  
   const number:number = Number(idData.id)
@@ -79,12 +72,7 @@ const DetailPage = () => {
       dispatch(notify(`이미 추가된 상품입니다.`))
     }
   }
-
-  // useEffect(() => {
-  //   localStorage.setItem("paramsData", JSON.stringify(paramsData));
-  //   setParamsData(data)
-  // }, [data, paramsData])
-  // console.log(data);
+    
     return (
       <>
       <div className='container'>        
