@@ -4,6 +4,8 @@ import { AddCart, notify } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
+import {v4 as uuidv4} from 'uuid';
+// uuidv4();
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -29,13 +31,11 @@ export interface DataSetting {
 }
 
 const DetailPage = () => {  
-  const [paramsData, setParamsData] = useState(
-    localStorage.paramsData ? JSON.parse(localStorage.paramsData) : []
-  )
-  useEffect(() => {
-    localStorage.setItem("paramsData", JSON.stringify(paramsData));
-  }, [paramsData])
-
+  // const [paramsData, setParamsData] = useState(
+  //   localStorage.paramsData ? JSON.parse(localStorage.paramsData) : []
+  // )
+  
+//--------------------------------------------------------------------------------
   const idData = useParams()
   console.log(idData)  
   const number:number = Number(idData.id)
@@ -63,6 +63,7 @@ const DetailPage = () => {
   const data:Data|any = items.find((ele) => (ele.id === number))
   console.log(data);
   
+
   const AddCartSetting = ( itemId:number, itemName:string ) => {    
     console.log(itemId);
     console.log(itemName);
@@ -79,10 +80,17 @@ const DetailPage = () => {
     }
   }
 
+  // useEffect(() => {
+  //   localStorage.setItem("paramsData", JSON.stringify(paramsData));
+  //   setParamsData(data)
+  // }, [data, paramsData])
+  // console.log(data);
     return (
       <>
-      <div className='container'>
-        <div className='fullImgDetailBox'>
+      <div className='container'>        
+        {data &&
+          <>
+          <div className='fullImgDetailBox'>         
           <img className='fullImg' src={data.img}  key={data.id} alt=''/>                   
         </div>
         <div className='infoBox'>
@@ -92,11 +100,15 @@ const DetailPage = () => {
             <div className='BtnBox'>
               <button className="ItemBtn" onClick={() => AddCartSetting(data.id, data.name)}>ADD TO CART</button>
             </div>
-        </div> 
+        </div>
+        
+        
         <div className='todos'>
           <div className='todosTitle'>Please leave your thoughts on the photo</div>
           <Todos todos={data}/>
-        </div>             
+        </div>
+        </>
+}             
       </div>      
       </>
     )
