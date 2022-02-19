@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { AddCart, notify } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
@@ -28,7 +28,14 @@ export interface DataSetting {
   }]; 
 }
 
-const DetailPage = () => {
+const DetailPage = () => {  
+  const [paramsData, setParamsData] = useState(
+    localStorage.paramsData ? JSON.parse(localStorage.paramsData) : []
+  )
+  useEffect(() => {
+    localStorage.setItem("paramsData", JSON.stringify(paramsData));
+  }, [paramsData])
+
   const idData = useParams()
   console.log(idData)  
   const number:number = Number(idData.id)
@@ -54,7 +61,7 @@ const DetailPage = () => {
   
 
   const data:Data|any = items.find((ele) => (ele.id === number))
-  // console.log(data);
+  console.log(data);
   
   const AddCartSetting = ( itemId:number, itemName:string ) => {    
     console.log(itemId);

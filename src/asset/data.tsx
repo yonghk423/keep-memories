@@ -42,7 +42,7 @@ export const initialState =
       name: "the aesthetics of slowness",
       img: "https://media.vlpt.us/images/yonghk423/post/138d7bdc-d719-410d-ada3-a4c2aa53af07/3.jpeg",
       price: 4900,
-      text: '노트북과 스마트폰의 장점',
+      text: 'green green green',
       textBox: [{
                     id: 1,
                     name: "the aesthetics of slowness",
