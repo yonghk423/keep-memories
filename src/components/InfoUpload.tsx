@@ -106,7 +106,7 @@ const InfoUpload = () => {
         <div>
             <form className='submitInfo' onSubmit={onSubmit}>
               <input type="file" accept="image/*" onChange={onFileChange}/>
-              <img src={imgUrl} alt=""/>                         
+              <img className='imgUrl' src={imgUrl} alt=""/>                         
               <textarea name='name' value={name} onChange={onNmaeChange}/>{nameMessage}             
               <textarea name='price' value={price} onChange={onPriceChange}/>{priceMessage}                                
               <textarea name='text' value={text} onChange={onChange}/>
