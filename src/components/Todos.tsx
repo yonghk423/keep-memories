@@ -39,7 +39,8 @@ const Todos = (todos:any) => {
 //-------------------------------------------------------------------------
 
 const TodoList = React.memo(function TodoList(todoss:any) {  
-  const todosss = todoss.todoss;  
+  const todosss = todoss.todoss;
+  console.log(todoss);  
   return (
     <ul>
       {todosss.map((todo:any) => (
@@ -51,9 +52,11 @@ const TodoList = React.memo(function TodoList(todoss:any) {
 
 //-------------------------------------------------------------------------
 const TodoItem = React.memo(function TodoItem(todo:any) {  
+  console.log(todo);
   return (
     <div className='todo'>
       {todo.todo}
+      {/* <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button> */}
     </div>
   );
 });

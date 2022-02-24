@@ -40,7 +40,6 @@ const Main = () => {
     console.log(itemId)
     dispatch(RemoveItem(itemId))
   }
-  
     return (
         <div className='total'>  
           <div className="fullImgBox">

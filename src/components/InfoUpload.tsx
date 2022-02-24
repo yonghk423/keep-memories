@@ -97,7 +97,7 @@ const InfoUpload = () => {
     setName('')
     setPrice('')
     setImgUrl('')    
-    setInfoData({ img:'', text:'', textBox:[{ name: '', text: '', }]});
+    setInfoData({ img:'', text:'', textBox:[{ name: '', text: '', }]});    
     //-------------------------------------------------------------------
     
   }  

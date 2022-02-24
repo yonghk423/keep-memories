@@ -79,20 +79,18 @@ export const dequeueNotification = () => {
   }
 }
 
-let infoId = 6
-let textBoxId = 6
 export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => {
   console.log(name, imgUrl, price, text, textBox)
   return {
     type: ADD_INFO,
   payload : {
-    id: infoId = infoId + 1,
+    id: Math.floor((Math.random()*100)),
     name: name,
     img: imgUrl,
     price: Number(price),
     text: text,
     textBox : [{
-      id: textBoxId = textBoxId + 1,
+      id: Math.floor((Math.random()*1000)),
       name: '',
       text: ''
     }]      
