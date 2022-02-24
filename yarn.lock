@@ -1086,6 +1086,13 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@createnextapp/react-barcode@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@createnextapp/react-barcode/-/react-barcode-1.1.1.tgz#2427669812e8fbe64173667460762d331f2263e4"
+  integrity sha512-W0zoKCnkNGCMpDgzczFKpUPGXGvg4IMB4dm/gOT9q5ZexdjDg0fFcLNWJtqwgk+FWc6JurDZyQt9rDlyI54EpQ==
+  dependencies:
+    jsbarcode "^3.11.0"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
@@ -7431,6 +7438,11 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
+jsbarcode@^3.11.0, jsbarcode@^3.11.5:
+  version "3.11.5"
+  resolved "https://registry.yarnpkg.com/jsbarcode/-/jsbarcode-3.11.5.tgz#390b3efd0271f35b9d68c7b8af6e972445969014"
+  integrity sha512-zv3KsH51zD00I/LrFzFSM6dst7rDn0vIMzaiZFL7qusTjPZiPtxg3zxetp0RR7obmjTw4f6NyGgbdkBCgZUIrA==
+
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.npmjs.org/jsbn/-/jsbn-0.1.1.tgz"
@@ -10191,7 +10203,7 @@ redent@^3.0.0:
 
 redux-persist@^6.0.0:
   version "6.0.0"
-  resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-6.0.0.tgz#b4d2972f9859597c130d40d4b146fecdab51b3a8"
+  resolved "https://registry.npmjs.org/redux-persist/-/redux-persist-6.0.0.tgz"
   integrity sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==
 
 redux-thunk@^2.4.1:

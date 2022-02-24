@@ -3,6 +3,7 @@ import { AddCart, notify } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
+import Barcode from '../service/Barcode'
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -78,7 +79,10 @@ const DetailPage = () => {
         {data &&
           <>
           <div className='fullImgDetailBox'>         
-            <img className='fullImg' src={data.img}  key={data.id} alt=''/>                   
+            <img className='fullImg' src={data.img}  key={data.id} alt=''/>
+            <div className='barcode'>
+              <Barcode/>
+            </div>
           </div>
           <div className='infoBox'>
             <div className='name'>{data.name}</div>
@@ -91,7 +95,7 @@ const DetailPage = () => {
           <div className='todos'>
             <div className='todosTitle'>Please leave your thoughts on the photo</div>
             <Todos todos={data}/>
-          </div>
+          </div>          
           </>
         }             
       </div>      
