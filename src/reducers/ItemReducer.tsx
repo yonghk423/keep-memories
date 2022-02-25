@@ -1,10 +1,11 @@
-import { ADD_CART, REMOVE_CART, SET_QUANTITY, ADD_TODO, ADD_INFO, REMOVE_ITEM} from "../actions/index"
+import { ADD_CART, REMOVE_CART, SET_QUANTITY, ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT} from "../actions/index"
 import { initialState } from '../asset/data'
 import { Action } from "../actions/index"
 
 const ItemReducer = (state:any  = initialState, action:any) => {
     console.log(state);
     console.log(state.items);
+    console.log(action);
     console.log(action.payload);
     
     switch (action.type) {
@@ -31,12 +32,10 @@ const ItemReducer = (state:any  = initialState, action:any) => {
           const addDataTotal = Object.assign({}, state, { items: [...state.items, addData]})
           console.log(addDataTotal);   
               for (let i = 0; i<state.items.length; i++ ) {
-            if(state.items[i].name === addData.name) {
-              state.items[i] = addData
-            }
-          }
-          console.log(state);
-          console.log(state.items)
+                if(state.items[i].name === addData.name) {
+                state.items[i] = addData
+              }
+            }      
           return Object.assign({}, state)
           
           case ADD_INFO:
@@ -49,6 +48,36 @@ const ItemReducer = (state:any  = initialState, action:any) => {
               { items: state.items.filter((ele:any) => ele.id !== action.payload.itemId ) },
               { cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.payload.itemId)}
           )
+          case REMOVE_TEXT:
+            console.log(action.payload.todoId)
+              //같은 아이디가 담긴 데이터를 찾는다
+              //filter를 두번 사용한다..?
+              let textData = state.items.find((ele:any)=> (
+                ele.textBox.find((ele:any)=> (
+                  ele.id === action.payload.todoId
+                ))
+              ))
+              console.log(textData);
+              console.log(textData.textBox);
+              let todoData = textData.textBox.filter((ele:any)=> (
+                ele.id !== action.payload.todoId
+              ))
+              console.log(todoData);
+              //filter로 삭제를 시켰다
+              //이제 이 데이터를 다시 기존 데이터에 할당을 시켜야 한다.
+              console.log(textData.textBox);
+              textData.textBox = todoData;
+              console.log(textData);
+              //할당 시켰다면 기존 items 데이터에 다시 재할당
+              // let itemsData
+              for (let i = 0; i<state.items.length; i++ ) {
+                if(state.items[i].id === textData.id) {
+                state.items[i] = textData;
+              }
+            }      
+            console.log(state.items)
+              //할당 시켰다면 전체 데이터와 합쳐야 한다.               
+              return Object.assign({}, state, { ...state.items })
           default: return state;
         }
     

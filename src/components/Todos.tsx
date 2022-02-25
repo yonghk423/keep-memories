@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../actions';
+import { addTodo, RemoveText } from '../actions';
 import './Todos.scss'
 
 export interface ItemReducer {
         ItemReducer : Array<object>
 }
 
-const Todos = (todos:any) => {    
+const Todos = (todos:any) => {  
+    
   const todoss:string = todos.todos.textBox
   const name:string = todos.todos.name;
 
@@ -22,6 +23,7 @@ const Todos = (todos:any) => {
     setText(''); // 인풋 초기화
   };
 
+  
   return (
     <div>
       <form className='submitBox' onSubmit={onSubmit}>
@@ -39,25 +41,25 @@ const Todos = (todos:any) => {
 //-------------------------------------------------------------------------
 
 const TodoList = React.memo(function TodoList(todoss:any) {  
+  const dispatch = useDispatch();  
   const todosss = todoss.todoss;
   console.log(todoss);  
+
+  const RemoveTextSetting = (todoId:number) => {
+    console.log(todoId);
+    dispatch(RemoveText(todoId))
+  }
+  
+
   return (
     <ul>
       {todosss.map((todo:any) => (
-        <TodoItem key={todo.id} todo={todo.text} />
+       <div key={todo.id}>
+        {todo.text}
+        <button onClick={() => RemoveTextSetting(todo.id)}>삭제</button>
+       </div> 
       ))}
     </ul>
-  );
-});
-
-//-------------------------------------------------------------------------
-const TodoItem = React.memo(function TodoItem(todo:any) {  
-  console.log(todo);
-  return (
-    <div className='todo'>
-      {todo.todo}
-      {/* <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button> */}
-    </div>
   );
 });
 

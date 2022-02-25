@@ -8,6 +8,7 @@ export const ENQUEUE_NOTIFICATION = "ENQUEUE_NOTIFICATION" as const;
 export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION" as const;
 export const ADD_INFO ="ADD_INFO" as const;
 export const REMOVE_ITEM = "REMOVE_ITEM" as const;
+export const REMOVE_TEXT ="REMOVE_TEXT" as const;
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
     console.log(itemId);
@@ -41,11 +42,10 @@ export const SetQuantity = (quantity:number, itemId:number) => {
     }
 }
 
-let nextId = 1; // todo 데이터에서 사용 할 고유 id
 export const addTodo = (text:string, name:string) => ({
   type: ADD_TODO,
   payload: {
-    id: nextId = nextId + 1, // 새 항목을 추가하고 nextId 값에 1을 더해줍니다.
+    id: Math.floor((Math.random()*1000)),
     name: name,
     text : text
   }  
@@ -84,7 +84,7 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
   return {
     type: ADD_INFO,
   payload : {
-    id: Math.floor((Math.random()*100)),
+    id: Math.floor((Math.random()*1000)),
     name: name,
     img: imgUrl,
     price: Number(price),
@@ -109,6 +109,16 @@ export const RemoveItem = (itemId:number) => {
     }
 }
 
+export const RemoveText = (todoId:number) => {
+  console.log(todoId)
+  return {
+        type: REMOVE_TEXT,
+        payload : {
+            todoId: todoId
+        }
+    }
+}
+
 
 export type Action =
   | ReturnType<typeof AddCart>
@@ -119,4 +129,5 @@ export type Action =
   | ReturnType<typeof enqueueNotification>
   | ReturnType<typeof dequeueNotification>
   | ReturnType<typeof addInfo>
-  | ReturnType<typeof RemoveItem>;
+  | ReturnType<typeof RemoveItem>
+  | ReturnType<typeof RemoveText>;
