@@ -11,7 +11,7 @@ const Header = () => {
     const state:any = useSelector<ItemReducer>(state=> state.ItemReducer);    
     return (
         <div className="HeaderBox">
-             <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="MarketName">Yonghee's photo shop</div></Link>
+             <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="MarketName">coffee coupon shop</div></Link>
                <div className="ItemBox">
                  {/* <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="ItemList">product list</div>
                  </Link> */}
