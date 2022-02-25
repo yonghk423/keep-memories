@@ -91,7 +91,7 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
     text: text,
     textBox : [{
       id: Math.floor((Math.random()*1000)),
-      name: '',
+      name: name,
       text: ''
     }]      
   }

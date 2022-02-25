@@ -56,7 +56,7 @@ const TodoList = React.memo(function TodoList(todoss:any) {
       {todosss.map((todo:any) => (
        <div key={todo.id}>
         {todo.text}
-        <button onClick={() => RemoveTextSetting(todo.id)}>삭제</button>
+        {todo.text === '' ? null : <button onClick={() => RemoveTextSetting(todo.id)}>삭제</button>}
        </div> 
       ))}
     </ul>
