@@ -6,14 +6,17 @@
   background: rgba(218, 218, 218, 1);
 
 .fullImgBox {
+  display: grid;
+  justify-items: center;
+  align-items: center;
   .fullImg {
     cursor: pointer;
-    position: relative;
-    top: 40px;
-    display: block;
+    // position: relative;
+    // top: 40px;
+    // display: block;
     height: 550px;
     width: 1200px;
-    margin: 0px auto;
+    // margin: 0px auto;
     object-fit: cover;
 
     
