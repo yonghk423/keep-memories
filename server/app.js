@@ -9,6 +9,9 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('tiny'))
 
+//라우터
+app.use('/')
+
 app.use((req, res, next) => {
     res.sendStatus(404);
 })
