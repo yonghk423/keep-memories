@@ -50,7 +50,7 @@ export const addTodo = (text:string, name:string) => ({
     text : text
   }  
 });
-
+//액션 -> 미들웨어 -> 리듀서 -> 스토어
 export const notify = (message: string, dismissTime:number = 5000) => (dispatch:any) => {
   console.log(dispatch);
   const uuid = Math.random()
