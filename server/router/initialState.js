@@ -1,7 +1,7 @@
 import express from 'express';
 import 'express-async-errors';
 
-const coupons = {
+const initialState = {
   items: [
     {
       id: 1,
@@ -90,8 +90,8 @@ const coupons = {
 
 const router = express.Router();
 
-router.get('/coupons', (req, res, next) => {
-    res.send(coupons);
+router.get('/initialState', (req, res, next) => {
+    res.send(initialState);
 })
 
 export default router;

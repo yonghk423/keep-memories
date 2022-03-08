@@ -1,3 +1,5 @@
+// import * as getAPI from '../api/GetData';
+
 //액션 타입 선언
 export const ADD_CART = "ADD_CART" as const;
 export const REMOVE_CART = "REMOVE_CART" as const;
@@ -9,6 +11,7 @@ export const DEQUEUE_NOTIFICATION = "DEQUEUE_NOTIFICATION" as const;
 export const ADD_INFO ="ADD_INFO" as const;
 export const REMOVE_ITEM = "REMOVE_ITEM" as const;
 export const REMOVE_TEXT ="REMOVE_TEXT" as const;
+
 //액션 생성 선언 함수
 export const AddCart = (itemId:number) => {
     console.log(itemId);
