@@ -17,13 +17,13 @@ function App() {
   return (
     <>    
     <BrowserRouter>
-    <Header/>    
+    {/* <Header/>     */}
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
-      <Route path="Main" element={<ShoppingCart/>}/>
-      <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>
+      {/* <Route path="ShoppingCart" element={<ShoppingCart/>}/>
+      <Route path="/DetailPage/:id" element={<DetailPage/>}></Route> */}
     </Routes>
-    <NofiticationCenter/>    
+    {/* <NofiticationCenter/>     */}
     </BrowserRouter>      
     </>
   )

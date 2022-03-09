@@ -1,6 +1,7 @@
 // import * as getAPI from '../api/GetData';
 
 //액션 타입 선언
+export const SET_DATA ="SET_DATA" as const;
 export const ADD_CART = "ADD_CART" as const;
 export const REMOVE_CART = "REMOVE_CART" as const;
 export const SET_QUANTITY ="SET_QUANTITY" as const;
@@ -13,6 +14,14 @@ export const REMOVE_ITEM = "REMOVE_ITEM" as const;
 export const REMOVE_TEXT ="REMOVE_TEXT" as const;
 
 //액션 생성 선언 함수
+export const SetData = (data:any) => {
+  console.log(data)
+  return {
+    type: SET_DATA,
+    payload: data,
+  }
+} 
+
 export const AddCart = (itemId:number) => {
     console.log(itemId);
     return {
@@ -133,4 +142,5 @@ export type Action =
   | ReturnType<typeof dequeueNotification>
   | ReturnType<typeof addInfo>
   | ReturnType<typeof RemoveItem>
-  | ReturnType<typeof RemoveText>;
+  | ReturnType<typeof RemoveText>
+  | ReturnType<typeof SetData>;

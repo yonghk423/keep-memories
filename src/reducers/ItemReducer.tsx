@@ -1,14 +1,23 @@
-import { ADD_CART, REMOVE_CART, SET_QUANTITY, ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT} from "../actions/index"
-import { initialState } from '../asset/data'
+import {SET_DATA, ADD_CART, REMOVE_CART, SET_QUANTITY, ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT} from "../actions/index"
+// import { initialState } from '../asset/data'
 import { Action } from "../actions/index"
+const  initialState = {
+  items: [],
 
-const ItemReducer = (state:any  = initialState, action:any) => {
+  cartItems: [], 
+  
+  notifications: [
+
+  ]   
+}
+
+const ItemReducer = (state:any = initialState, action:any) => {
     console.log(state);
     console.log(state.items);
     console.log(action);
     console.log(action.payload);
     
-    switch (action.type) {
+    switch (action.type) {        
         case ADD_CART:
           return Object.assign({}, state, { cartItems: [...state.cartItems, action.payload]})
         case REMOVE_CART:
