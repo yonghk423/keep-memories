@@ -19,13 +19,13 @@ const Main = () => {
   const thumImg = state.items
   console.log(thumImg);
   const [fullImg, setFullImg]:any = useState([]);
-  console.log(fullImg);
-  console.log(fullImg.items)
+  console.log(fullImg);  
 //-------------------------------------------------------------------------------    
   useEffect(() => {
     axios.get('http://localhost:8080/initialState')
     .then(response => {
-      setFullImg(response.data);
+      console.log(response.data.items[0])
+      setFullImg(response.data.items[0]);
     })
   }, [])
 
@@ -42,6 +42,11 @@ const Main = () => {
     getData();
   }, [])
 //------------------------------------------------------------------------------   
+  const imgData:string = fullImg.img  
+  console.log(imgData);
+  const idData:number = fullImg.id
+  console.log(idData);
+    
   const onImgChange = (ele: {
     id: number;
     name: string;
@@ -55,6 +60,7 @@ const Main = () => {
     }[];
 }): void => {
     console.log(ele);
+    setFullImg(ele);
   }
 
   const RemoveItemSetting = (itemId:number) => {
@@ -63,16 +69,14 @@ const Main = () => {
   }
 //----------------------------------------------------------------------------------  
     return (
-        <div className='total'>
-          {fullImg.items &&
-          <>
+        <div className='total'>  
           <div className="fullImgBox">
-            <Link to={`/DetailPage/${fullImg.items[0].id}`}>
-              <img className='fullImg' src={fullImg.items[0].img} alt=""></img>
+            <Link to={`/DetailPage/${idData}`}>
+              <img className='fullImg' src={imgData} alt=""></img>
             </Link>
             <div className='title'>please click the picture</div>
           </div>          
-          {/* <div className='thumBox'>
+          <div className='thumBox'>
             {thumImg.map((ele:any)=> (
                 <div key={ele.id}>
                   <img className='thumImg' 
@@ -81,12 +85,10 @@ const Main = () => {
                 <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button>
                 </div>                
             ))}
-          </div> */}
-          {/* <div className='infoBox'>
+          </div>
+          <div className='infoBox'>
             <InfoUpload/>
-          </div> */}
-          </>
-          }      
+          </div>
         </div>    
     )
 }

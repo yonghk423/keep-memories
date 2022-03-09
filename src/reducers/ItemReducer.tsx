@@ -17,7 +17,9 @@ const ItemReducer = (state:any = initialState, action:any) => {
     console.log(action);
     console.log(action.payload);
     
-    switch (action.type) {        
+    switch (action.type) {  
+        case SET_DATA:          
+          return Object.assign({}, state, action.payload )      
         case ADD_CART:
           return Object.assign({}, state, { cartItems: [...state.cartItems, action.payload]})
         case REMOVE_CART:
