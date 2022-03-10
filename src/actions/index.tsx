@@ -1,7 +1,7 @@
-// import * as getAPI from '../api/GetData';
-
 //액션 타입 선언
-export const SET_DATA ="SET_DATA" as const;
+export const SET_DATA = "SET_DATA" as const;
+export const SELECTED_ITEM = "SELECTED_ITEM" as const;
+export const REMOVE_SELECTED_ITEM = "REMOVE_SELECTED_ITEM" as  const
 export const ADD_CART = "ADD_CART" as const;
 export const REMOVE_CART = "REMOVE_CART" as const;
 export const SET_QUANTITY ="SET_QUANTITY" as const;
@@ -21,6 +21,21 @@ export const SetData = (data:any) => {
     payload: data,
   }
 } 
+export const selectedItem = (data:any) => {
+  console.log(data);
+  return {
+    type: SELECTED_ITEM,
+    payload: data
+  }
+}
+
+export const removeSelectedItem = (data:any) => {
+  console.log(data)
+  return {
+    type: REMOVE_SELECTED_ITEM, 
+    payload: data
+  }
+}
 
 export const AddCart = (itemId:number) => {
     console.log(itemId);
@@ -143,4 +158,7 @@ export type Action =
   | ReturnType<typeof addInfo>
   | ReturnType<typeof RemoveItem>
   | ReturnType<typeof RemoveText>
-  | ReturnType<typeof SetData>;
+  | ReturnType<typeof SetData>
+  |ReturnType<typeof selectedItem>
+  |ReturnType<typeof removeSelectedItem>;
+  

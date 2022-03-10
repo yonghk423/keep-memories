@@ -94,4 +94,19 @@ router.get('/initialState', (req, res, next) => {
     res.send(initialState);
 })
 
+router.get('/initialState/items/:id', (req, res, next) => {
+  const id = Number(req.params.id);
+  console.log(id);
+  console.log(initialState.items)
+  const detailData = initialState.items.find((ele) => (
+    ele.id === id
+  ));
+  console.log(detailData);
+  if (detailData) {
+    res.send(detailData)
+  } else {
+    res.status(404).send(`id(${id}) not found` );
+  }
+});
+
 export default router;

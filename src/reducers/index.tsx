@@ -1,6 +1,7 @@
 import  { combineReducers } from 'redux';
 import ItemReducer from './ItemReducer';
 import notificationReducer from './notificationReducer';
+import SelectedReducer from './selectedReducer';
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -13,7 +14,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-        ItemReducer, notificationReducer
+        ItemReducer, notificationReducer, SelectedReducer,
 });
 export default persistReducer(persistConfig, rootReducer);
 // export default rootReducer;

@@ -1,66 +1,84 @@
+import React, { useEffect } from 'react';
+import axios from "axios";
 import { useParams } from 'react-router-dom';
-import { AddCart, notify } from '../actions';
+import { AddCart, notify, selectedItem, removeSelectedItem } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
 import Barcode from '../service/Barcode'
 
-export interface ItemReducer {
-        ItemReducer : Array<object>
+export interface SelectedReducer {
+        SelectedReducer : Array<object>
 }
 
-export interface DataSetting {  
-  items: [{
-    price:number;
-    id:number;
-    img:string;
-    name:string;
-    text:string;
-    textBox: {
-        id: number;
-        name: string;
-        text: string;
-    }[];
-  }]
-  cartItems: [{
-    quantity:number;
-    itemId:number;
-  }]; 
-}
+// export interface DataSetting {  
+//   items: [{
+//     price:number;
+//     id:number;
+//     img:string;
+//     name:string;
+//     text:string;
+//     textBox: {
+//         id: number;
+//         name: string;
+//         text: string;
+//     }[];
+//   }]
+//   cartItems: [{
+//     quantity:number;
+//     itemId:number;
+//   }]; 
+// }
 
 const DetailPage = () => {  
   const idData = useParams()
   console.log(idData)  
-  const number:number = Number(idData.id)
-  console.log(number);
+  const ItemId:number = Number(idData.id)
+  console.log(ItemId);
 
-  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);  
+  const state:any = useSelector<SelectedReducer>(state => state.SelectedReducer); 
+  console.log(state);
   const dispatch = useDispatch();
-  const {items, cartItems}:DataSetting = state;
-  console.log(items) 
+  let {items, cartItems}:any = state;
+      
+  const getDetail = async (ItemId:number) => {
+    const response:any = await axios
+      .get(`http://localhost:8080/initialState/items/${ItemId}`)
+      .catch((err) => {
+        console.log("Err: ", err);
+      });
+      dispatch(selectedItem(response.data))   
+  };
   
-  interface Data {
-    id: number;
-    name: string;
-    img: string;
-    price: number;
-    text: string;
-    textBox: {
-        id: number;
-        name: string;
-        text: string;
-    }[];
-  }  
-  
+  useEffect(() => {
+    if(ItemId) (
+      getDetail(ItemId)
+    )
+    return () => {
+      dispatch(removeSelectedItem)
+    }
+  }, [ItemId])
 
-  const data:Data|any = items.find((ele) => (ele.id === number))
-  console.log(data);
+  // interface Data {
+  //   id: number;
+  //   name: string;
+  //   img: string;
+  //   price: number;
+  //   text: string;
+  //   textBox: {
+  //       id: number;
+  //       name: string;
+  //       text: string;
+  //   }[];
+  // }  
+  // const data:Data|any = items.find((ele) => (ele.id === number))
+  // console.log(data);
   
 
   const AddCartSetting = ( itemId:number, itemName:string ) => {    
     console.log(itemId);
     console.log(itemName);
-    const find = cartItems.filter((ele):boolean => (ele.itemId === itemId))[0]
+    const find = cartItems.filter((ele:any):boolean => (ele.itemId === itemId))[0]
     if(!find) {
       // console.log(find);
       console.log('새로운 상품 추가')
@@ -73,33 +91,31 @@ const DetailPage = () => {
     }
   }
 
-    return (
-      <>
-      <div className='container'>        
-        {data &&
-          <>
-          <div className='fullImgDetailBox'>         
-            <img className='fullImg' src={data.img}  key={data.id} alt=''/>
+    return (      
+      <div className='container'>               
+        {items.map((ele:any)=> (
+          <div key={ele.id}>          
+          <div className='fullImgDetailBox'>                   
+              <img className='fullImg' src={ele.img}  key={ele.id} alt=''/>
             <div className='barcode'>
               <Barcode/>
             </div>
           </div>
           <div className='infoBox'>
-            <div className='name'>{data.name}</div>
-            <div className='price'>{data.price}₩</div>
-            <div className='text'>{data.text}</div>
+            <div className='name'>{ele.name}</div>
+            <div className='price'>{ele.price}₩</div>
+            <div className='text'>{ele.text}</div>
             <div className='BtnBox'>
-              <button className="ItemBtn" onClick={() => AddCartSetting(data.id, data.name)}>ADD TO CART</button>
+              <button className="ItemBtn" onClick={() => AddCartSetting(items[0].id, items[0].name)}>ADD TO CART</button>
             </div>
           </div>       
           <div className='todos'>
             <div className='todosTitle'>Please leave your thoughts on the photo</div>
-            <Todos todos={data}/>
-          </div>          
-          </>
-        }             
-      </div>      
-      </>
+            {/* <Todos todos={items}/> */}
+          </div>
+          </div>             
+          ))}       
+      </div>  
     )
 }
 export default DetailPage;

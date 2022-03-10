@@ -8,7 +8,7 @@ export interface ItemReducer {
 }
 
 const Todos = (todos:any) => {  
-    
+  console.log(todos)  
   const todoss:string = todos.todos.textBox
   const name:string = todos.todos.name;
 
