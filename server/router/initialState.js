@@ -1,6 +1,23 @@
 import express from 'express';
 import 'express-async-errors';
 
+const mainImg = {
+  items: [
+    {
+      id: 3,
+      name: "spring spirit",
+      img: "https://images.velog.io/images/yonghk423/post/fdcbfd65-45c3-4372-8324-f2b3ce6f1d36/5.jpeg",
+      price: 2900,
+      text: 'Life is really simple',
+      textBox: [{
+                    id: 1,                    
+                    name: "spring spirit",
+                    text: '',
+                  }]
+    },
+  ]
+}
+
 const initialState = {
   items: [
     {
@@ -89,6 +106,10 @@ const initialState = {
 }
 
 const router = express.Router();
+
+router.get('/mainImg', (req, res, next) => {
+  res.send(mainImg);
+})
 
 router.get('/initialState', (req, res, next) => {
     res.send(initialState);

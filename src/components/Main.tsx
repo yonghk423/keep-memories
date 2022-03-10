@@ -21,13 +21,32 @@ const Main = () => {
   const [fullImg, setFullImg]:any = useState([]);
   console.log(fullImg);  
 //-------------------------------------------------------------------------------    
-  useEffect(() => {
-    axios.get('http://localhost:8080/initialState')
-    .then(response => {
-      console.log(response.data.items[0])
-      setFullImg(response.data.items[2]);
-    })
-  }, [])
+ const mainImg = async () => {
+  await axios
+    .get('http://localhost:8080/initialState')
+    .then((res) => setFullImg(res.data.items[2]))
+};
+
+useEffect(() => {
+  mainImg();
+}, []);
+
+  // useEffect(() => {
+  //   const test = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:8080/initialState')
+  //       const mainImg = await response.data.items[2]
+  //       setFullImg(mainImg)
+  //     } catch(err) {
+  //   console.log("Error >>", err);
+  // }
+  //   } 
+  //   // axios.get('http://localhost:8080/mainImg')
+  //   // .then(response => {
+      
+  //   // setFullImg(response.data.items[2]);
+  //   // })
+  // }, [])
 
   const getData = async () => {
     const response:any = await axios
