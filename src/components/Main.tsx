@@ -77,20 +77,21 @@ useEffect(() => {
 //----------------------------------------------------------------------------------  
     return (
         <div className='total'>
-          {fullImg &&
+          {/* {fullImg &&
           <div className="fullImgBox">
-            <Link to={`/DetailPage/${idData}`}>
+            
               <img className='fullImg' src={imgData} alt=""></img>
-            </Link>
             <div className='title'>please click the picture</div>
           </div>          
-          }          
+          }           */}
           <div className='thumBox'>
             {thumImg.map((ele:any)=> (
                 <div key={ele.id}>
+                <Link to={`/DetailPage/${idData}`}> 
                   <img className='thumImg' 
                     src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
                   </img>
+                </Link>   
                 <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button>
                 </div>                
             ))}
