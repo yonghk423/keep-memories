@@ -69,9 +69,7 @@ const Main = () => {
   }
 //----------------------------------------------------------------------------------  
     return (
-        <div className='total'>
-          {imgData && 
-          <>
+        <div className='total'>  
           <div className="fullImgBox">
             <Link to={`/DetailPage/${idData}`}>
               <img className='fullImg' src={imgData} alt=""></img>
@@ -91,9 +89,6 @@ const Main = () => {
           <div className='infoBox'>
             <InfoUpload/>
           </div>
-          </>
-          }  
-          
         </div>    
     )
 }
