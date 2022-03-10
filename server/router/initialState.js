@@ -91,6 +91,7 @@ const initialState = {
 const router = express.Router();
 
 router.get('/initialState', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.send(initialState);
 })
 
