@@ -21,10 +21,11 @@ const Main = () => {
   const [fullImg, setFullImg]:any = useState([]);
   console.log(fullImg);  
 //-------------------------------------------------------------------------------    
- const mainImg = async () => {
+  const mainImg = async () => {
   try {
     const response  = await axios.get('http://localhost:8080/initialState')
     const mainImg = await response.data.items[2]
+    console.log(mainImg)
     setFullImg(mainImg)
   } catch(err) {
     console.log("Error >>", err);
@@ -34,23 +35,6 @@ const Main = () => {
 useEffect(() => {
   mainImg();
 }, []);
-
-  // useEffect(() => {
-  //   const test = async () => {
-  //     try {
-  //       const response = await axios.get('http://localhost:8080/initialState')
-  //       const mainImg = await response.data.items[2]
-  //       setFullImg(mainImg)
-  //     } catch(err) {
-  //   console.log("Error >>", err);
-  // }
-  //   } 
-  //   // axios.get('http://localhost:8080/mainImg')
-  //   // .then(response => {
-      
-  //   // setFullImg(response.data.items[2]);
-  //   // })
-  // }, [])
 
   const getData = async () => {
     const response:any = await axios
@@ -92,13 +76,15 @@ useEffect(() => {
   }
 //----------------------------------------------------------------------------------  
     return (
-        <div className='total'>  
+        <div className='total'>
+          {fullImg &&
           <div className="fullImgBox">
             <Link to={`/DetailPage/${idData}`}>
               <img className='fullImg' src={imgData} alt=""></img>
             </Link>
             <div className='title'>please click the picture</div>
           </div>          
+          }          
           <div className='thumBox'>
             {thumImg.map((ele:any)=> (
                 <div key={ele.id}>
