@@ -25,7 +25,7 @@ const Main = () => {
     axios.get('http://localhost:8080/initialState')
     .then(response => {
       console.log(response.data.items[0])
-      setFullImg(response.data.items[1]);
+      setFullImg(response.data.items[2]);
     })
   }, [])
 
