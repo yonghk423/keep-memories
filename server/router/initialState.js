@@ -1,5 +1,6 @@
 import express from 'express';
 import 'express-async-errors';
+import cors from 'cors';
 
 const initialState = {
   items: [
@@ -89,6 +90,7 @@ const initialState = {
 }
 
 const router = express.Router();
+router.use(cors());
 
 router.get('/initialState', (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
