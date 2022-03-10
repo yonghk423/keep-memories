@@ -22,9 +22,13 @@ const Main = () => {
   console.log(fullImg);  
 //-------------------------------------------------------------------------------    
  const mainImg = async () => {
-  await axios
-    .get('http://localhost:8080/initialState')
-    .then((res) => setFullImg(res.data.items[2]))
+  try {
+    const response  = await axios.get('http://localhost:8080/initialState')
+    const mainImg = await response.data.items[2]
+    setFullImg(mainImg)
+  } catch(err) {
+    console.log("Error >>", err);
+  }
 };
 
 useEffect(() => {
