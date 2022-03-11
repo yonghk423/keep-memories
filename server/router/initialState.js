@@ -1,8 +1,7 @@
 import express from 'express';
 import 'express-async-errors';
-import cors from 'cors';
 
-const initialState = {
+let initialState = {
   items: [
     {
       id: 1,
@@ -92,23 +91,29 @@ const initialState = {
 const router = express.Router();
 
 router.get('/initialState', (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
     res.send(initialState);
 })
 
 router.get('/initialState/items/:id', (req, res, next) => {
   const id = Number(req.params.id);
-  console.log(id);
-  console.log(initialState.items)
+  // console.log(id);
+  // console.log(initialState.items)
   const detailData = initialState.items.find((ele) => (
     ele.id === id
   ));
-  console.log(detailData);
+  // console.log(detailData);
   if (detailData) {
     res.send(detailData)
   } else {
     res.status(404).send(`id(${id}) not found` );
   }
+});
+
+router.post('/initialState', (req, res, next) => {
+  const data = req.body
+  console.log(data)
+  initialState = Object.assign({}, initialState, {cartItems: [ data ]})
+  res.status(201).json(initialState);
 });
 
 export default router;

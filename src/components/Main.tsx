@@ -21,20 +21,20 @@ const Main = () => {
   const [fullImg, setFullImg]:any = useState([]);
   console.log(fullImg);  
 //-------------------------------------------------------------------------------    
-//   const mainImg = async () => {
-//   try {
-//     const response  = await axios.get('http://localhost:8080/initialState')
-//     const mainImg = await response.data.items[2]
-//     console.log(mainImg)
-//     setFullImg(mainImg)
-//   } catch(err) {
-//     console.log("Error >>", err);
-//   }
-// };
+  const mainImg = async () => {
+  try {
+    const response  = await axios.get('http://localhost:8080/initialState')
+    const mainImg = await response.data.items[2]
+    console.log(mainImg)
+    setFullImg(mainImg)
+  } catch(err) {
+    console.log("Error >>", err);
+  }
+};
 
-// useEffect(() => {
-//   mainImg();
-// }, []);
+useEffect(() => {
+  mainImg();
+}, []);
 
   const getData = async () => {
     const response:any = await axios
@@ -77,23 +77,22 @@ const Main = () => {
 //----------------------------------------------------------------------------------  
     return (
         <div className='total'>
-          {/* {fullImg &&
-          <div className="fullImgBox">
-               <img className='fullImg' src={imgData} alt=""></img>
-             <Link to={`/DetailPage/${fullImg.items[0].id}`}>
-               <img className='fullImg' src={fullImg.items[0].img} alt=""></img>
+          {fullImg &&
+          <div className="fullImgBox">              
+             <Link to={`/DetailPage/${fullImg.id}`}>
+               <img className='fullImg' src={fullImg.img} alt=""></img>
              </Link>
              <div className='title'>please click the picture</div>
           </div>          
-          }           */}
+          }          
           <div className='thumBox'>
             {thumImg.map((ele:any)=> (
                 <div key={ele.id}>
-                <Link to={`/DetailPage/${ele.id}`}> 
+                {/* <Link to={`/DetailPage/${ele.id}`}>  */}
                   <img className='thumImg' 
                     src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
                   </img>
-                </Link>   
+                {/* </Link>    */}
                 <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button>
                 </div>                
             ))}
