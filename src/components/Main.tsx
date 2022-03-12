@@ -15,9 +15,7 @@ const Main = () => {
   const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
   console.log(state);
   const dispatch = useDispatch();  
-  console.log(state.items);
   const thumImg = state.items
-  console.log(thumImg);
   const [fullImg, setFullImg]:any = useState([]);
   console.log(fullImg);  
 //-------------------------------------------------------------------------------    

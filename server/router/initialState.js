@@ -116,7 +116,7 @@ router.post('/initialState/', (req, res, next) => {
     itemdId,
     quantity
   };
-  initialState = Object.assign({}, initialState, {cartItems: [ data ]})
+  initialState = Object.assign({}, initialState, { cartItems: [...initialState.cartItems, data ]})
   console.log(initialState);
   res.status(201).send(data)
   // console.log(data)

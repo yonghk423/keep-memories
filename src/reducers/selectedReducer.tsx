@@ -1,5 +1,4 @@
-import { SELECTED_ITEM, REMOVE_SELECTED_ITEM } from '../actions/index'
-
+import { SELECTED_ITEM} from '../actions/index'
 import { Action } from '../actions/index'
 
 const  initialState = {
@@ -17,12 +16,12 @@ const SelectedReducer = (state = initialState, action:any) => {
     console.log(action.payload);
     
     switch (action.type) {
+        // case ADD_CART:
+        //   console.log(action.addcart.data);
+        //   return Object.assign({}, state, {cartItems: [action.addcart.data]})
         case SELECTED_ITEM:
           console.log(action.payload)
-          return Object.assign({}, state, {items:[ action.payload ]})
-        case REMOVE_SELECTED_ITEM:
-          console.log(action.payload)
-          return {};
+          return Object.assign({}, state, {items:[ action.payload ]})        
         default: return state;            
     }
 }

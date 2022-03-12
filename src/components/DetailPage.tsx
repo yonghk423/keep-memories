@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import { AddCart, notify, selectedItem, removeSelectedItem } from '../actions';
+import { AddCart, notify, selectedItem, } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
@@ -53,10 +53,7 @@ const DetailPage = () => {
   useEffect(() => {
     if(ItemId) (
       getDetail(ItemId)
-    )
-    return () => {
-      dispatch(removeSelectedItem)
-    }
+    )   
   }, [ItemId])
 
   // interface Data {
