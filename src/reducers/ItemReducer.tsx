@@ -15,15 +15,13 @@ const  initialState = {
 
 const ItemReducer = (state:any = initialState, action:any) => {
     console.log(state);
-    console.log(state.items);
-    console.log(action);
-    console.log(action.payload);
-    
+    console.log(action);    
     switch (action.type) {  
         case SET_DATA:          
           return Object.assign({}, state, action.payload)             
         case ADD_CART:
-          return Object.assign({}, state, { cartItems: [...state.cartItems, action.payload]})
+          console.log(action.addcart.data);
+          return Object.assign({}, state, {cartItems: [action.addcart.data]})
         case REMOVE_CART:
           return Object.assign({}, state, {
             cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.payload.itemId )

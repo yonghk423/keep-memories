@@ -1,3 +1,5 @@
+import axios from "axios";
+
 //액션 타입 선언
 export const SET_DATA = "SET_DATA" as const;
 export const SELECTED_ITEM = "SELECTED_ITEM" as const;
@@ -37,15 +39,25 @@ export const removeSelectedItem = (data:any) => {
   }
 }
 
-export const AddCart = (itemId:number) => {
-    console.log(itemId);
-    return {
-        type: ADD_CART,
-        payload: {
-            quantity: 1,
-            itemId
-        }
-    }
+// export const AddCart = (itemId:number) => {
+//     console.log(itemId);
+//     return {
+//         type: ADD_CART,
+//         payload: {
+//             quantity: 1,
+//             itemId
+//         }
+//     }
+// }
+
+export const AddCart = (itemdId:number) => async (dispatch:any) => {
+  try {
+    const addcart = await axios.post('http://localhost:8080/initialState/', { itemdId, quantity: 1, })
+    dispatch({type: ADD_CART, addcart})
+    console.log(addcart)    
+  } catch(err) {
+    console.log("Error >>", err);
+  }
 }
 
 export const RemoveCart = (itemId:number) => {
