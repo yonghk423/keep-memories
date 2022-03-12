@@ -128,6 +128,12 @@ router.delete('/initialState/cartItems/:id', (req, res, next) => {
   const id = req.params.id;
   console.log(id)
   res.send(id)
+  initialState = Object.assign({}, initialState, {
+    cartItems: initialState.cartItems.filter((ele) => ele.id !== Number(id))
+  })
 });
 
+// Object.assign({}, state, {
+//             cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.payload.itemId )
+//           })
 export default router;
