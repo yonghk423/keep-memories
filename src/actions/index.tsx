@@ -50,9 +50,9 @@ export const removeSelectedItem = (data:any) => {
 //     }
 // }
 
-export const AddCart = (itemdId:number) => async (dispatch:any) => {
+export const AddCart = (id:number) => async (dispatch:any) => {
   try {
-    const addcart = await axios.post('http://localhost:8080/initialState/', { itemdId, quantity: 1, })
+    const addcart = await axios.post('http://localhost:8080/initialState/', { id, quantity: 1, })
     dispatch({type: ADD_CART, addcart})
     console.log(addcart)    
   } catch(err) {
@@ -60,12 +60,12 @@ export const AddCart = (itemdId:number) => async (dispatch:any) => {
   }
 }
 
-export const RemoveCart = (itemId:number) => {
-    console.log(itemId);
+export const RemoveCart = (id:number) => {
+    console.log(id);
     return {
         type: REMOVE_CART,
         payload : {
-            itemId
+            id
         }
     }
 }

@@ -72,14 +72,14 @@ const DetailPage = () => {
   // console.log(data);
   
 
-  const AddCartSetting = ( itemId:number, itemName:string ) => {    
-    console.log(itemId);
+  const AddCartSetting = ( id:number, itemName:string ) => {    
+    console.log(id);
     console.log(itemName);
-    const find = cartItems.filter((ele:any):boolean => (ele.itemId === itemId))[0]
+    const find = cartItems.filter((ele:any):boolean => (ele.id === id))[0]
     if(!find) {
       // console.log(find);
       console.log('새로운 상품 추가')
-      dispatch(AddCart(itemId))
+      dispatch(AddCart(id))
       dispatch(notify(`${itemName}이(가) 추가 되었습니다.`))
     }
     else {

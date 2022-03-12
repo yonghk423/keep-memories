@@ -19,7 +19,7 @@ export interface DataSetting {
   }]
   cartItems: [{
     quantity:number;
-    itemId:number;
+    id:number;
   }]; //object 형식에 quantity itemdId price 속성이 없다는 오류 원인
 }
 
@@ -38,10 +38,13 @@ const CartMain = () => {
   console.log({items, cartItems})
   console.log(items)
   console.log(cartItems)
-  const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.itemId).indexOf(ele.id) > -1)
+
+  const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.id).indexOf(ele.id) > -1)
   console.log(MatchingItems);
-  let data = cartItems.map((ele) => (ele.itemId))
+  
+  let data = cartItems.map((ele) => (ele.id))
   console.log(data);
+  
   const [checkedItems, setCheckedItems]= useState(data);
   console.log(checkedItems);
 
@@ -77,7 +80,7 @@ const CartMain = () => {
   const handleAllCheck = (checked:boolean) => {
     console.log(checked)
     if(checked) {
-      setCheckedItems(cartItems.map((ele)=> (ele.itemId)))
+      setCheckedItems(cartItems.map((ele)=> (ele.id)))
     }
     else {
       setCheckedItems([]);
@@ -114,7 +117,7 @@ const CartMain = () => {
           ) : (
               <>  
                 {MatchingItems.map((item:any) => {
-                const quantity = cartItems.filter((ele) => ele.itemId === item.id)[0].quantity  
+                const quantity = cartItems.filter((ele) => ele.id === item.id)[0].quantity  
                 return <li className="CartContainer" key={item.id}> 
                   <input 
                     className="Check" 
