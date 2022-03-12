@@ -11,6 +11,10 @@ export interface SelectedReducer {
         SelectedReducer : Array<object>
 }
 
+export interface ItemReducer {
+        ItemReducer : Array<object>
+}
+
 // export interface DataSetting {  
 //   items: [{
 //     price:number;
@@ -36,7 +40,7 @@ const DetailPage = () => {
   const ItemId:number = Number(idData.id)
   console.log(ItemId);
 
-  const state:any = useSelector<SelectedReducer>(state => state.SelectedReducer); 
+  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
   console.log(state);
   const dispatch = useDispatch();
   let {items, cartItems}:any = state;
@@ -108,7 +112,7 @@ const DetailPage = () => {
           </div>       
           <div className='todos'>
             <div className='todosTitle'>Please leave your thoughts on the photo</div>
-            {/* <Todos todos={items}/> */}
+            <Todos todos={items}/>
           </div>
           </div>             
           ))}       

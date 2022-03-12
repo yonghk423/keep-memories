@@ -1,5 +1,6 @@
 import {SET_DATA, ADD_CART, REMOVE_CART, SET_QUANTITY, 
-  ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT,  
+  ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT, 
+  SELECTED_ITEM 
 } from "../actions/index"
 // import { initialState } from '../asset/data'
 import { Action } from "../actions/index"
@@ -16,9 +17,12 @@ const  initialState = {
 const ItemReducer = (state:any = initialState, action:any) => {
     console.log(state);
     console.log(action);    
-    switch (action.type) {  
+    switch (action.type) {         
         case SET_DATA:          
-          return Object.assign({}, state, action.payload)             
+          return Object.assign({}, state, action.payload)
+        case SELECTED_ITEM:
+          console.log(action.payload)
+          return Object.assign({}, state, {items:[ action.payload ]})              
         case ADD_CART:
           console.log(action.addcart.data);
           return Object.assign({}, state, {cartItems: [action.addcart.data]})
@@ -32,7 +36,7 @@ const ItemReducer = (state:any = initialState, action:any) => {
             cartItems: [...state.cartItems.slice(0, idx), action.payload,
             ...state.cartItems.slice(idx + 1)]
           });
-        case ADD_TODO:
+        case ADD_TODO:          
           // name이 같은 데이터를 찾는다 
           let data = state.items.find((ele:any) => (ele.name === action.payload.name))
           console.log(data); 

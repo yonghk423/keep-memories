@@ -56,15 +56,6 @@ export const RemoveCart = (id:number) => async (dispatch:any) => {
     console.log("Error >>", err);
   }
 }
-// export const RemoveCart = (id:number) => {
-//     console.log(id);
-//     return {
-//         type: REMOVE_CART,
-//         payload : {
-//             id
-//         }
-//     }
-// }
 
 export const SetQuantity = (quantity:number, itemId:number) => {
     console.log(quantity, itemId);
@@ -77,14 +68,18 @@ export const SetQuantity = (quantity:number, itemId:number) => {
     }
 }
 
-export const addTodo = (text:string, name:string) => ({
-  type: ADD_TODO,
+export const addTodo = (text:string, name:string) => {
+  console.log(text, name)
+  return {
+    type: ADD_TODO,
   payload: {
     id: Math.floor((Math.random()*1000)),
     name: name,
     text : text
-  }  
-});
+    }
+  }
+}
+
 //액션 -> 미들웨어 -> 리듀서 -> 스토어
 export const notify = (message: string, dismissTime:number = 5000) => (dispatch:any) => {
   console.log(dispatch);
