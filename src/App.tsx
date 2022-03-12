@@ -23,7 +23,7 @@ function App() {
       <Route path="ShoppingCart" element={<ShoppingCart/>}/>
       <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>
     </Routes>
-    {/* <NofiticationCenter/>     */}
+    <NofiticationCenter/>    
     </BrowserRouter>      
     </>
   )
