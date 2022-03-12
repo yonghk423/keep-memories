@@ -48,10 +48,10 @@ const CartMain = () => {
   const [checkedItems, setCheckedItems]= useState(data);
   console.log(checkedItems);
 
-  const RemoveCartSetting = (itemId:number) => {
-    console.log(itemId)
-    setCheckedItems(checkedItems.filter((ele) => ele !== itemId))
-    dispatch(RemoveCart(itemId))
+  const RemoveCartSetting = (id:number) => {
+    console.log(id)
+    setCheckedItems(checkedItems.filter((ele) => ele !== id))
+    dispatch(RemoveCart(id))
   } 
   
   const SetQuantitySetting = ( quantity: number, itemId: number) => {

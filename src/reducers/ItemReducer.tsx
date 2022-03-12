@@ -22,10 +22,10 @@ const ItemReducer = (state:any = initialState, action:any) => {
         case ADD_CART:
           console.log(action.addcart.data);
           return Object.assign({}, state, {cartItems: [action.addcart.data]})
-        case REMOVE_CART:
+        case REMOVE_CART:         
           return Object.assign({}, state, {
-            cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.payload.itemId )
-          })
+            cartItems: [ state.cartItems.filter((ele:any) => ele.id !== action.removecart.data )]
+          })          
         case SET_QUANTITY:
             let idx = state.cartItems.findIndex((ele:any) => ele.itemId === action.payload.itemId)
           return Object.assign({}, state, {

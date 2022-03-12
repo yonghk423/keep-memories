@@ -118,10 +118,7 @@ router.post('/initialState/', (req, res, next) => {
   };
   initialState = Object.assign({}, initialState, { cartItems: [...initialState.cartItems, data ]})
   console.log(initialState);
-  res.status(201).send(data)
-  // console.log(data)
-  // initialState = Object.assign({}, initialState, {cartItems: [ data ]})
-  // res.status(201).send(initialState);
+  res.status(201).send(data)  
 });
 
 router.delete('/initialState/cartItems/:id', (req, res, next) => {
@@ -133,7 +130,4 @@ router.delete('/initialState/cartItems/:id', (req, res, next) => {
   })
 });
 
-// Object.assign({}, state, {
-//             cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.payload.itemId )
-//           })
 export default router;

@@ -39,17 +39,6 @@ export const removeSelectedItem = (data:any) => {
   }
 }
 
-// export const AddCart = (itemId:number) => {
-//     console.log(itemId);
-//     return {
-//         type: ADD_CART,
-//         payload: {
-//             quantity: 1,
-//             itemId
-//         }
-//     }
-// }
-
 export const AddCart = (id:number) => async (dispatch:any) => {
   try {
     const addcart = await axios.post('http://localhost:8080/initialState/', { id, quantity: 1, })
@@ -59,16 +48,23 @@ export const AddCart = (id:number) => async (dispatch:any) => {
     console.log("Error >>", err);
   }
 }
-
-export const RemoveCart = (id:number) => {
-    console.log(id);
-    return {
-        type: REMOVE_CART,
-        payload : {
-            id
-        }
-    }
+export const RemoveCart = (id:number) => async (dispatch:any) => {
+  try {
+    const removecart = await axios.delete(`http://localhost:8080/initialState/cartItems/${id}`)
+    dispatch({type: REMOVE_CART, removecart})
+  } catch(err) {
+    console.log("Error >>", err);
+  }
 }
+// export const RemoveCart = (id:number) => {
+//     console.log(id);
+//     return {
+//         type: REMOVE_CART,
+//         payload : {
+//             id
+//         }
+//     }
+// }
 
 export const SetQuantity = (quantity:number, itemId:number) => {
     console.log(quantity, itemId);
