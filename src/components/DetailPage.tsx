@@ -39,8 +39,7 @@ export interface ItemReducer {
 const DetailPage = () => {
   const idData = useParams()
   const ItemId:number = Number(idData.id)
-  const navigate = useNavigate();
-  
+  console.log(ItemId);
   const detailData = async () => {
     const response:any = await axios
     .get('http://localhost:8080/initialState')
@@ -94,7 +93,7 @@ const DetailPage = () => {
   }  
   console.log(items);
   console.log(ItemId);
-  const data:Data|any = items.find((ele:any) => (ele.id === ItemId))
+  const data:Data|any = textBox.find((ele:any) => (ele.id === ItemId))
   console.log(data);
   
 
