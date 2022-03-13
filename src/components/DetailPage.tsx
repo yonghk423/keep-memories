@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import { AddCart, notify, selectedItem, } from '../actions';
+import { AddCart, notify, selectedItem, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
 import Barcode from '../service/Barcode'
+import CartMain from './CartMain';
 
 export interface SelectedReducer {
         SelectedReducer : Array<object>
@@ -35,16 +36,33 @@ export interface ItemReducer {
 // }
 
 const DetailPage = () => {  
+  const detailData = async () => {
+    const response:any = await axios
+    .get('http://localhost:8080/initialState')
+    .catch((err) => {
+      console.log("Err", err);
+    });
+    dispatch(SetData(response.data));
+  }
+
+  useEffect(() => {
+    detailData();
+  }, [])
+
   const idData = useParams()
   console.log(idData)  
   const ItemId:number = Number(idData.id)
   console.log(ItemId);
 
-  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
+  const state:any = useSelector<SelectedReducer>(state => state.SelectedReducer);
+  const textState:any = useSelector<ItemReducer>(state => state.ItemReducer);
+  console.log(textState);
   console.log(state);
   const dispatch = useDispatch();
   let {items, cartItems}:any = state;
-      
+  let textBox = textState.items
+  console.log(textBox);
+
   const getDetail = async (ItemId:number) => {
     const response:any = await axios
       .get(`http://localhost:8080/initialState/items/${ItemId}`)
@@ -84,14 +102,17 @@ const DetailPage = () => {
       // console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(id))
-      dispatch(notify(`${itemName}이(가) 추가 되었습니다.`))
+      dispatch(notify(`${itemName}이(가) 추가 되었습니다.`))      
     }
     else {
       console.log('기존 리스트와 일치하는 상품')
       dispatch(notify(`이미 추가된 상품입니다.`))
     }
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500)
   }
-
+  
     return (      
       <div className='container'>               
         {items.map((ele:any)=> (
@@ -112,10 +133,13 @@ const DetailPage = () => {
           </div>       
           <div className='todos'>
             <div className='todosTitle'>Please leave your thoughts on the photo</div>
-            <Todos todos={items}/>
+            <Todos todos={textBox}/>
           </div>
           </div>             
-          ))}       
+          ))}
+          <div className='cartMainBox'>
+            <CartMain/>
+          </div>       
       </div>  
     )
 }

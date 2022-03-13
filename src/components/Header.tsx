@@ -15,7 +15,11 @@ const Header = () => {
                <div className="ItemBox">
                  {/* <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="ItemList">product list</div>
                  </Link> */}
-                 <Link to="ShoppingCart" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="ItemCount">shopping cart {state.cartItems.length} </div></Link>
+                <Link to="ShoppingCart" style={{ textDecoration: 'none', color:'#f5f5f5' }}>
+                  <div className="ItemCount">shopping cart
+                    {/* {state.cartItems.length}  */}
+                  </div>
+                 </Link>
                </div>             
          </div>
         )            

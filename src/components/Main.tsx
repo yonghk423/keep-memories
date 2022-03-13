@@ -40,7 +40,7 @@ useEffect(() => {
     .catch((err) => {
       console.log("Err", err);
     });
-    dispatch(SetData(response.data));
+    dispatch(SetData(response.data));    
   }
 
   useEffect(() => {

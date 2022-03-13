@@ -1,6 +1,6 @@
 import {SET_DATA, ADD_CART, REMOVE_CART, SET_QUANTITY, 
   ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT, 
-  SELECTED_ITEM 
+  // SELECTED_ITEM 
 } from "../actions/index"
 // import { initialState } from '../asset/data'
 import { Action } from "../actions/index"
@@ -20,9 +20,9 @@ const ItemReducer = (state:any = initialState, action:any) => {
     switch (action.type) {         
         case SET_DATA:          
           return Object.assign({}, state, action.payload)
-        case SELECTED_ITEM:
-          console.log(action.payload)
-          return Object.assign({}, state, {items:[ action.payload ]})              
+        // case SELECTED_ITEM:
+        //   console.log(action.payload)
+        //   return Object.assign({}, state, {items:[ action.payload ]})              
         case ADD_CART:
           console.log(action.addcart.data);
           return Object.assign({}, state, {cartItems: [action.addcart.data]})

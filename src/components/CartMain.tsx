@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { RemoveCart, SetQuantity } from '../actions';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { RemoveCart, SetQuantity, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.scss';
 import OrderTotal from './OrderTotal';
@@ -31,13 +32,28 @@ export interface Item {
   id: number
 }
 
-const CartMain = () => {  
+const CartMain = () => {    
+
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
   console.log({items, cartItems})
   console.log(items)
   console.log(cartItems)
+  
+  const cartData = async () => {
+    const response:any = await axios
+    .get('http://localhost:8080/initialState')
+    .catch((err) => {
+      console.log("Err", err);
+    });
+    dispatch(SetData(response.data));
+  }
+
+  useEffect(() => {
+    cartData();
+  }, [])
+  
 
   const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.id).indexOf(ele.id) > -1)
   console.log(MatchingItems);
@@ -52,6 +68,7 @@ const CartMain = () => {
     console.log(id)
     setCheckedItems(checkedItems.filter((ele) => ele !== id))
     dispatch(RemoveCart(id))
+    window.location.reload();
   } 
   
   const SetQuantitySetting = ( quantity: number, itemId: number) => {
@@ -131,7 +148,7 @@ const CartMain = () => {
                 <div className="Item">
                   <div>{item.name}</div>
                   <div>{item.price}</div>
-                </div>
+                </div>                
                 <div className="Settiing">
                   <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
                   <input 
@@ -143,7 +160,7 @@ const CartMain = () => {
                     SetQuantitySetting(Number(e.target.value), item.id)
                   }}
                   />
-                </div>
+                </div>                
               </li>
               })}
               {/* <OrderTotal total={total.price} totalQuantity={total.quantity} /> */}

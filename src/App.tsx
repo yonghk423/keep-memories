@@ -20,7 +20,7 @@ function App() {
     <Header/>    
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
-      <Route path="ShoppingCart" element={<ShoppingCart/>}/>
+      {/* <Route path="ShoppingCart" element={<ShoppingCart/>}/> */}
       <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>
     </Routes>
     <NofiticationCenter/>    

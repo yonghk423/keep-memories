@@ -1,26 +1,26 @@
-// import { SELECTED_ITEM} from '../actions/index'
+import { SELECTED_ITEM} from '../actions/index'
 import { Action } from '../actions/index'
 
-// const  initialState = {
-//   items: [],
+const  initialState = {
+  items: [],
 
-//   cartItems: [], 
+  cartItems: [], 
   
-//   notifications: [
+  notifications: [
 
-//   ]   
-// }
+  ]   
+}
 
-// const SelectedReducer = (state = initialState, action:any) => {
-//     console.log(action);
-//     console.log(action.payload);
+const SelectedReducer = (state = initialState, action:any) => {
+    console.log(action);
+    console.log(action.payload);
     
-//     switch (action.type) {        
-//         case SELECTED_ITEM:
-//           console.log(action.payload)
-//           return Object.assign({}, state, {items:[ action.payload ]})        
-//         default: return state;            
-//     }
-// }
+    switch (action.type) {        
+        case SELECTED_ITEM:
+          console.log(action.payload)
+          return Object.assign({}, state, {items:[ action.payload ]})        
+        default: return state;            
+    }
+}
 
-// export default SelectedReducer;
+export default SelectedReducer;
