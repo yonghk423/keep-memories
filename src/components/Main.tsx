@@ -4,6 +4,8 @@ import { SetData } from '../actions/index';
 import { useSelector, useDispatch} from 'react-redux';
 import { RemoveItem } from '../actions/index'
 import './Main.scss';
+import { useNavigate } from 'react-router-dom';
+
 // import { initialState } from '../asset/data'
 import { Link } from 'react-router-dom';
 import InfoUpload from './InfoUpload';
@@ -11,18 +13,20 @@ import InfoUpload from './InfoUpload';
 export interface ItemReducer {
         ItemReducer : Array<object>
 }
+
 const Main = () => {
+  const navigate = useNavigate();  
   const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
   console.log(state);
   const dispatch = useDispatch();  
   const thumImg = state.items
   const [fullImg, setFullImg]:any = useState([]);
   console.log(fullImg);  
-//-------------------------------------------------------------------------------    
+//------------------------------------------------------------------------------- 
   const mainImg = async () => {
   try {
     const response  = await axios.get('http://localhost:8080/initialState')
-    const mainImg = await response.data.items[2]
+    const mainImg = await response.data.items[2]    
     console.log(mainImg)
     setFullImg(mainImg)
   } catch(err) {
@@ -40,12 +44,13 @@ useEffect(() => {
     .catch((err) => {
       console.log("Err", err);
     });
-    dispatch(SetData(response.data));    
+    dispatch(SetData(response.data));     
   }
-
+  
   useEffect(() => {
     getData();
-  }, [])
+  }, [fullImg])
+
 //------------------------------------------------------------------------------   
   const imgData:string = fullImg.img  
   console.log(imgData);
@@ -63,23 +68,30 @@ useEffect(() => {
         name: string;
         text: string;
     }[];
-}): void => {
+}): void => {    
     console.log(ele);
-    setFullImg(ele);
+    setFullImg(ele);    
   }
 
   const RemoveItemSetting = (itemId:number) => {
     console.log(itemId)
     dispatch(RemoveItem(itemId))
   }
+  const onClick = () => {
+      navigate(`/DetailPage/${fullImg.id}`)
+      window.location.reload()
+    }   
 //----------------------------------------------------------------------------------  
     return (
         <div className='total'>
           {fullImg &&
-          <div className="fullImgBox">              
-             <Link to={`/DetailPage/${fullImg.id}`}>
+          <div className="fullImgBox">
+            <div onClick={onClick}>
                <img className='fullImg' src={fullImg.img} alt=""></img>
-             </Link>
+            </div>                    
+             {/* <Link to={`/DetailPage/${fullImg.id}`}>
+               <img className='fullImg' src={fullImg.img} alt=""></img>
+             </Link> */}
              <div className='title'>please click the picture</div>
           </div>          
           }          

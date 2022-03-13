@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { AddCart, notify, selectedItem, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
 import Barcode from '../service/Barcode'
 import CartMain from './CartMain';
+
 
 export interface SelectedReducer {
         SelectedReducer : Array<object>
@@ -35,24 +36,25 @@ export interface ItemReducer {
 //   }]; 
 // }
 
-const DetailPage = () => {  
+const DetailPage = () => {
+  const idData = useParams()
+  const ItemId:number = Number(idData.id)
+  const navigate = useNavigate();
+  
   const detailData = async () => {
     const response:any = await axios
     .get('http://localhost:8080/initialState')
     .catch((err) => {
       console.log("Err", err);
     });
-    dispatch(SetData(response.data));
-  }
+    dispatch(SetData(response.data));    
+  }  
 
   useEffect(() => {
-    detailData();
+    detailData();    
   }, [])
 
-  const idData = useParams()
-  console.log(idData)  
-  const ItemId:number = Number(idData.id)
-  console.log(ItemId);
+  
 
   const state:any = useSelector<SelectedReducer>(state => state.SelectedReducer);
   const textState:any = useSelector<ItemReducer>(state => state.ItemReducer);
@@ -69,7 +71,7 @@ const DetailPage = () => {
       .catch((err) => {
         console.log("Err: ", err);
       });
-      dispatch(selectedItem(response.data))   
+      dispatch(selectedItem(response.data))        
   };
   
   useEffect(() => {
@@ -78,20 +80,22 @@ const DetailPage = () => {
     )   
   }, [ItemId])
 
-  // interface Data {
-  //   id: number;
-  //   name: string;
-  //   img: string;
-  //   price: number;
-  //   text: string;
-  //   textBox: {
-  //       id: number;
-  //       name: string;
-  //       text: string;
-  //   }[];
-  // }  
-  // const data:Data|any = items.find((ele) => (ele.id === number))
-  // console.log(data);
+  interface Data {
+    id: number;
+    name: string;
+    img: string;
+    price: number;
+    text: string;
+    textBox: {
+        id: number;
+        name: string;
+        text: string;
+    }[];
+  }  
+  console.log(items);
+  console.log(ItemId);
+  const data:Data|any = items.find((ele:any) => (ele.id === ItemId))
+  console.log(data);
   
 
   const AddCartSetting = ( id:number, itemName:string ) => {    
@@ -133,7 +137,7 @@ const DetailPage = () => {
           </div>       
           <div className='todos'>
             <div className='todosTitle'>Please leave your thoughts on the photo</div>
-            <Todos todos={textBox}/>
+            <Todos todos={data}/>
           </div>
           </div>             
           ))}

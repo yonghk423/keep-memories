@@ -9,9 +9,9 @@ export interface ItemReducer {
 
 const Todos = (todos:any) => {  
   console.log(todos)  
-  const todoss:string = todos.todos[0].textBox
+  const todoss:string = todos.todos.textBox
   console.log(todoss)
-  const name:string = todos.todos[0].name;
+  const name:string = todos.todos.name;
   console.log(name);
 
   const dispatch = useDispatch();
