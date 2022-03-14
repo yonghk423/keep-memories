@@ -9,11 +9,11 @@ let initialState = {
       img: "https://images.velog.io/images/yonghk423/post/00995394-70d4-480e-bf98-e699dffda06f/red16.jpeg",
       price: 9900,
       text: 'Live life to the fullest',
-      textBox: [{
+      textBox: [JSON.stringify({
                     id: 1,
                     name: "leisure time",
                     text: '',
-                  }]  
+                  })]  
     },
     {
       id: 2,
@@ -130,5 +130,32 @@ router.delete('/initialState/cartItems/:id', (req, res, next) => {
   })
 });
 
+router.post('/initialState/items' , (req, res, next) => {
+  const { text, name } = req.body;
+  console.log({text,name})
+  let textBox = {
+    text: text,
+    name: name
+  };
+  //같은 name을 찾고 같은 배열을 데이터 배열을 찾는다.
+  let data1 = initialState.items.find((ele)=> (ele.name === textBox.name))
+  console.log(data1)
+  console.log(data1.textBox)
+  //찾은 배열안에 req.body 값을 넣는다.
+  let items = Object.assign({}, data1, { textBox: [ ...data1.textBox, textBox ]})
+  console.log(items)
+  //그리고 다시 기존 데이터와 합친다
+  // let addDataTotal = Object.assign({}, initialState, { items: [...initialState.items], items })
+  // console.log(addDataTotal)
+  for (let i = 0; i<initialState.items.length; i++ ) {
+                if(initialState.items[i].name === items.name) {
+                initialState.items[i] = items
+              }
+            }
+  initialState = Object.assign({}, initialState)
+  console.log(initialState)
+  res.status(201).send(initialState)                    
+
+})
 
 export default router;

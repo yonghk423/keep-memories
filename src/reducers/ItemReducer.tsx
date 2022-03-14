@@ -40,12 +40,12 @@ const ItemReducer = (state:any = initialState, action:any) => {
           // name이 같은 데이터를 찾는다 
           let data = state.items.find((ele:any) => (ele.name === action.payload.name))
           console.log(data); 
-          // data라는 변수에 action.payload 넣고
+          // addData라는 변수에 action.payload 넣고
           const addData = Object.assign({}, data, { textBox: [...data.textBox, action.payload]})
           console.log(addData);
           // 데이터를 전체 state 값들과 합친다.
-          const addDataTotal = Object.assign({}, state, { items: [...state.items, addData]})
-          console.log(addDataTotal);   
+          // const addDataTotal = Object.assign({}, state, { items: [...state.items, addData]})
+          // console.log(addDataTotal);   
               for (let i = 0; i<state.items.length; i++ ) {
                 if(state.items[i].name === addData.name) {
                 state.items[i] = addData
