@@ -55,7 +55,8 @@ const ItemReducer = (state:any = initialState, action:any) => {
           
           case ADD_INFO:
             //받은 데이터를 items 배열에 추가 시킨다
-            return Object.assign({}, state, { items : [...state.items, action.payload] })       
+            console.log(action.addinfo.data)
+            return Object.assign({}, state, { items : [...state.items, action.addinfo.data] })       
           case REMOVE_ITEM:
             return Object.assign(
               {}, 

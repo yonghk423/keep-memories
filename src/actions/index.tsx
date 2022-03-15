@@ -109,11 +109,28 @@ export const dequeueNotification = () => {
   }
 }
 
-export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => {
-  console.log(name, imgUrl, price, text, textBox)
-  return {
-    type: ADD_INFO,
-  payload : {
+// export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => {
+//   console.log(name, imgUrl, price, text, textBox)
+//   return {
+//     type: ADD_INFO,
+//   payload : {
+//     id: Math.floor((Math.random()*1000)),
+//     name: name,
+//     img: imgUrl,
+//     price: Number(price),
+//     text: text,
+//     textBox : [{
+//       id: Math.floor((Math.random()*1000)),
+//       name: name,
+//       text: ''
+//     }]      
+//   }
+//   }  
+// }
+
+export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => async (dispatch:any) => {
+  try {
+    const addinfo = await axios.post('http://localhost:8080/initialState/info', {
     id: Math.floor((Math.random()*1000)),
     name: name,
     img: imgUrl,
@@ -124,9 +141,12 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
       name: name,
       text: ''
     }]      
+    })
+    dispatch({type: ADD_INFO, addinfo})
+    console.log(addinfo)
+  } catch(err) {
+    console.log("Error >>", err);
   }
-  }
-  
 }
 
 export const RemoveItem = (itemId:number) => {
