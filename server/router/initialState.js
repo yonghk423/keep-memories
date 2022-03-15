@@ -130,7 +130,7 @@ router.delete('/initialState/cartItems/:id', (req, res, next) => {
   })
 });
 
-router.post('/initialState/items' , (req, res, next) => {
+router.post('/initialState/addTodo' , (req, res, next) => {
   const {id, text, name } = req.body;
   console.log({text,name})
   let textBox = {
@@ -181,9 +181,31 @@ router.delete('/initialState/items/:id/textBox/:id', (req, res, next) => {
               }
             }      
             console.log(initialState.items)
-  initialState = Object.assign({}, initialState,  {items : [ ...initialState.items ] })
+  initialState = Object.assign({}, initialState,  { items : [ ...initialState.items ] })
   console.log(initialState);
   res.sendStatus(204);                        
 });
+
+router.post('/initialState/info', (req, res, next) => {
+  const items = req.body
+  console.log(items)
+  initialState = Object.assign({}, initialState, { items : [...initialState.items, items]})
+  console.log(initialState);
+  res.status(201).send(initialState)
+})
+
+router.delete('/initialState/items/:id', (req, res, next) => {
+  const id = Number(req.params.id);
+  console.log(id);
+  initialState = Object.assign(
+              {}, 
+              initialState,
+              { items: initialState.items.filter((ele) => ele.id !== id ) },
+              { cartItems: initialState.cartItems.filter((ele) => ele.itemId !== id)}
+          )
+  console.log(initialState);
+  res.sendStatus(204);        
+})
+
 
 export default router;
