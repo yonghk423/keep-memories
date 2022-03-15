@@ -75,24 +75,24 @@ const CartMain = () => {
     dispatch(SetQuantity(quantity, itemId))    
   }  
 
-  // const getTotal = () => {
-  //   let cartIdArr = cartItems.map((ele) => ele.itemId)
-  //   console.log(cartIdArr);
-  //   let total = {
-  //     price: 0,
-  //     quantity: 0,
-  //   }
-  //   for (let i = 0; i < cartIdArr.length; i++) {
-  //     if (checkedItems.indexOf(cartIdArr[i]) > -1) {
-  //       let quantity = cartItems[i].quantity
-  //       let price = items.filter((ele) => ele.id === cartItems[i].itemId)[0].price        
-  //       total.price = total.price + quantity * price
-  //       total.quantity = total.quantity + quantity        
-  //     }
-  //   }
-  //   return total
-  // }
-  // const total = getTotal()
+  const getTotal = () => {
+    let cartIdArr = cartItems.map((ele) => ele.id)
+    console.log(cartIdArr);
+    let total = {
+      price: 0,
+      quantity: 0,
+    }
+    for (let i = 0; i < cartIdArr.length; i++) {
+      if (checkedItems.indexOf(cartIdArr[i]) > -1) {
+        let quantity = cartItems[i].quantity
+        let price = items.filter((ele) => ele.id === cartItems[i].id)[0].price        
+        total.price = total.price + quantity * price
+        total.quantity = total.quantity + quantity        
+      }
+    }
+    return total
+  }
+  const total = getTotal()
 
   const handleAllCheck = (checked:boolean) => {
     console.log(checked)
@@ -163,7 +163,7 @@ const CartMain = () => {
                 </div>                
               </li>
               })}
-              {/* <OrderTotal total={total.price} totalQuantity={total.quantity} /> */}
+              <OrderTotal total={total.price} totalQuantity={total.quantity} />
               </>
           )}
           </>

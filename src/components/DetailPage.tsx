@@ -93,7 +93,7 @@ const DetailPage = () => {
   }  
   console.log(items);
   console.log(ItemId);
-  const data:Data|any = textBox.find((ele:any) => (ele.id === ItemId))
+  const data:Data|any = items.find((ele:any) => (ele.id === ItemId))
   console.log(data);
   
 
@@ -117,7 +117,9 @@ const DetailPage = () => {
   }
   
     return (      
-      <div className='container'>               
+      <div className='container'>
+        {items &&
+        <>               
         {items.map((ele:any)=> (
           <div key={ele.id}>          
           <div className='fullImgDetailBox'>                   
@@ -140,9 +142,13 @@ const DetailPage = () => {
           </div>
           </div>             
           ))}
+          </>
+        }
+        {items &&
           <div className='cartMainBox'>
             <CartMain/>
-          </div>       
+          </div>
+        }         
       </div>  
     )
 }
