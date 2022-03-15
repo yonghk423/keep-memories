@@ -80,18 +80,7 @@ export const SetQuantity = (quantity:number, itemId:number) => {
 //   }
 // }
 
-export const addTodo = (text:string, name:string) => async (dispatch:any) => {
-  try {
-    const addtodo = await axios.post('http://localhost:8080/initialState/addTodo', {
-    id: Math.floor((Math.random()*1000)),
-    name: name,
-    text : text
-    })
-    dispatch({type: ADD_TODO, addtodo}) 
-  } catch(err) {
-    console.log("Error >>", err);
-  }
-}
+
 
 //액션 -> 미들웨어 -> 리듀서 -> 스토어
 export const notify = (message: string, dismissTime:number = 5000) => (dispatch:any) => {
@@ -182,17 +171,38 @@ export const RemoveItem = (id:number) => async(dispatch:any) => {
   }  
 }
 
-export const RemoveText = (todoId:number) => {
-  console.log(todoId)
-  return {
-        type: REMOVE_TEXT,
-        payload : {
-            todoId: todoId
-        }
-    }
+// export const RemoveText = (todoId:number) => {
+//   console.log(todoId)
+//   return {
+//         type: REMOVE_TEXT,
+//         payload : {
+//             todoId: todoId
+//         }
+//     }
+// }
+
+export const RemoveText = (id:number) => async(dispatch:any) => {
+  console.log(id)
+  try {
+    const removetext = await axios.delete(`http://localhost:8080/initialState/items/${id}/textBox/${id}/`)
+    dispatch({type: REMOVE_TEXT, removetext})
+  } catch(err) {
+    console.log("Error >>", err);
+  }  
 }
 
-
+export const addTodo = (text:string, name:string) => async (dispatch:any) => {
+  try {
+    const addtodo = await axios.post('http://localhost:8080/initialState/addTodo', {
+    id: Math.floor((Math.random()*1000)),
+    name: name,
+    text : text
+    })
+    dispatch({type: ADD_TODO, addtodo}) 
+  } catch(err) {
+    console.log("Error >>", err);
+  }
+}
 
 
 export type Action =

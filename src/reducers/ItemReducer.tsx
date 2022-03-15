@@ -66,18 +66,18 @@ const ItemReducer = (state:any = initialState, action:any) => {
               { cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.removeitem.data)}
           )
           case REMOVE_TEXT:
-            console.log(action.payload.todoId)
+            console.log(action.removetext.data)
               //같은 아이디가 담긴 데이터를 찾는다
               //filter를 두번 사용한다..?
               let textData = state.items.find((ele:any)=> (
                 ele.textBox.find((ele:any)=> (
-                  ele.id === action.payload.todoId
+                  ele.id === action.removetext.data
                 ))
               ))
               console.log(textData);
               console.log(textData.textBox);
               let todoData = textData.textBox.filter((ele:any)=> (
-                ele.id !== action.payload.todoId
+                ele.id !== action.removetext.data
               ))
               console.log(todoData);
               //filter로 삭제를 시켰다

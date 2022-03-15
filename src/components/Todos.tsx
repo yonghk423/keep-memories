@@ -51,6 +51,7 @@ const TodoList = React.memo(function TodoList(todoss:any) {
   const RemoveTextSetting = (todoId:number) => {
     console.log(todoId);
     dispatch(RemoveText(todoId))
+    window.location.reload()
   }
   
 
