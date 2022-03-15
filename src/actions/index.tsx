@@ -68,15 +68,28 @@ export const SetQuantity = (quantity:number, itemId:number) => {
     }
 }
 
-export const addTodo = (text:string, name:string) => {
-  console.log(text, name)
-  return {
-    type: ADD_TODO,
-  payload: {
+// export const addTodo = (text:string, name:string) => {
+//   console.log(text, name)
+//   return {
+//     type: ADD_TODO,
+//   payload: {
+    // id: Math.floor((Math.random()*1000)),
+    // name: name,
+    // text : text
+//     }
+//   }
+// }
+
+export const addTodo = (text:string, name:string) => async (dispatch:any) => {
+  try {
+    const addtodo = await axios.post('http://localhost:8080/initialState/addTodo', {
     id: Math.floor((Math.random()*1000)),
     name: name,
     text : text
-    }
+    })
+    dispatch({type: ADD_TODO, addtodo}) 
+  } catch(err) {
+    console.log("Error >>", err);
   }
 }
 
@@ -149,14 +162,24 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
   }
 }
 
-export const RemoveItem = (itemId:number) => {
-  console.log(itemId);
-  return {
-        type: REMOVE_ITEM,
-        payload : {
-            itemId: itemId
-        }
-    }
+// export const RemoveItem = (itemId:number) => {
+//   console.log(itemId);
+//   return {
+//         type: REMOVE_ITEM,
+//         payload : {
+//             itemId: itemId
+//         }
+//     }
+// }
+
+export const RemoveItem = (id:number) => async(dispatch:any) => {
+  console.log(id)
+  try {
+    const removeitem = await axios.delete(`http://localhost:8080/initialState/items/${id}`)
+    dispatch({type: REMOVE_ITEM, removeitem})
+  } catch(err) {
+    console.log("Error >>", err);
+  }  
 }
 
 export const RemoveText = (todoId:number) => {
@@ -168,6 +191,8 @@ export const RemoveText = (todoId:number) => {
         }
     }
 }
+
+
 
 
 export type Action =

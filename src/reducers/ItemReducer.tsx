@@ -36,16 +36,16 @@ const ItemReducer = (state:any = initialState, action:any) => {
             cartItems: [...state.cartItems.slice(0, idx), action.payload,
             ...state.cartItems.slice(idx + 1)]
           });
-        case ADD_TODO:          
+        case ADD_TODO:
+          console.log(action.addtodo)
+          console.log(action.addtodo.data)          
           // name이 같은 데이터를 찾는다 
-          let data = state.items.find((ele:any) => (ele.name === action.payload.name))
+          let data = state.items.find((ele:any) => (ele.name === action.addtodo.data))
           console.log(data); 
           // addData라는 변수에 action.payload 넣고
-          const addData = Object.assign({}, data, { textBox: [...data.textBox, action.payload]})
+          const addData = Object.assign({}, data, { textBox: [...data.textBox, action.addtodo.data]})
           console.log(addData);
-          // 데이터를 전체 state 값들과 합친다.
-          // const addDataTotal = Object.assign({}, state, { items: [...state.items, addData]})
-          // console.log(addDataTotal);   
+          // 데이터를 전체 state 값들과 합친다.         
               for (let i = 0; i<state.items.length; i++ ) {
                 if(state.items[i].name === addData.name) {
                 state.items[i] = addData
@@ -58,11 +58,12 @@ const ItemReducer = (state:any = initialState, action:any) => {
             console.log(action.addinfo.data)
             return Object.assign({}, state, { items : [...state.items, action.addinfo.data] })       
           case REMOVE_ITEM:
+            console.log(action.removeitem.data)
             return Object.assign(
               {}, 
               state, 
               { items: state.items.filter((ele:any) => ele.id !== action.payload.itemId ) },
-              { cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.payload.itemId)}
+              { cartItems: state.cartItems.filter((ele:any) => ele.itemId !== action.removeitem.data)}
           )
           case REMOVE_TEXT:
             console.log(action.payload.todoId)

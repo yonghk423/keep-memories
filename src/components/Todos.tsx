@@ -20,7 +20,7 @@ const Todos = (todos:any) => {
   const [text, setText] = useState('');
   const onChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value);
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
+    // e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
     onCreate(text, name);
     setText(''); // 인풋 초기화
   };
