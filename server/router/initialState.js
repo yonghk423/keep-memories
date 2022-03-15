@@ -131,9 +131,10 @@ router.delete('/initialState/cartItems/:id', (req, res, next) => {
 });
 
 router.post('/initialState/items' , (req, res, next) => {
-  const { text, name } = req.body;
+  const {id, text, name } = req.body;
   console.log({text,name})
   let textBox = {
+    id : id,
     text: text,
     name: name
   };
@@ -154,8 +155,35 @@ router.post('/initialState/items' , (req, res, next) => {
             }
   initialState = Object.assign({}, initialState)
   console.log(initialState)
-  res.status(201).send(initialState)                    
-
+  res.status(201).send(initialState)
 })
+//-----------------------------------------------------------------------------------------
+router.delete('/initialState/items/:id/textBox/:id', (req, res, next) => {
+  const id = Number(req.params.id);
+  console.log(id)
+    let textData = initialState.items.find((ele)=> (
+                ele.textBox.find((ele)=> (
+                  ele.id === id
+                ))
+              ))
+              console.log(textData);
+              console.log(textData.textBox);            
+  let todoData = textData.textBox.filter((ele)=> (
+                ele.id !== id
+              ))
+              console.log(todoData);
+              console.log(textData.textBox);
+              textData.textBox = todoData;
+              console.log(textData);
+              for (let i = 0; i<initialState.items.length; i++ ) {
+                if(initialState.items[i].id === textData.id) {
+                initialState.items[i] = textData;
+              }
+            }      
+            console.log(initialState.items)
+  initialState = Object.assign({}, initialState,  {items : [ ...initialState.items ] })
+  console.log(initialState);
+  res.sendStatus(204);                        
+});
 
 export default router;
