@@ -96,12 +96,11 @@ router.get('/initialState', (req, res, next) => {
 
 router.get('/initialState/items/:id', (req, res, next) => {
   const id = Number(req.params.id);
-  // console.log(id);
-  // console.log(initialState.items)
+  
   const detailData = initialState.items.find((ele) => (
     ele.id === id
   ));
-  // console.log(detailData);
+  //-------------test---------------
   if (detailData) {
     res.send(detailData)
   } else {
