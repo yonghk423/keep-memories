@@ -206,7 +206,7 @@ app.post('/info', (req, res, next) => {
   res.status(201).send(initialState)
 })
 
-app.delete('/:id', (req, res, next) => {
+app.delete('/items/:id', (req, res, next) => {
   const id = Number(req.params.id);
   console.log(id);
   initialState = Object.assign(
