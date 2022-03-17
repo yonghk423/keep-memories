@@ -92,7 +92,7 @@ const InfoUpload = () => {
   ) 
   
   const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    // e.preventDefault();
+    e.preventDefault();
     onInfo(name, imgUrl, price, text, textBox);    
     setName('')
     setPrice('')
