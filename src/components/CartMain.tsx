@@ -68,7 +68,9 @@ const CartMain = () => {
     console.log(id)
     setCheckedItems(checkedItems.filter((ele) => ele !== id))
     dispatch(RemoveCart(id))
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000)
   } 
   
   const SetQuantitySetting = ( quantity: number, itemId: number) => {
