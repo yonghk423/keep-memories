@@ -103,11 +103,11 @@ let initialState = {
 
 // const router = express.Router();
 
-app.get('https://everycoding.herokuapp.com', (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.send(initialState);
 })
 
-app.get('https://everycoding.herokuapp.com/items/:id', (req, res, next) => {
+app.get('/items/:id', (req, res, next) => {
   const id = Number(req.params.id);
   
   const detailData = initialState.items.find((ele) => (
@@ -121,7 +121,7 @@ app.get('https://everycoding.herokuapp.com/items/:id', (req, res, next) => {
   }
 });
 
-app.post('https://everycoding.herokuapp.com', (req, res, next) => {
+app.post('/', (req, res, next) => {
   const { id, quantity } = req.body
   console.log({id, quantity})
   const data = {
@@ -133,7 +133,7 @@ app.post('https://everycoding.herokuapp.com', (req, res, next) => {
   res.status(201).send(data)  
 });
 
-app.delete('https://everycoding.herokuapp.com/cartItems/:id', (req, res, next) => {
+app.delete('/cartItems/:id', (req, res, next) => {
   const id = req.params.id;
   console.log(id)
   res.send(id)
@@ -142,7 +142,7 @@ app.delete('https://everycoding.herokuapp.com/cartItems/:id', (req, res, next) =
   })
 });
 
-app.post('https://everycoding.herokuapp.com/addTodo' , (req, res, next) => {
+app.post('/addTodo' , (req, res, next) => {
   const {id, text, name } = req.body;
   console.log({text,name})
   let textBox = {
@@ -170,7 +170,7 @@ app.post('https://everycoding.herokuapp.com/addTodo' , (req, res, next) => {
   res.status(201).send(initialState)
 })
 //-----------------------------------------------------------------------------------------
-app.delete('https://everycoding.herokuapp.com/items/:id/textBox/:id', (req, res, next) => {
+app.delete('/items/:id/textBox/:id', (req, res, next) => {
   const id = Number(req.params.id);
   console.log(id)
     let textData = initialState.items.find((ele)=> (
@@ -198,7 +198,7 @@ app.delete('https://everycoding.herokuapp.com/items/:id/textBox/:id', (req, res,
   res.sendStatus(204);                        
 });
 
-app.post('https://everycoding.herokuapp.com/info', (req, res, next) => {
+app.post('/info', (req, res, next) => {
   const items = req.body
   console.log(items)
   initialState = Object.assign({}, initialState, { items : [...initialState.items, items]})
@@ -206,7 +206,7 @@ app.post('https://everycoding.herokuapp.com/info', (req, res, next) => {
   res.status(201).send(initialState)
 })
 
-app.delete('https://everycoding.herokuapp.com/:id', (req, res, next) => {
+app.delete('/:id', (req, res, next) => {
   const id = Number(req.params.id);
   console.log(id);
   initialState = Object.assign(
