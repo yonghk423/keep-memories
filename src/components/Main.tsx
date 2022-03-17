@@ -25,7 +25,7 @@ const Main = () => {
 //------------------------------------------------------------------------------- 
   const mainImg = async () => {
   try {
-    const response  = await axios.get('http://localhost:8080/initialState')
+    const response  = await axios.get('http://localhost:8080/initialState/')
     const mainImg = await response.data.items[2]    
     console.log(mainImg)
     setFullImg(mainImg)
@@ -40,7 +40,7 @@ useEffect(() => {
 
   const getData = async () => {
     const response:any = await axios
-    .get('http://localhost:8080/initialState')
+    .get('http://localhost:8080/initialState/')
     .catch((err) => {
       console.log("Err", err);
     });

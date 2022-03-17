@@ -206,5 +206,4 @@ router.delete('/initialState/items/:id', (req, res, next) => {
   res.sendStatus(204);        
 })
 
-
 export default router;

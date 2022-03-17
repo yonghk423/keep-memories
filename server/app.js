@@ -15,11 +15,11 @@ app.use(morgan('tiny'))
 app.use('/', initialStateRouter)
 
 app.use((req, res, next) => {
-    res.sendStatus(404);
+    res.sendStatus(404)
 })
 
 app.use((error, req, res, next)=> {
     console.error(error);
     res.sendStatus(500);
 })
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
