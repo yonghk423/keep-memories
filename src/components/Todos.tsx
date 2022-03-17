@@ -23,6 +23,9 @@ const Todos = (todos:any) => {
     // e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
     onCreate(text, name);
     setText(''); // 인풋 초기화
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000)
   };
 
   
@@ -51,7 +54,9 @@ const TodoList = React.memo(function TodoList(todoss:any) {
   const RemoveTextSetting = (todoId:number) => {
     console.log(todoId);
     dispatch(RemoveText(todoId))
-    window.location.reload()
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500)
   }
   
 

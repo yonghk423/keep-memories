@@ -113,7 +113,7 @@ const DetailPage = () => {
     }
     setTimeout(() => {
       window.location.reload();
-    }, 1500)
+    }, 2000)
   }
   
     return (      

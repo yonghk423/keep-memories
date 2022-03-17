@@ -76,7 +76,9 @@ useEffect(() => {
   const RemoveItemSetting = (itemId:number) => {
     console.log(itemId)
     dispatch(RemoveItem(itemId))
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000)
   }
   const onClick = () => {
       navigate(`/DetailPage/${fullImg.id}`)
