@@ -90,11 +90,11 @@ let initialState = {
 
 const router = express.Router();
 
-router.get('/initialState', (req, res, next) => {
+router.get('https://everycoding.herokuapp.com', (req, res, next) => {
     res.send(initialState);
 })
 
-router.get('/initialState/items/:id', (req, res, next) => {
+router.get('https://everycoding.herokuapp.com/items/:id', (req, res, next) => {
   const id = Number(req.params.id);
   
   const detailData = initialState.items.find((ele) => (
@@ -108,7 +108,7 @@ router.get('/initialState/items/:id', (req, res, next) => {
   }
 });
 
-router.post('/initialState/', (req, res, next) => {
+router.post('https://everycoding.herokuapp.com', (req, res, next) => {
   const { id, quantity } = req.body
   console.log({id, quantity})
   const data = {
@@ -120,7 +120,7 @@ router.post('/initialState/', (req, res, next) => {
   res.status(201).send(data)  
 });
 
-router.delete('/initialState/cartItems/:id', (req, res, next) => {
+router.delete('https://everycoding.herokuapp.com/cartItems/:id', (req, res, next) => {
   const id = req.params.id;
   console.log(id)
   res.send(id)
@@ -129,7 +129,7 @@ router.delete('/initialState/cartItems/:id', (req, res, next) => {
   })
 });
 
-router.post('/initialState/addTodo' , (req, res, next) => {
+router.post('https://everycoding.herokuapp.com/addTodo' , (req, res, next) => {
   const {id, text, name } = req.body;
   console.log({text,name})
   let textBox = {
@@ -157,7 +157,7 @@ router.post('/initialState/addTodo' , (req, res, next) => {
   res.status(201).send(initialState)
 })
 //-----------------------------------------------------------------------------------------
-router.delete('/initialState/items/:id/textBox/:id', (req, res, next) => {
+router.delete('https://everycoding.herokuapp.com/items/:id/textBox/:id', (req, res, next) => {
   const id = Number(req.params.id);
   console.log(id)
     let textData = initialState.items.find((ele)=> (
@@ -185,7 +185,7 @@ router.delete('/initialState/items/:id/textBox/:id', (req, res, next) => {
   res.sendStatus(204);                        
 });
 
-router.post('/initialState/info', (req, res, next) => {
+router.post('https://everycoding.herokuapp.com/info', (req, res, next) => {
   const items = req.body
   console.log(items)
   initialState = Object.assign({}, initialState, { items : [...initialState.items, items]})
@@ -193,7 +193,7 @@ router.post('/initialState/info', (req, res, next) => {
   res.status(201).send(initialState)
 })
 
-router.delete('/initialState/items/:id', (req, res, next) => {
+router.delete('https://everycoding.herokuapp.com/:id', (req, res, next) => {
   const id = Number(req.params.id);
   console.log(id);
   initialState = Object.assign(

@@ -42,7 +42,7 @@ const DetailPage = () => {
   console.log(ItemId);
   const detailData = async () => {
     const response:any = await axios
-    .get('http://localhost:8080/initialState')
+    .get('https://everycoding.herokuapp.com')
     .catch((err) => {
       console.log("Err", err);
     });
@@ -66,7 +66,7 @@ const DetailPage = () => {
 
   const getDetail = async (ItemId:number) => {
     const response:any = await axios
-      .get(`http://localhost:8080/initialState/items/${ItemId}`)
+      .get(`https://everycoding.herokuapp.com/items/${ItemId}`)
       .catch((err) => {
         console.log("Err: ", err);
       });

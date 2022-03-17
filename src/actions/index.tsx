@@ -41,7 +41,7 @@ export const removeSelectedItem = (data:any) => {
 
 export const AddCart = (id:number) => async (dispatch:any) => {
   try {
-    const addcart = await axios.post('http://localhost:8080/initialState/', { id, quantity: 1, })
+    const addcart = await axios.post('https://everycoding.herokuapp.com', { id, quantity: 1, })
     dispatch({type: ADD_CART, addcart})
     console.log(addcart)    
   } catch(err) {
@@ -50,7 +50,7 @@ export const AddCart = (id:number) => async (dispatch:any) => {
 }
 export const RemoveCart = (id:number) => async (dispatch:any) => {
   try {
-    const removecart = await axios.delete(`http://localhost:8080/initialState/cartItems/${id}`)
+    const removecart = await axios.delete(`https://everycoding.herokuapp.com/cartItems/${id}`)
     dispatch({type: REMOVE_CART, removecart})
   } catch(err) {
     console.log("Error >>", err);
@@ -132,7 +132,7 @@ export const dequeueNotification = () => {
 
 export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => async (dispatch:any) => {
   try {
-    const addinfo = await axios.post('http://localhost:8080/initialState/info', {
+    const addinfo = await axios.post('https://everycoding.herokuapp.com/info', {
     id: Math.floor((Math.random()*1000)),
     name: name,
     img: imgUrl,
@@ -164,7 +164,7 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
 export const RemoveItem = (id:number) => async(dispatch:any) => {
   console.log(id)
   try {
-    const removeitem = await axios.delete(`http://localhost:8080/initialState/items/${id}`)
+    const removeitem = await axios.delete(`https://everycoding.herokuapp.com/items/${id}`)
     dispatch({type: REMOVE_ITEM, removeitem})
   } catch(err) {
     console.log("Error >>", err);
@@ -184,7 +184,7 @@ export const RemoveItem = (id:number) => async(dispatch:any) => {
 export const RemoveText = (id:number) => async(dispatch:any) => {
   console.log(id)
   try {
-    const removetext = await axios.delete(`http://localhost:8080/initialState/items/${id}/textBox/${id}/`)
+    const removetext = await axios.delete(`https://everycoding.herokuapp.com/items/${id}/textBox/${id}/`)
     dispatch({type: REMOVE_TEXT, removetext})
   } catch(err) {
     console.log("Error >>", err);
@@ -193,7 +193,7 @@ export const RemoveText = (id:number) => async(dispatch:any) => {
 
 export const addTodo = (text:string, name:string) => async (dispatch:any) => {
   try {
-    const addtodo = await axios.post('http://localhost:8080/initialState/addTodo', {
+    const addtodo = await axios.post('https://everycoding.herokuapp.com/addTodo', {
     id: Math.floor((Math.random()*1000)),
     name: name,
     text : text
