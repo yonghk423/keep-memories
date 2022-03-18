@@ -3,7 +3,7 @@ import axios from 'axios';
 import { RemoveCart, SetQuantity, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.scss';
-import OrderTotal from './OrderTotal';
+// import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {
   ItemReducer : Array<object>
@@ -165,7 +165,7 @@ const CartMain = () => {
                 </div>                
               </li>
               })}
-              <OrderTotal total={total.price} totalQuantity={total.quantity} />
+              {/* <OrderTotal total={total.price} totalQuantity={total.quantity} /> */}
               </>
           )}
           </>
