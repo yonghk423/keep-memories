@@ -7,6 +7,7 @@
 
 .fullImgBox {
   display: grid;
+  grid-template-columns: auto;
   justify-items: center;
   align-items: center;
   .fullImg {

@@ -43,7 +43,7 @@ const CartMain = () => {
   
   const cartData = async () => {
     const response:any = await axios
-    .get('http://localhost:8080/initialState')
+    .get('https://everycoding.herokuapp.com')
     .catch((err) => {
       console.log("Err", err);
     });
