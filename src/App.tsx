@@ -7,13 +7,6 @@ import DetailPage from './components/DetailPage';
 import NofiticationCenter from './components/ NofiticationCenter/NofiticationCenter'
 // import { initialState } from './asset/data';
 
-const http = require("http");
- 
-/* Prevent Sleep in Heroku Server */
-setInterval(function () {
-  http.get("http://everycoding.herokuapp.com");
-}, 600000); // every 10 minutes
-
 export interface DataList {
   Items : object[];
 }

@@ -3,7 +3,13 @@ import 'express-async-errors';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+const http = require("http");
 // import initialStateRouter from './router/initialState.js'
+ 
+/* Prevent Sleep in Heroku Server */
+setInterval(function () {
+  http.get("http://everycoding.herokuapp.com");
+}, 600000); // every 10 minutes
 
 const app = express();
 app.use(express.json());
