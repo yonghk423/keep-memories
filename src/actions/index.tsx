@@ -68,20 +68,6 @@ export const SetQuantity = (quantity:number, itemId:number) => {
     }
 }
 
-// export const addTodo = (text:string, name:string) => {
-//   console.log(text, name)
-//   return {
-//     type: ADD_TODO,
-//   payload: {
-    // id: Math.floor((Math.random()*1000)),
-    // name: name,
-    // text : text
-//     }
-//   }
-// }
-
-
-
 //액션 -> 미들웨어 -> 리듀서 -> 스토어
 export const notify = (message: string, dismissTime:number = 5000) => (dispatch:any) => {
   console.log(dispatch);
@@ -111,25 +97,6 @@ export const dequeueNotification = () => {
   }
 }
 
-// export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => {
-//   console.log(name, imgUrl, price, text, textBox)
-//   return {
-//     type: ADD_INFO,
-//   payload : {
-//     id: Math.floor((Math.random()*1000)),
-//     name: name,
-//     img: imgUrl,
-//     price: Number(price),
-//     text: text,
-//     textBox : [{
-//       id: Math.floor((Math.random()*1000)),
-//       name: name,
-//       text: ''
-//     }]      
-//   }
-//   }  
-// }
-
 export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => async (dispatch:any) => {
   try {
     const addinfo = await axios.post('https://everycoding.herokuapp.com/info', {
@@ -151,16 +118,6 @@ export const addInfo = (name:string, imgUrl:string, price:string, text:string, t
   }
 }
 
-// export const RemoveItem = (itemId:number) => {
-//   console.log(itemId);
-//   return {
-//         type: REMOVE_ITEM,
-//         payload : {
-//             itemId: itemId
-//         }
-//     }
-// }
-
 export const RemoveItem = (id:number) => async(dispatch:any) => {
   console.log(id)
   try {
@@ -170,16 +127,6 @@ export const RemoveItem = (id:number) => async(dispatch:any) => {
     console.log("Error >>", err);
   }  
 }
-
-// export const RemoveText = (todoId:number) => {
-//   console.log(todoId)
-//   return {
-//         type: REMOVE_TEXT,
-//         payload : {
-//             todoId: todoId
-//         }
-//     }
-// }
 
 export const RemoveText = (id:number) => async(dispatch:any) => {
   console.log(id)
