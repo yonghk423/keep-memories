@@ -1,0 +1,19 @@
+.modalBackground {
+  // background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  .modalContent {
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 300px;
+    top: -200px;
+    width: 800px;
+    height: 500px;
+  }
+}
+
+.modalImg {
+  width: 200px;
+  height: 200px;
+}

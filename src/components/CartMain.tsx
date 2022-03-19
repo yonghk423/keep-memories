@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { RemoveCart, SetQuantity, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './CartMain.scss';
-import DataModal from './DataModal';
+import ModalData from './ModalData';
 // import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {
@@ -33,12 +34,14 @@ export interface Item {
   id: number
 }
 
-const CartMain = () => {    
+const CartMain = (todos:any) => {  
+    
 
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
   const [showReq, setShowReq] = useState<boolean>(false);
+  const [modalNumber, setModalNumber] = useState(0)
   
   const cartData = async () => {
     const response:any = await axios
@@ -121,8 +124,12 @@ const CartMain = () => {
   const closeReq = () => {
       setShowReq(!showReq);
   }
-
-
+  
+  const onClickModal = (id:number) => {
+    console.log(id)
+    setModalNumber(id)
+    
+  }
     return (
           <> 
           <div className="TotalCheck">
@@ -154,7 +161,9 @@ const CartMain = () => {
                       handleCheckChange(e.target.checked, item.id)
                     }}
                   />
-                <img className="CartImg" onClick={openReq} src={item.img} alt=""/>
+                <div onClick={()=> {onClickModal(item.id)}}>  
+                  <img className="CartImg" onClick={openReq} src={item.img} alt=""/>
+                </div>
                 <div className="Item">
                   <div>{item.name}</div>
                   <div>{item.price}</div>
@@ -173,7 +182,7 @@ const CartMain = () => {
                 </div>                
               </li>
               })}
-              <DataModal open={showReq} close={closeReq}/>
+              <ModalData open={showReq} close={closeReq} modalNumber={modalNumber}/>
               {/* <OrderTotal total={total.price} totalQuantity={total.quantity} /> */}
               </>
           )}
