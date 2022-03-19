@@ -5,7 +5,6 @@ import { AddCart, notify, selectedItem, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
-import Barcode from '../service/Barcode'
 import CartMain from './CartMain';
 
 
@@ -102,7 +101,6 @@ const DetailPage = () => {
     console.log(itemName);
     const find = cartItems.filter((ele:any):boolean => (ele.id === id))[0]
     if(!find) {
-      // console.log(find);
       console.log('새로운 상품 추가')
       dispatch(AddCart(id))
       dispatch(notify(`${itemName}이(가) 추가 되었습니다.`))      
@@ -124,8 +122,7 @@ const DetailPage = () => {
           <div key={ele.id}>          
           <div className='fullImgDetailBox'>                   
               <img className='fullImg' src={ele.img}  key={ele.id} alt=''/>
-            <div className='barcode'>
-              <Barcode/>
+            <div className='barcode'>              
             </div>
           </div>
           <div className='infoBox'>

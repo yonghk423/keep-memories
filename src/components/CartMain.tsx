@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { RemoveCart, SetQuantity, SetData } from '../actions';
+import { RemoveCart, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import './CartMain.scss';
 import ModalData from './ModalData';
-// import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {
   ItemReducer : Array<object>
@@ -75,29 +73,6 @@ const CartMain = (todos:any) => {
     }, 2000)
   } 
   
-  // const SetQuantitySetting = ( quantity: number, itemId: number) => {
-  //   dispatch(SetQuantity(quantity, itemId))    
-  // }  
-
-  // const getTotal = () => {
-  //   let cartIdArr = cartItems.map((ele) => ele.id)
-  //   console.log(cartIdArr);
-  //   let total = {
-  //     price: 0,
-  //     quantity: 0,
-  //   }
-  //   for (let i = 0; i < cartIdArr.length; i++) {
-  //     if (checkedItems.indexOf(cartIdArr[i]) > -1) {
-  //       let quantity = cartItems[i].quantity
-  //       let price = items.filter((ele) => ele.id === cartItems[i].id)[0].price        
-  //       total.price = total.price + quantity * price
-  //       total.quantity = total.quantity + quantity        
-  //     }
-  //   }
-  //   return total
-  // }
-  // const total = getTotal()
-
   const handleAllCheck = (checked:boolean) => {
     console.log(checked)
     if(checked) {
@@ -151,7 +126,6 @@ const CartMain = (todos:any) => {
           ) : (
               <>  
                 {MatchingItems.map((item:any) => {
-                // const quantity = cartItems.filter((ele) => ele.id === item.id)[0].quantity  
                 return <li className="CartContainer" key={item.id}> 
                   <input 
                     className="Check" 
@@ -169,21 +143,11 @@ const CartMain = (todos:any) => {
                   <div>{item.price}</div>
                 </div>                
                 <div className="Settiing">
-                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
-                  {/* <input 
-                  className="NumberSetting" 
-                  type="number"
-                  min={1}
-                  value={quantity}
-                  onChange={(e) => {
-                    SetQuantitySetting(Number(e.target.value), item.id)
-                  }}
-                  /> */}
+                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>                  
                 </div>                
               </li>
               })}
               <ModalData open={showReq} close={closeReq} modalNumber={modalNumber}/>
-              {/* <OrderTotal total={total.price} totalQuantity={total.quantity} /> */}
               </>
           )}
           </>
