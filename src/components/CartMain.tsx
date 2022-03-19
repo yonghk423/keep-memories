@@ -37,9 +37,7 @@ const CartMain = () => {
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
-  console.log({items, cartItems})
-  console.log(items)
-  console.log(cartItems)
+  const [modal, setModal] = useState(false);
   
   const cartData = async () => {
     const response:any = await axios
@@ -73,28 +71,28 @@ const CartMain = () => {
     }, 2000)
   } 
   
-  const SetQuantitySetting = ( quantity: number, itemId: number) => {
-    dispatch(SetQuantity(quantity, itemId))    
-  }  
+  // const SetQuantitySetting = ( quantity: number, itemId: number) => {
+  //   dispatch(SetQuantity(quantity, itemId))    
+  // }  
 
-  const getTotal = () => {
-    let cartIdArr = cartItems.map((ele) => ele.id)
-    console.log(cartIdArr);
-    let total = {
-      price: 0,
-      quantity: 0,
-    }
-    for (let i = 0; i < cartIdArr.length; i++) {
-      if (checkedItems.indexOf(cartIdArr[i]) > -1) {
-        let quantity = cartItems[i].quantity
-        let price = items.filter((ele) => ele.id === cartItems[i].id)[0].price        
-        total.price = total.price + quantity * price
-        total.quantity = total.quantity + quantity        
-      }
-    }
-    return total
-  }
-  const total = getTotal()
+  // const getTotal = () => {
+  //   let cartIdArr = cartItems.map((ele) => ele.id)
+  //   console.log(cartIdArr);
+  //   let total = {
+  //     price: 0,
+  //     quantity: 0,
+  //   }
+  //   for (let i = 0; i < cartIdArr.length; i++) {
+  //     if (checkedItems.indexOf(cartIdArr[i]) > -1) {
+  //       let quantity = cartItems[i].quantity
+  //       let price = items.filter((ele) => ele.id === cartItems[i].id)[0].price        
+  //       total.price = total.price + quantity * price
+  //       total.quantity = total.quantity + quantity        
+  //     }
+  //   }
+  //   return total
+  // }
+  // const total = getTotal()
 
   const handleAllCheck = (checked:boolean) => {
     console.log(checked)
@@ -136,7 +134,7 @@ const CartMain = () => {
           ) : (
               <>  
                 {MatchingItems.map((item:any) => {
-                const quantity = cartItems.filter((ele) => ele.id === item.id)[0].quantity  
+                // const quantity = cartItems.filter((ele) => ele.id === item.id)[0].quantity  
                 return <li className="CartContainer" key={item.id}> 
                   <input 
                     className="Check" 
@@ -155,12 +153,12 @@ const CartMain = () => {
                   <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
                   <input 
                   className="NumberSetting" 
-                  type="number"
-                  min={1}
-                  value={quantity}
-                  onChange={(e) => {
-                    SetQuantitySetting(Number(e.target.value), item.id)
-                  }}
+                  // type="number"
+                  // min={1}
+                  // value={quantity}
+                  // onChange={(e) => {
+                  //   SetQuantitySetting(Number(e.target.value), item.id)
+                  // }}
                   />
                 </div>                
               </li>
