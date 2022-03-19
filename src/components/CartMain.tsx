@@ -3,6 +3,7 @@ import axios from 'axios';
 import { RemoveCart, SetQuantity, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.scss';
+import DataModal from './DataModal';
 // import OrderTotal from './OrderTotal';
 
 export interface ItemReducer {
@@ -37,7 +38,7 @@ const CartMain = () => {
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
-  const [modal, setModal] = useState(false);
+  const [showReq, setShowReq] = useState<boolean>(false);
   
   const cartData = async () => {
     const response:any = await axios
@@ -113,6 +114,15 @@ const CartMain = () => {
     }
   };
 
+  const openReq = () => {
+      setShowReq(!showReq);
+  }
+
+  const closeReq = () => {
+      setShowReq(!showReq);
+  }
+
+
     return (
           <> 
           <div className="TotalCheck">
@@ -144,7 +154,7 @@ const CartMain = () => {
                       handleCheckChange(e.target.checked, item.id)
                     }}
                   />
-                <img className="CartImg" src={item.img} alt=""/>
+                <img className="CartImg" onClick={openReq} src={item.img} alt=""/>
                 <div className="Item">
                   <div>{item.name}</div>
                   <div>{item.price}</div>
@@ -163,6 +173,7 @@ const CartMain = () => {
                 </div>                
               </li>
               })}
+              <DataModal open={showReq} close={closeReq}/>
               {/* <OrderTotal total={total.price} totalQuantity={total.quantity} /> */}
               </>
           )}
