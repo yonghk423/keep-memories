@@ -151,15 +151,15 @@ const CartMain = () => {
                 </div>                
                 <div className="Settiing">
                   <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>
-                  <input 
+                  {/* <input 
                   className="NumberSetting" 
-                  // type="number"
-                  // min={1}
-                  // value={quantity}
-                  // onChange={(e) => {
-                  //   SetQuantitySetting(Number(e.target.value), item.id)
-                  // }}
-                  />
+                  type="number"
+                  min={1}
+                  value={quantity}
+                  onChange={(e) => {
+                    SetQuantitySetting(Number(e.target.value), item.id)
+                  }}
+                  /> */}
                 </div>                
               </li>
               })}
