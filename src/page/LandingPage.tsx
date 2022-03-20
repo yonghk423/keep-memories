@@ -10,7 +10,7 @@ const landingPage = () => {
           <Header/>                    
           <Main/>
           <InfoUpload/>
-          {/* <Footer/> */}
+          <Footer/>
         </>
     )
 }

@@ -5,41 +5,14 @@
     background-color: #212121;
     display: flex;
     height: 80px;
-
+    width: 100%;
+    .header{
+        position: relative;
+        padding: 20px 14px;
+        font-size: 20px;
+        cursor: pointer;
+    }
     /* border: 1px solid black; */
 }
 
-.MarketName {
-    color: white;
-    font-size: 20px;
-    padding: 25px 20px;
-    width: 200px;
-    height: 80px;
 
-    /* border: 1px solid black; */
-}
-
-.ItemBox {
-    display: flex;
-    margin-left: auto;
-}
-
-/* 
-.ItemList {
-  position: relative;
-  left: 50px;
-  font-size: 20px;
-  padding: 20px 16px;
-  width: 150px;
-  height: 80px;
-  border: 1px solid black;
-} */
-
-.ItemCount {
-    font-size: 20px;
-    padding: 25px 20px;
-    width: 150px;
-    height: 80px;
-
-    /* border: 1px solid black; */
-}

@@ -17,18 +17,8 @@ const Header = () => {
     }
 
     return (
-        <div className="HeaderBox">
-             {/* <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="MarketName">coffee coupon shop</div></Link> */}
-             <div onClick={onClick}>coffee coupon shop</div>
-               <div className="ItemBox">
-                 {/* <Link to="/" style={{ textDecoration: 'none', color:'#f5f5f5' }}><div className="ItemList">product list</div>
-                 </Link> */}
-                <Link to="ShoppingCart" style={{ textDecoration: 'none', color:'#f5f5f5' }}>
-                  <div className="ItemCount">
-                    {/* {state.cartItems.length}  */}
-                  </div>
-                 </Link>
-               </div>             
+        <div className="HeaderBox">             
+             <div className='header' style={{ textDecoration: 'none', color:'#f5f5f5' }} onClick={onClick}>memories of photos</div>                       
          </div>
         )            
        };

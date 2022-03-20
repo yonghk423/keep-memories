@@ -130,7 +130,7 @@ const DetailPage = () => {
             <div className='price'>{ele.price}₩</div>
             <div className='text'>{ele.text}</div>
             <div className='BtnBox'>
-              <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>ADD TO CART</button>
+              <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>즐겨찾기 추가</button>
             </div>
           </div>       
           <div className='todos'>
