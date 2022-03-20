@@ -106,7 +106,7 @@ const CartMain = (todos:any) => {
     
   }
     return (
-          <> 
+          <>           
           <div className="TotalCheck">
             <input className='TotalCheckBtn'
               type="checkbox" 
@@ -149,7 +149,7 @@ const CartMain = (todos:any) => {
               })}
               <ModalData open={showReq} close={closeReq} modalNumber={modalNumber}/>
               </>
-          )}
+          )}                       
           </>
     )
 }

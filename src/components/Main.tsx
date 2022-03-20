@@ -4,7 +4,6 @@ import axios from 'axios';
 import { SetData } from '../actions/index';
 import { RemoveItem } from '../actions/index'
 import { useNavigate } from 'react-router-dom';
-import InfoUpload from './InfoUpload';
 import './Main.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -107,11 +106,7 @@ let settings = {
                 </div>                
             ))}
             </Slider>
-          </div>
-          
-          <div className='infoBox'>
-            <InfoUpload/>
-          </div>
+          </div>         
         </div>    
     )
 }

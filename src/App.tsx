@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetailPage from './components/DetailPage';
 import NofiticationCenter from './components/ NofiticationCenter/NofiticationCenter'
 import Footer from './components/Footer';
+import LandingDetailPage from './page/LandingDetailPage';
 
 export interface DataList {
   Items : object[];
@@ -18,13 +19,11 @@ export interface CartDataList {
 function App() {      
   return (
     <>    
-    <BrowserRouter>
-    <Header/>        
+    <BrowserRouter>            
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
-      <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>     
+      <Route path="/DetailPage/:id" element={<LandingDetailPage/>}></Route>     
     </Routes>
-    <Footer/>      
     <NofiticationCenter/>    
     </BrowserRouter>        
     </>

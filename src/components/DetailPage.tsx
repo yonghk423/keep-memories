@@ -140,12 +140,7 @@ const DetailPage = () => {
           </div>             
           ))}
           </>
-        }
-        {items &&
-          <div className='cartMainBox'>
-            <CartMain/>
-          </div>
-        }         
+        }       
       </div>  
     )
 }

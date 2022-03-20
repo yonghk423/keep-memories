@@ -104,7 +104,7 @@ const InfoUpload = () => {
   }  
   
   return (
-        <div>
+        <div className='infoBox'>
             <form className='submitInfo' onSubmit={onSubmit}>
               <input type="file" accept="image/*" onChange={onFileChange}/>
               {imgUrl && <img className='imgUrl' src={imgUrl} alt=""/>}                         
