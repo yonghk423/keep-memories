@@ -77,13 +77,13 @@ useEffect(() => {
       window.location.reload()
     }   
 //----------------------------------------------------------------------------------  
-let settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1
-  };
+// let settings = {
+//     dots: false,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 4,
+//     slidesToScroll: 1
+//   };
     return (
         <div className='total'>
           {fullImg &&
@@ -93,19 +93,16 @@ let settings = {
             </div>   
              <div className='title'>please click the picture</div>
           </div>          
-          }
-                    
+          }                    
           <div className='thumBox'>
-            <Slider {...settings}>
             {thumImg.map((ele:any)=> (
-                <div key={ele.id}>
-                  <img className='thumImg' 
+                <div className='thumImgBox' key={ele.id}>
+                  <img className='thumImg'  
                     src={ele.img} alt="" onClick={() => onImgChange(ele)}>   
                   </img>
-                <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button>
+                <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>&times;</button>
                 </div>                
             ))}
-            </Slider>
           </div>         
         </div>    
     )
