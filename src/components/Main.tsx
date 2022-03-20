@@ -78,7 +78,7 @@ useEffect(() => {
       window.location.reload()
     }   
 //----------------------------------------------------------------------------------  
-var settings = {
+let settings = {
     dots: false,
     infinite: true,
     speed: 500,
