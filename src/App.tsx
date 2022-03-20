@@ -4,6 +4,7 @@ import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetailPage from './components/DetailPage';
 import NofiticationCenter from './components/ NofiticationCenter/NofiticationCenter'
+import Footer from './components/Footer';
 
 export interface DataList {
   Items : object[];
@@ -18,13 +19,14 @@ function App() {
   return (
     <>    
     <BrowserRouter>
-    <Header/>    
+    <Header/>        
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
-      <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>      
-    </Routes>    
+      <Route path="/DetailPage/:id" element={<DetailPage/>}></Route>     
+    </Routes>
+    <Footer/>      
     <NofiticationCenter/>    
-    </BrowserRouter>      
+    </BrowserRouter>        
     </>
   )
 }

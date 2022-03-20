@@ -6,6 +6,9 @@ import { RemoveItem } from '../actions/index'
 import { useNavigate } from 'react-router-dom';
 import InfoUpload from './InfoUpload';
 import './Main.scss';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -75,6 +78,13 @@ useEffect(() => {
       window.location.reload()
     }   
 //----------------------------------------------------------------------------------  
+var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1
+  };
     return (
         <div className='total'>
           {fullImg &&
@@ -84,8 +94,10 @@ useEffect(() => {
             </div>   
              <div className='title'>please click the picture</div>
           </div>          
-          }          
+          }
+                    
           <div className='thumBox'>
+            <Slider {...settings}>
             {thumImg.map((ele:any)=> (
                 <div key={ele.id}>
                   <img className='thumImg' 
@@ -94,7 +106,9 @@ useEffect(() => {
                 <button className='imgDelBtn' onClick={() => RemoveItemSetting(ele.id)}>삭제</button>
                 </div>                
             ))}
+            </Slider>
           </div>
+          
           <div className='infoBox'>
             <InfoUpload/>
           </div>
