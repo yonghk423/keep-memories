@@ -41,7 +41,7 @@ const InfoUpload = () => {
 
   
 //-------------------------------------------------------
-  const onNmaeChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onNameChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     setName(e.target.value)
     if (e.target.value.length < 2 || e.target.value.length > 20) {
       setNameMessage('2글자 이상 20글자 이하로 입력해주세요.')
@@ -106,14 +106,26 @@ const InfoUpload = () => {
   return (
         <div className='infoItemBox'>
             <form className='submitInfo' onSubmit={onSubmit}>
-              <input type="file" accept="image/*" onChange={onFileChange}/>
-              {imgUrl && <img className='imgUrl' src={imgUrl} alt=""/>}                         
-              <textarea name='name' value={name} onChange={onNmaeChange}/>{nameMessage}             
-              <textarea name='price' value={price} onChange={onPriceChange}/>{priceMessage}                                
-              <textarea name='text' value={text} onChange={onChange}/>
-              <button type='submit' disabled={!(isName && isPrice)}>등록</button>              
+              <div className='onFileChange'>
+                <input type="file" accept="image/*" onChange={onFileChange}/>
+                {imgUrl && <img className='imgUrl' src={imgUrl} alt=""/>}
+                <h3>Uploaded {progress} %</h3>
+              </div>
+              <div className='onNameChange'>
+                <textarea placeholder="사진의 제목을 적어주세요!" name='name' value={name} onChange={onNameChange}/>
+                <div className='nameMessage'>{nameMessage} </div>
+              </div>
+              <div className='onPriceChange'>
+                <textarea placeholder="사진의 가격을 적어주세요!" name='price' value={price} onChange={onPriceChange}/>
+                <div className='priceMessage'>{priceMessage}</div>
+              </div>
+              <div className='text'>
+                <textarea placeholder="사진에 담긴 생각을 자유롭게 적어 주세요!" name='text' value={text} onChange={onChange}/>
+              </div>
+              <div className='submit'>
+                <button type='submit' disabled={!(isName && isPrice)}>등록</button>
+              </div>              
             </form> 
-            <h3>Uploaded {progress} %</h3>           
         </div>
     ) 
     

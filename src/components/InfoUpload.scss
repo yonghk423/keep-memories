@@ -1,8 +1,51 @@
 .infoItemBox {
-    background-color: antiquewhite;
-    position: relative;
-    .imgUrl {
-        width: 150px;
-        height: 150px;
+width: 100%;
+height: 800px;
+background-color: antiquewhite;
+    .submitInfo {
+      outline : solid 1px black;
+      display: grid;
+      height: 800px;
+      grid-template-columns: auto;
+      justify-content: center;
+      justify-items: center;
+      align-content: end;
+      .imgUrl {
+        width: 100px;
+        height: 100px;
+      }
+      .onFileChang {
+        
+      }
+      .onNameChange {
+        textarea {
+          border: 1px solid #ddd;
+          margin-bottom: 20px;
+          width: 400px;
+          height: 50px;
+          padding: 10px;
+          resize: none;
+        }
+      }
+      .onPriceChange {
+        textarea {
+          border: 1px solid #ddd;
+          margin-bottom: 20px;
+          width: 400px;
+          height: 50px;
+          padding: 10px;
+          resize: none;
+        }
+      }
+      .text {
+        textarea {
+          border: 1px solid #ddd;
+          margin-bottom: 20px;
+          width: 400px;
+          height: calc(50vh - 130px);
+          padding: 10px;
+          resize: none;
+        }
+      }
     }
 }

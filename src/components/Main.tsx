@@ -91,7 +91,7 @@ useEffect(() => {
             <div onClick={onClick}>
                <img className='fullImg' src={fullImg.img} alt=""></img>
             </div>   
-             <div className='title'>please click the picture</div>
+            <div className='title'>please click the picture</div>            
           </div>          
           }                    
           <div className='thumBox'>
