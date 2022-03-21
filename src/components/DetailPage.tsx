@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import axios from "axios";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { AddCart, notify, selectedItem, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos';
-import CartMain from './CartMain';
 
 
 export interface SelectedReducer {

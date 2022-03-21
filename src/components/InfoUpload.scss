@@ -1,9 +1,9 @@
 .infoItemBox {
 width: 100%;
 height: 800px;
-background-color: antiquewhite;
+background: rgba(218, 218, 218, 1);
     .submitInfo {
-      outline : solid 1px black;
+      // outline : solid 1px black;
       display: grid;
       height: 800px;
       grid-template-columns: auto;
