@@ -1,7 +1,7 @@
 .infoItemBox {
 width: 100%;
 height: 800px;
-background: rgba(218, 218, 218, 1);
+background: #546e7a;
     .submitInfo {
       // outline : solid 1px black;
       display: grid;
@@ -9,16 +9,20 @@ background: rgba(218, 218, 218, 1);
       grid-template-columns: auto;
       justify-content: center;
       justify-items: center;
-      align-content: end;
+      align-content: end;      
       .imgUrl {
         width: 100px;
         height: 100px;
+        box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
       }
       .onFileChang {
         
       }
       .onNameChange {
         textarea {
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
           border: 1px solid #ddd;
           margin-bottom: 20px;
           width: 400px;
@@ -29,6 +33,8 @@ background: rgba(218, 218, 218, 1);
       }
       .onPriceChange {
         textarea {
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
           border: 1px solid #ddd;
           margin-bottom: 20px;
           width: 400px;
@@ -39,6 +45,8 @@ background: rgba(218, 218, 218, 1);
       }
       .text {
         textarea {
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
           border: 1px solid #ddd;
           margin-bottom: 20px;
           width: 400px;

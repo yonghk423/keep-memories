@@ -29,17 +29,24 @@
   }
 }
 .thumBox {
+  // outline : solid 1px black;
   overflow: auto;
-  width: 390px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  width: 410px;
   height: 250px;
-  margin: 0 auto; 
-  
+  margin: 0 auto;   
+  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   .thumImgBox {
-    display: inline-block; //grid가 적용이 안됨 이유는 계속 공부 중
-    
+    position: relative;
+    left: 10px;
     
   .thumImg {
     filter: brightness(60%);
+    position: relative;
+        
     height: 100px;
     width: 100px;
     border-radius: 5px;
@@ -65,6 +72,7 @@
   text-align: center;
   color: #fafafa;
   width: 250px;
+  left: 400px;
   height: 40px;
   font-size: 20px;  
   transform: translate(-200%, -1100%);
