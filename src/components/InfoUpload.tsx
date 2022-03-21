@@ -123,7 +123,7 @@ const InfoUpload = () => {
                 <textarea placeholder="사진에 담긴 생각을 자유롭게 적어 주세요!" name='text' value={text} onChange={onChange}/>
               </div>
               <div className='submit'>
-                <button type='submit' disabled={!(isName && isPrice)}>등록</button>
+                <button type='submit' className='submitBtn' disabled={!(isName && isPrice)}>등록</button>
               </div>              
             </form> 
         </div>
