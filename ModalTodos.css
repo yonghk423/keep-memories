@@ -21,14 +21,14 @@
   padding: 10px;
   resize: none;
   position: relative;
-  top: 40px;
+  top: 20px;
 }
 
 .ModalSubmitBox .ModalBtn {
   width: 100px;
   height: 40px;
   position: relative;
-  top: -50px;
+  top: -70px;
 }
 
 .ModalTodoTextBox {
