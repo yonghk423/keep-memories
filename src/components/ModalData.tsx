@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import './ModalData.scss'
-import Todos from './Todos'
+import ModalTodos from './ModalTodos';
 
 interface props { open: boolean; close: () => void; modalNumber : any }
 
@@ -29,7 +29,7 @@ const ModalData = (props: props) => {
               <div className='modalPrice'>{data.price}₩</div>
               <div className='modalText'>{data.text}</div>
             </div>}
-            <Todos todos={data}/>
+            <ModalTodos todos={data}/>
         </div>       
       </div>
         }

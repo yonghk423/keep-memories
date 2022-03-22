@@ -1,11 +1,12 @@
 .modalBackground {
+    overflow: auto;
     position: fixed;
-    top: 50%;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
     border: 1px solid black;
     width: 500px;
-    height: 500px;
+    height: 700px;
     background-color: antiquewhite;
     margin: 0 auto;
     z-index: 999;
@@ -23,8 +24,9 @@
         }
         .modalImg {
         border: 1px solid black;
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
+        position: relative;
         }
         .modalPrice {
         border: 1px solid black;

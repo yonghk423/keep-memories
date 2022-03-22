@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { AddCart, notify, selectedItem, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
-import Todos from './Todos';
+import Todos from './Todos'
 
 
 export interface SelectedReducer {
