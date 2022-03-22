@@ -1,6 +1,6 @@
 .infoItemBox {
 width: 100%;
-height: 1200px;
+height: 1000px;
 background: #546e7a;
     .submitInfo {
       display: grid;
@@ -34,6 +34,7 @@ background: #546e7a;
           resize: none;          
         }
         .nameMessage {
+          color: #cfd8dc;
           // outline : solid 1px black;
           
         }
@@ -54,6 +55,7 @@ background: #546e7a;
           top: 20px;
         }
         .priceMessage {
+          color: #cfd8dc;
           position: relative;
           top: 20px;
           // outline : solid 1px black;          

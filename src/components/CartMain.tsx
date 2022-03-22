@@ -33,8 +33,6 @@ export interface Item {
 }
 
 const CartMain = (todos:any) => {  
-    
-
   const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
@@ -58,39 +56,39 @@ const CartMain = (todos:any) => {
   const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.id).indexOf(ele.id) > -1)
   console.log(MatchingItems);
   
-  let data = cartItems.map((ele) => (ele.id))
-  console.log(data);
+  // let data = cartItems.map((ele) => (ele.id))
+  // console.log(data);
   
-  const [checkedItems, setCheckedItems]= useState(data);
-  console.log(checkedItems);
+  // const [checkedItems, setCheckedItems]= useState(data);
+  // console.log(checkedItems);
 
   const RemoveCartSetting = (id:number) => {
     console.log(id)
-    setCheckedItems(checkedItems.filter((ele) => ele !== id))
+    // setCheckedItems(checkedItems.filter((ele) => ele !== id))
     dispatch(RemoveCart(id))
     setTimeout(() => {
       window.location.reload();
     }, 2000)
   } 
   
-  const handleAllCheck = (checked:boolean) => {
-    console.log(checked)
-    if(checked) {
-      setCheckedItems(cartItems.map((ele)=> (ele.id)))
-    }
-    else {
-      setCheckedItems([]);
-    }
-  }
+  // const handleAllCheck = (checked:boolean) => {
+  //   console.log(checked)
+  //   if(checked) {
+  //     setCheckedItems(cartItems.map((ele)=> (ele.id)))
+  //   }
+  //   else {
+  //     setCheckedItems([]);
+  //   }
+  // }
 
-  const handleCheckChange = (checked:boolean, id:number) => {
-    if (checked) {
-      setCheckedItems([...checkedItems, id]);
-    }
-    else {
-      setCheckedItems(checkedItems.filter((ele) => ele !== id));
-    }
-  };
+  // const handleCheckChange = (checked:boolean, id:number) => {
+  //   if (checked) {
+  //     setCheckedItems([...checkedItems, id]);
+  //   }
+  //   else {
+  //     setCheckedItems(checkedItems.filter((ele) => ele !== id));
+  //   }
+  // };
 
   const openReq = () => {
       setShowReq(!showReq);
@@ -108,14 +106,14 @@ const CartMain = (todos:any) => {
     return (
           <>           
           <div className="TotalCheck">
-            <input className='TotalCheckBtn'
+            {/* <input className='TotalCheckBtn'
               type="checkbox" 
               checked={
                 checkedItems.length === cartItems.length ? true : false
               }
               onChange={(e) => handleAllCheck(e.target.checked)}
-              />
-            <label className='TotalCheckText'>Select All</label>
+              /> */}
+            {/* <label className='TotalCheckText'>Select All</label> */}
           </div>
           {!cartItems.length ? (
           <div className='TotalCheckSub'>  
@@ -126,15 +124,15 @@ const CartMain = (todos:any) => {
           ) : (
               <>  
                 {MatchingItems.map((item:any) => {
-                return <li className="CartContainer" key={item.id}> 
-                  <input 
+                return <div className="CartContainer" key={item.id}> 
+                  {/* <input 
                     className="Check" 
                     type="checkbox" 
                     checked={checkedItems.includes(item.id) ? true : false}
                     onChange={(e) => {
                       handleCheckChange(e.target.checked, item.id)
                     }}
-                  />
+                  /> */}
                 <div onClick={()=> {onClickModal(item.id)}}>  
                   <img className="CartImg" onClick={openReq} src={item.img} alt=""/>
                 </div>
@@ -143,9 +141,10 @@ const CartMain = (todos:any) => {
                   <div>{item.price}</div>
                 </div>                
                 <div className="Settiing">
-                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제</button>                  
+                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제
+                  </button>                  
                 </div>                
-              </li>
+              </div>
               })}
               <ModalData open={showReq} close={closeReq} modalNumber={modalNumber}/>
               </>
