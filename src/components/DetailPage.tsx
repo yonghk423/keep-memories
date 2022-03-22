@@ -115,7 +115,7 @@ const DetailPage = () => {
   
     return (      
       <div className='container'>
-        {items &&
+        {!items.length ? (<div>loading...</div>) :
         <>               
         {items.map((ele:any)=> (
           <div className='detailBox' key={ele.id}>          

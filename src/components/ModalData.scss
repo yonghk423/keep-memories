@@ -1,4 +1,39 @@
 .modalBackground {
-  
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 0 auto;
+    z-index: 999;
+  .modalContent {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    justify-content: center;
+    .modalData {
+        border: 1px solid black;
+
+        .modalName {
+
+        }
+        .modalImg {
+        border: 1px solid black;
+        width: 250px;
+        height: 250px;
+        }
+        .modalPrice {
+        border: 1px solid black;
+
+        }
+        .modalText {
+        border: 1px solid black;
+        }
+    }
+  }
 }
 

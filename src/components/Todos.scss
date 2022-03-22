@@ -1,34 +1,4 @@
 .submitBox {    
-    .onText {
-        // border: 1px solid black;
-        position: relative;
-        left: 15px;
-        top: 30px;
-        width: 380px; 
-        height: 30px;          
-    }
-    .btn {
-       position: relative;
-       background-color: #212121;
-       text-align: center;
-       color: #fafafa;
-       width: 100px;
-       height: 40px;
-       font-size: 20px;
-       left: 300px;
-       top: 40px;
-       // transform: translate(20%, -1100%);
-       line-height: 40px;
-       &:hover {
-           background-color: #6d6d6d;
-           color: efebe9;
-           transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-       }
-    }
+    
 }
 
-.todo {
-    position: relative;
-    left: -10px;
-    top: 30px;
-}

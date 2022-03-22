@@ -115,13 +115,7 @@ const CartMain = (todos:any) => {
               /> */}
             {/* <label className='TotalCheckText'>Select All</label> */}
           </div>
-          {!cartItems.length ? (
-          <div className='TotalCheckSub'>  
-            <div className="item-list-text">
-              <div className='noItemText'>There are no items in your cart</div>
-            </div>
-          </div>  
-          ) : (
+          {!cartItems.length ? ( <div>loading...</div> ) :           
               <>  
                 {MatchingItems.map((item:any) => {
                 return <div className="CartContainer" key={item.id}> 
@@ -148,7 +142,7 @@ const CartMain = (todos:any) => {
               })}
               <ModalData open={showReq} close={closeReq} modalNumber={modalNumber}/>
               </>
-          )}                       
+          }                        
           </>
     )
 }

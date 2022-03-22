@@ -1,10 +1,13 @@
 .CartContainer {
     border: 1px solid black;
-
-    /* border: 8px solid #212121; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    justify-content: center;
     &:hover {        
     }
   .CartImg {
+    cursor: pointer;
     border: 1px solid black;
     width: 100px;
     height: 100px;

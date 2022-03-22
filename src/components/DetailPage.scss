@@ -6,20 +6,22 @@
   .detailBox {
     display: grid;
     grid-template-columns: auto auto auto;
+    justify-items: center;
+    justify-content: center;
     .fullImg {
       border: 1px solid black;
-      width: 100px;
-      height: 100px;
+      width: 400px;
+      height: 400px;
     }
     .infoBox {
       border: 1px solid black;
-      width: 100px;
-      height: 100px;
+      width: 400px;
+      height: 400px;
     }
     .todos {
       border: 1px solid black;
-      width: 100px;
-      height: 100px;
+      width: 400px;
+      height: 400px;
     }
   }
 }
