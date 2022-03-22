@@ -23,13 +23,13 @@ const ModalData = (props: props) => {
       {open &&
       <div className='modalBackground'>
         <div className='modalContent'>
-            <button onClick={close}>&times;</button>
+            <button className='modalBtn' onClick={close}>&times;</button>
             {data && 
-            <div>
-              <div>{data.name}</div>
+            <div className='modalData'>
+              <div className='modalName'>{data.name}</div>
               <img className='modalImg' src={data.img} alt=""/>
-              <div>{data.price}₩</div>
-              <div>{data.text}</div>
+              <div className='modalPrice'>{data.price}₩</div>
+              <div className='modalText'>{data.text}</div>
             </div>}
             <Todos todos={data}/>
         </div>       

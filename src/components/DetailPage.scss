@@ -2,102 +2,25 @@
 
 .container {
     font-family: 'EB Garamond', serif;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 1400px;
-    height: 580px;
-    margin: auto;
-    top: 35px;    
-    // border: 1px solid black;
-
-    .fullImgDetailBox {
+    border: 1px solid black;
+  .detailBox {
+    display: grid;
+    grid-template-columns: auto auto auto;
     .fullImg {
-      border: solid rgb(238, 238, 238) 0.2rem;
-      list-style: none;
-      box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
-      transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-      position: absolute;
-      left: 20px;
-      top: 40px;
-      width: 500px;
-      height: 500px;
-    }    
-}
-.infoBox {
-  border: solid rgb(238, 238, 238) 0.2rem;  
-  list-style: none;  
-  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
-  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-  position: absolute;
-  top:40px;
-  left: 525px;
-  width: 425px;
-  height: 500px;
-  // border: 1px solid black;
-  .name {
-    font-size: 40px;
-    padding: 10px 8px;
-  }
-  .price {
-    font-size: 30px;
-    padding: 10px 8px;
-  }
-  .text {
-    font-size: 30px;
-    padding: 10px 8px;
-  }
-  .BtnBox {
-    .ItemBtn{
-      position: absolute;
-      background-color: #212121;
-      text-align: center;
-      color: #fafafa;
-      width: 250px;
-      height: 40px;
-      font-size: 20px;
-      top: 200px;
-      left: 50%;
-      top: 400px;
-      transform: translate(-50%, -50%);
-      // transform: translate(20%, -1100%);
-      line-height: 40px;
-
-      &:hover {
-        background-color: #6d6d6d;
-        color: efebe9;
-        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-      }
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+    .infoBox {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+    .todos {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
     }
   }
-}
-
-.todos {
-  border: solid rgb(238, 238, 238) 0.2rem;
-  list-style: none;
-  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
-  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-  position: absolute;
-  overflow: auto;
-  top: 40px;
-  width: 420px;
-  height: 500px;
-  left: 960px;
-  // border: 1px solid black;
-  .todosTitle {
-    font-size: 20px;
-    position: relative;
-    top: 10px;
-    text-align: center;
-  }
-}
-.cartMainBox {
-  position: relative;
-  bottom: -600px;
-  left: -300px;
-}
 }
 

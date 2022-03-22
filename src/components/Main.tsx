@@ -5,9 +5,6 @@ import { SetData } from '../actions/index';
 import { RemoveItem } from '../actions/index'
 import { useNavigate } from 'react-router-dom';
 import './Main.scss';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -85,7 +82,7 @@ useEffect(() => {
 //     slidesToScroll: 1
 //   };
     return (
-        <div className='total'>
+        <div className='total'>          
           {fullImg &&
           <div className="fullImgBox">
             <div onClick={onClick}>
