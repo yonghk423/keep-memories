@@ -3,20 +3,24 @@
     display: grid;
     grid-template-columns: auto auto auto;
     justify-items: center;
-    justify-content: center;
+    justify-content: center;    
     &:hover {        
     }
   .CartImg {
     cursor: pointer;
     border: 1px solid black;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
   } 
   .Item {
     border: 1px solid black;
+    width: 200px;
+    height: 200px;
   } 
   .Setting {
     border: 1px solid black;
+    width: 200px;
+    height: 200px;
   }  
 }
 

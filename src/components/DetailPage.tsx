@@ -118,6 +118,7 @@ const DetailPage = () => {
         {!items.length ? (<div>loading...</div>) :
         <>               
         {items.map((ele:any)=> (
+          <>
           <div className='detailBox' key={ele.id}>          
             <img className='fullImg' src={ele.img}  key={ele.id} alt=''/>            
             <div className='infoBox'>
@@ -127,12 +128,13 @@ const DetailPage = () => {
               <div className='BtnBox'>
                 <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>즐겨찾기 추가</button>
               </div>
-            </div>       
-            <div className='todos'>
+            </div>    
+          </div>  
+          <div className='todos'>
               <div className='todosTitle'>Please leave your thoughts on the photo</div>
               <Todos todos={data}/>
-            </div>
-          </div>             
+          </div>
+          </>           
           ))}
         </>
         }       

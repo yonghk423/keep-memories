@@ -1,4 +1,42 @@
 .submitBox {    
-    
+    border: 1px solid black;
+    width: 900px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    justify-content: center;
+    textarea {
+        outline: solid 1px black;        
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        width: 850px;
+        height: calc(50vh - 150px);
+        padding: 10px;
+        resize: none;
+        position: relative;
+        top: 40px;
+    }
+    .btn {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+.todoTextBox {
+    border: 1px solid black;
+    display: grid; 
+    grid-template-columns: 800px 100px;
+    justify-items: center;
+    width: 900px;
+    // justify-content: center;
+    position: relative;
+    left: -20px;
+    .todoText {
+       
+    }
+    .todoDelete {
+        
+    }
 }
 

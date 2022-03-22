@@ -2,27 +2,33 @@
 
 .container {
     font-family: 'EB Garamond', serif;
-    border: 1px solid black;
+    border: 1px solid black;     
   .detailBox {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     justify-items: center;
     justify-content: center;
+    
     .fullImg {
       border: 1px solid black;
-      width: 400px;
-      height: 400px;
+      width: 450px;
+      height: 450px;
     }
     .infoBox {
+      display: grid;
+      grid-template-columns: auto;
+      justify-items: center;
       border: 1px solid black;
-      width: 400px;
-      height: 400px;
-    }
-    .todos {
-      border: 1px solid black;
-      width: 400px;
-      height: 400px;
-    }
+      width: 450px;
+      height: 450px;
+    }    
+  }
+  .todos {
+    border: 1px solid black;    
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    justify-content: center;  
   }
 }
 

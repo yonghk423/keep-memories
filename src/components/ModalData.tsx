@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { SetData } from '../actions';
+import { useSelector } from 'react-redux';
 import './ModalData.scss'
 import Todos from './Todos'
 
