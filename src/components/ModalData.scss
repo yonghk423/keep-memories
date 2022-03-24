@@ -16,6 +16,10 @@
     grid-template-columns: auto;
     justify-items: center;
     justify-content: center;
+    .modalBtn {
+      position: relative;
+      left: -230px;
+    }
     .modalData {
         border: 1px solid black;
 
@@ -24,7 +28,7 @@
         }
         .modalImg {
         border: 1px solid black;
-        width: 220px;
+        width: 250px;
         height: 220px;
         position: relative;
         }
