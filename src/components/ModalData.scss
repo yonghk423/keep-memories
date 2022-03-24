@@ -6,7 +6,7 @@
     transform: translate(-50%, -35%);
     border: 1px solid black;
     width: 500px;
-    height: 700px;
+    height: 550px;
     background-color: antiquewhite;
     margin: 0 auto;
     z-index: 999;
@@ -22,6 +22,8 @@
     }
     .modalData {
         border: 1px solid black;
+        display: grid;
+        justify-items: center;
 
         .modalName {
 

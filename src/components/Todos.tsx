@@ -62,7 +62,7 @@ const TodoList = React.memo(function TodoList(todoss:any) {
 
   return (
   todosss &&   
-    <ul>
+    <ul className='textList'>
       {todosss.map((todo:any) => (
        <div className='todoTextBox' key={todo.id}>
         <div className='todoText'>{todo.text}</div>

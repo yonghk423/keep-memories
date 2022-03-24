@@ -131,10 +131,10 @@ const CartMain = (todos:any) => {
                   <img className="CartImg" onClick={openReq} src={item.img} alt=""/>
                 </div>
                 <div className="Item">
-                  <div>{item.name}</div>
-                  <div>{item.price}</div>
+                  <div className='itemName'>{item.name}</div>
+                  <div className='itemPrice'>{item.price}₩</div>
                 </div>                
-                <div className="Settiing">
+                <div className="Setting">
                   <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제
                   </button>                  
                 </div>                
