@@ -24,13 +24,13 @@ let initialState = {
   items: [
     {
       id: 1,
-      name: "leisure time",
-      img: "https://images.velog.io/images/yonghk423/post/00995394-70d4-480e-bf98-e699dffda06f/red16.jpeg",
+      name: "코딩과 커피는 단짝",
+      img: "https://media.vlpt.us/images/yonghk423/post/fe476ce0-2920-4d1f-b527-fd37d067122d/D58867B2-00E0-4C19-AF06-CEB5C9689CAB_1_105_c.jpeg",
       price: 9900,
-      text: 'Live life to the fullest',
+      text: '고민할 때 커피 한잔은 행복이다:)',
       textBox: [JSON.stringify({
                     id: 1,
-                    name: "leisure time",
+                    name: "코딩과 커피는 단짝",
                     text: '',
                   })]  
     },
