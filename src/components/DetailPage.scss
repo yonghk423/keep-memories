@@ -40,10 +40,21 @@
         top: 50px;
 
       }
-      .BtnBox {
-        .ItemBtn {
-
-        }
+      .ItemBtn {
+       position: relative;
+       background-color: #212121;
+       text-align: center;
+       color: #fafafa;
+       width: 200px;
+       height: 40px;
+       top: 25px;
+       font-size: 20px;
+       line-height: 40px;
+       &:hover {
+         background-color: #6d6d6d;
+         color: efebe9;
+         transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+       }
       }
     }    
   }

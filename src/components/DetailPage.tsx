@@ -112,32 +112,28 @@ const DetailPage = () => {
       window.location.reload();
     }, 2000)
   }
-  
+  console.log(items)
     return (      
       <div className='container'>
         {!items.length ? (<div>loading...</div>) :
         <>               
         {items.map((ele:any)=> (
-          <>
-          <div className='detailBox' key={ele.id}>          
-            <img className='fullImg' src={ele.img}  key={ele.id} alt=''/>            
+          <div key={ele.id} className="detailBox">   
+            <img className='fullImg' src={ele.img}  key={ele.id} alt=''/>           
             <div className='infoBox'>
               <div className='name'>{ele.name}</div>
               <div className='price'>{ele.price}₩</div>
               <div className='text'>{ele.text}</div>
-              <div className='BtnBox'>
-                <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>즐겨찾기 추가</button>
-              </div>
-            </div>    
-          </div>  
-          <div className='todos'>
-              <div className='todosTitle'>Please leave your thoughts on the photo</div>
-              <Todos todos={data}/>
+              <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>즐겨찾기 추가</button>
+            </div>
           </div>
-          </>           
-          ))}
+         ))}         
+          <div className='todos'>
+            <div className='todosTitle'>Please leave your thoughts on the photo</div>
+            <Todos todos={data}/>
+          </div> 
         </>
-        }       
+        }    
       </div>  
     )
 }

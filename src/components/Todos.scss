@@ -22,6 +22,17 @@
         top: 10px;
         width: 100px;
         height: 40px;
+        position: relative;
+        background-color: #212121;
+        text-align: center;
+        color: #fafafa;
+        font-size: 20px;
+        line-height: 40px;
+        &:hover {
+            background-color: #6d6d6d;
+            color: efebe9;
+            transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
     }
 }
 .textList {
