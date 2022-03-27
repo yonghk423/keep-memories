@@ -73,14 +73,7 @@ useEffect(() => {
       navigate(`/DetailPage/${fullImg.id}`)
       window.location.reload()
     }   
-//----------------------------------------------------------------------------------  
-// let settings = {
-//     dots: false,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 4,
-//     slidesToScroll: 1
-//   };
+
     return (
         <div className='total'>          
           {fullImg &&

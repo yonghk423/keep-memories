@@ -24,25 +24,25 @@ let initialState = {
   items: [
     {
       id: 1,
-      name: "코딩과 커피는 단짝",
+      name: "랭스터디 카페 아메리카노",
       img: "https://media.vlpt.us/images/yonghk423/post/fe476ce0-2920-4d1f-b527-fd37d067122d/D58867B2-00E0-4C19-AF06-CEB5C9689CAB_1_105_c.jpeg",
-      price: 9900,
+      price: 6000,
       text: '고민할 때 커피 한잔은 행복이다:)',
-      textBox: [JSON.stringify({
+      textBox: [{
                     id: 1,
-                    name: "코딩과 커피는 단짝",
+                    name: "랭스터디 카페 아메리카노",
                     text: '',
-                  })]  
+                  }]
     },
     {
       id: 2,
-      name: "beautiful architecture",
-      img: "https://media.vlpt.us/images/yonghk423/post/1b0c1f1b-72bf-4864-b6c4-1be205b1abfd/1.jpeg",
-      price: 12000,
-      text: 'Behind the cloud is the sun still shining',
+      name: "합정역 카페 아메리카노",
+      img: "https://media.vlpt.us/images/yonghk423/post/49198b67-141b-4832-813c-e9c7d71ccfa6/IMG_7715.JPG",
+      price: 4900,
+      text: '답답할 때는 카페를 자주 갔다',
       textBox: [{
                     id: 1,
-                    name: "beautiful architecture",
+                    name: "합정역 카페 아메리카노",
                     text: '',
                   }]
     },
