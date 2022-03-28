@@ -15,25 +15,6 @@ export interface ItemReducer {
         ItemReducer : Array<object>
 }
 
-// export interface DataSetting {  
-//   items: [{
-//     price:number;
-//     id:number;
-//     img:string;
-//     name:string;
-//     text:string;
-//     textBox: {
-//         id: number;
-//         name: string;
-//         text: string;
-//     }[];
-//   }]
-//   cartItems: [{
-//     quantity:number;
-//     itemId:number;
-//   }]; 
-// }
-
 const DetailPage = () => {
   const idData = useParams()
   const ItemId:number = Number(idData.id)
