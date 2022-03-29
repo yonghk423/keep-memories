@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
         <div className="HeaderBox">             
-             <div className='header' style={{ textDecoration: 'none', color:'#f5f5f5' }} onClick={onClick}>memories of photos</div>                       
+             <div className='header' style={{ textDecoration: 'none', color:'#f5f5f5' }} onClick={onClick}>추억을 담다</div>                       
          </div>
         )            
        };
