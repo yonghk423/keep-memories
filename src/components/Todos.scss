@@ -28,6 +28,7 @@
         color: #fafafa;
         font-size: 20px;
         line-height: 40px;
+        border-radius: 10px;
         &:hover {
             background-color: #6d6d6d;
             color: efebe9;
@@ -51,10 +52,22 @@
        
     }
     .todoDelete {
-        
-    }   
-    .none {
-        display: none;
+        .todoBtn {
+            position: relative;
+            background-color: #212121;
+            text-align: center;
+            color: #fafafa;
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            border-radius: 10px;
+            &:hover {
+                background-color: #6d6d6d;
+                color: efebe9;
+                transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+        }
     }
 }
 }
