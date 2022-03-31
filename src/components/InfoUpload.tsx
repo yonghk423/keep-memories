@@ -11,11 +11,8 @@ const InfoUpload = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
-  const [infoData, setInfoData] = useState({ img:'', text:'', textBox:[{ name: '', text: '', }]});  
-  const {img, text, textBox} = infoData;
-
-  //--------------localStorage-------------------------------------------------------------------
-  
+  const [infoData, setInfoData] = useState({ img:'', text:'', textBox:[{ name: '', text: '', }]}); 
+  const {img, text, textBox} = infoData;  
 
    //-----------오류 메시지 상태------------------------------------------------
   const [nameMessage, setNameMessage] = useState('')

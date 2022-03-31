@@ -24,6 +24,8 @@ height: 1000px;
       }
       .onNameChange {
         // outline : solid 1px black;
+        display: grid;
+        justify-items: center;
         textarea {
           outline : solid 1px black;
           box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
@@ -36,13 +38,16 @@ height: 1000px;
           resize: none;          
         }
         .nameMessage {
-          color: #cfd8dc;
+          color: #f50057;
+          padding: 10px 8px;
           // outline : solid 1px black;
           
         }
       }
       .onPriceChange {
         // outline : solid 1px black;
+        display: grid;
+        justify-items: center;
         textarea {
           outline : solid 1px black;
           box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
@@ -57,9 +62,10 @@ height: 1000px;
           top: 20px;
         }
         .priceMessage {
-          color: #cfd8dc;
+          color: #f50057;
           position: relative;
           top: 20px;
+          padding: 10px 8px;
           // outline : solid 1px black;          
         }
       }
