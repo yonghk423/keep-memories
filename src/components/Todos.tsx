@@ -37,7 +37,7 @@ const Todos = (todos:any) => {
           placeholder=""
           onChange={onChange}
         />
-        <button className='btn' type="submit">Add</button>
+        <button className='btn' type="submit">글 남기기</button>
       </form>
       <TodoList todoss={todoss}/>
     </>

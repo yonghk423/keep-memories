@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
 
 .container {
-  background: url('https://i.pinimg.com/750x/e5/23/76/e5237648be08b9577148ba3d6c8added.jpg');
-  background-size: cover;
-  // background-color: #bbdefb;
+  // background: url('https://i.pinimg.com/750x/e5/23/76/e5237648be08b9577148ba3d6c8added.jpg');
+  // background-size: cover;
+  background-color: #d1c4e9;
   border: 1px solid black;     
   .detailBox {
-     font-family: 'EB Garamond',
-     serif;
+    font-family: 'Gowun Dodum',
+    sans-serif;
     display: grid;
     grid-template-columns: auto auto;
     justify-items: center;
@@ -41,22 +41,12 @@
 
       }
       .ItemBtn {
+      background-color: #d1c4e9;
+      width: 100px;
+      height: 100px;
+      border-style: none;
       position: relative;
-      background-color: #212121;
-      text-align: center;
-      color: #fafafa;
-      width: 200px;
-      height: 40px;
-      top: 25px;
-      font-size: 20px;
-      line-height: 40px;
-      border-radius: 10px;
-
-       &:hover {
-         background-color: #6d6d6d;
-         color: efebe9;
-         transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-       }
+      top: 50px;
       }
     }    
   }

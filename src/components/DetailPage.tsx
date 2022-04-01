@@ -5,7 +5,8 @@ import { AddCart, notify, selectedItem, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './DetailPage.scss';
 import Todos from './Todos'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 
 export interface SelectedReducer {
         SelectedReducer : Array<object>
@@ -105,7 +106,9 @@ const DetailPage = () => {
               <div className='name'>{ele.name}</div>
               <div className='price'>{ele.price}₩</div>
               <div className='text'>{ele.text}</div>
-              <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>즐겨찾기 추가</button>
+              <button className="ItemBtn" onClick={() => AddCartSetting(ele.id, ele.name)}>
+                <FontAwesomeIcon icon={faFolderPlus} size="4x" />
+              </button>
             </div>
           </div>
          ))}         

@@ -1,4 +1,8 @@
-.submitBox {    
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
+
+.submitBox {
+    font-family: 'Gowun Dodum',
+    sans-serif;
     // border: 1px solid black;
     width: 900px;
     height: 250px;
@@ -22,7 +26,6 @@
         top: 10px;
         width: 100px;
         height: 40px;
-        position: relative;
         background-color: #212121;
         text-align: center;
         color: #fafafa;

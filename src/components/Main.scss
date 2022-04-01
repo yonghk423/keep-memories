@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
 
 .total {
   font-family: 'EB Garamond',
     serif; 
-  background: rgba(218, 218, 218, 1);
   width: 100%;
   // background: url('https://i.pinimg.com/564x/86/35/08/863508c0e1ed15f36fae540dd7961755.jpg');
   // background-size: cover;
-  background-color: #ede7f6;
+  background-color: #d1c4e9;
 .fullImgBox {
   width: 100%;
   display: grid;
@@ -37,7 +36,7 @@
   border-radius: 10px;
   overflow: auto;
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto ;
+  grid-template-columns: auto auto auto auto auto auto auto;
   justify-content: center;
   position: relative;
   top: -10px;

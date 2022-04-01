@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Kirang+Haerang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
  
 
 .CartContainer {
-  background: url('https://i.pinimg.com/564x/9e/55/5b/9e555bd25c070d83bd7108c46e083ea9.jpg');
-    background-size: cover;
-
-    font-family: 'EB Garamond',
-    serif;
+  // background: url('https://i.pinimg.com/564x/9e/55/5b/9e555bd25c070d83bd7108c46e083ea9.jpg');
+  //   background-size: cover;
+    font-family: 'Gowun Dodum',
+    sans-serif;
     border: 1px solid black;
     display: grid;
     grid-template-columns: auto auto auto;
