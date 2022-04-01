@@ -16,7 +16,7 @@
   .fullImg {
     cursor: pointer;    
     height: 550px;
-    width: 390px;
+    width: 1200px;
     object-fit: cover;
     //  filter: grayscale(100%) contrast(120%);
     box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
@@ -33,11 +33,11 @@
   // outline : solid 1px black;
   overflow: auto;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto ;
   justify-content: center;
   position: relative;
   top: -10px;
-  width: 410px;
+  width: 1200px;
   height: 250px;
   margin: 0 auto;   
   box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);

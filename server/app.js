@@ -25,7 +25,7 @@ let initialState = {
     {
       id: 1,
       name: "랭스터디 카페 아메리카노",
-      img: "https://media.vlpt.us/images/yonghk423/post/fe476ce0-2920-4d1f-b527-fd37d067122d/D58867B2-00E0-4C19-AF06-CEB5C9689CAB_1_105_c.jpeg",
+      img: "https://media.vlpt.us/images/yonghk423/post/00995394-70d4-480e-bf98-e699dffda06f/red16.jpeg",
       price: 6000,
       text: '고민할 때 커피 한잔은 행복이다:)',
       textBox: [{
@@ -36,8 +36,8 @@ let initialState = {
     },
     {
       id: 2,
-      name: "합정역 카페 아메리카노",
-      img: "https://media.vlpt.us/images/yonghk423/post/49198b67-141b-4832-813c-e9c7d71ccfa6/IMG_7715.JPG",
+      name: "노원역 시드누아 카페 카푸치노",
+      img: "https://media.vlpt.us/images/yonghk423/post/f7687d60-9c6f-4e7d-9b3e-192fad742223/red14.jpeg",
       price: 4900,
       text: '답답할 때는 카페를 자주 갔다',
       textBox: [{
