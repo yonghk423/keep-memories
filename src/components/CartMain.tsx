@@ -115,7 +115,7 @@ const CartMain = (todos:any) => {
               /> */}
             {/* <label className='TotalCheckText'>Select All</label> */}
           </div>
-          {!cartItems.length ? ( <div>loading...</div> ) :           
+          {cartItems &&           
               <>  
                 {MatchingItems.map((item:any) => {
                 return <div className="CartContainer" key={item.id}> 

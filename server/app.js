@@ -95,7 +95,137 @@ let initialState = {
                     name: "harmony of colors",
                     text: '',
                   }]
-    }    
+    },
+    
+    {
+      id: 7,
+      name: "1",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "1",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 8,
+      name: "2",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "2",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 9,
+      name: "3",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "3",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 10,
+      name: "4",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "4",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 11,
+      name: "5",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "5",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 12,
+      name: "6",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "6",
+                    text: '',
+                  }]
+    },
+
+    {
+      id: 13,
+      name: "7",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "7",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 14,
+      name: "8",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "8",
+                    text: '',
+                  }]
+    },
+    
+    {
+      id: 15,
+      name: "9",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "9",
+                    text: '',
+                  }]
+    },
+
+    {
+      id: 16,
+      name: "10",
+      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "11",
+                    text: '',
+                  }]
+    },    
   ],
 
   cartItems: [
