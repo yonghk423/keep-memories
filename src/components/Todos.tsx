@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo, RemoveText } from '../actions';
 import './Todos.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquarePen } from "@fortawesome/free-solid-svg-icons";
+import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
 export interface ItemReducer {
         ItemReducer : Array<object>
@@ -37,7 +40,9 @@ const Todos = (todos:any) => {
           placeholder=""
           onChange={onChange}
         />
-        <button className='btn' type="submit">글 남기기</button>
+        <button className='btn' type="submit">
+          <FontAwesomeIcon icon={faSquarePen} size="5x" />
+        </button>
       </form>
       <TodoList todoss={todoss}/>
     </>
@@ -68,7 +73,9 @@ const TodoList = React.memo(function TodoList(todoss:any) {
         <div className='todoText'>{todo.text}</div>
         {todo.text === '' ? null :  
         <div className='todoDelete'>
-          <button className='todoBtn' onClick={() => RemoveTextSetting(todo.id)}>삭제</button>
+          <button className='todoBtn' onClick={() => RemoveTextSetting(todo.id)}>
+            <FontAwesomeIcon icon={faEraser} size="2x" />
+          </button>
         </div>
         }
       </div>       

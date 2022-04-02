@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.scss';
 import ModalData from './ModalData';
 
+
 export interface ItemReducer {
   ItemReducer : Array<object>
 }
