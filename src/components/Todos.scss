@@ -57,7 +57,7 @@
     display: grid; 
     grid-template-columns: 800px 100px;
     justify-items: center;
-    width: 900px;
+    width: 825px;
     // justify-content: center;
     position: relative;
     left: -20px;
@@ -66,12 +66,13 @@
     }
     .todoDelete {      
         .todoBtn {
-          outline: solid 1px black;
+          // outline: solid 1px black;
           background-color: #d1c4e9;
           width: 35px;
           height: 35px;
           border-style: none;
           position: relative;
+          left: -50px;
           cursor: pointer;
             // position: relative;
             // background-color: #212121;

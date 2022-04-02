@@ -41,7 +41,7 @@ const Todos = (todos:any) => {
           onChange={onChange}
         />
         <button className='btn' type="submit">
-          <FontAwesomeIcon icon={faSquarePen} size="5x" />
+          <FontAwesomeIcon icon={faSquarePen} size="4x" />
         </button>
       </form>
       <TodoList todoss={todoss}/>
