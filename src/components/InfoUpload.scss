@@ -1,7 +1,8 @@
 .infoItemBox {
 background: url('https://i.pinimg.com/564x/d3/47/e9/d347e974cfb6b2bc20c4d85114101575.jpg');
 background-size: cover;
-width: 100%;
+max-width: 100%;
+max-height: 100%;
 height: 1000px;
 // background: #ede7f6;
     .submitInfo {
@@ -10,6 +11,8 @@ height: 1000px;
       justify-content: center;
       position: relative;
       top: 200px;
+      max-width: 100%;
+      max-height: 100%;
       .imgUrl {
         // outline : solid 1px black;        
         box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
@@ -35,7 +38,9 @@ height: 1000px;
           width: 390px;
           height: 25px;
           padding: 10px;
-          resize: none;          
+          resize: none;
+          max-width: 100%;
+          max-height: 100%;
         }
         .nameMessage {
           color: #fcfcfc;
@@ -60,6 +65,8 @@ height: 1000px;
           resize: none; 
           position: relative;
           top: 20px;
+          max-width: 100%;
+          max-height: 100%;
         }
         .priceMessage {
           color: #fcfcfc;
@@ -83,11 +90,15 @@ height: 1000px;
           resize: none;
           position: relative;
           top: 40px;
+          max-width: 100%;
+          max-height: 100%;
         }
       }
       .submit {
         display: grid;
         justify-items: center;
+        max-width: 100%;
+        max-height: 100%;
         .submitBtn {     
           width: 100px;
           height: 50px;  
