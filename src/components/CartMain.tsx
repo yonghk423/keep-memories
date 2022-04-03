@@ -4,6 +4,8 @@ import { RemoveCart, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './CartMain.scss';
 import ModalData from './ModalData';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
 
 export interface ItemReducer {
@@ -136,7 +138,8 @@ const CartMain = (todos:any) => {
                   <div className='itemPrice'>{item.price}₩</div>
                 </div>                
                 <div className="Setting">
-                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>삭제
+                  <button className="DelBtn" onClick={() => {RemoveCartSetting(item.id)}}>
+                    <FontAwesomeIcon icon={faEraser} size="2x" />
                   </button>                  
                 </div>                
               </div>

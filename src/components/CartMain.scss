@@ -4,9 +4,10 @@
 .CartContainer {
   // background: url('https://i.pinimg.com/564x/9e/55/5b/9e555bd25c070d83bd7108c46e083ea9.jpg');
   //   background-size: cover;
+    background-color: #d1c4e9;
     font-family: 'Gowun Dodum',
     sans-serif;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-items: center;
@@ -47,7 +48,7 @@
       background-color: #373737;
       border-radius: 9px;
       border-color: 90a4ae;
-      box-shadow: 0px 6px #87A8A4;
+      box-shadow: 0px 6px #fff4ff;
       border: none;
       color: white;
     &:hover {
