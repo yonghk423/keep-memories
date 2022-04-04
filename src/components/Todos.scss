@@ -9,7 +9,9 @@
     display: grid;
     grid-template-columns: auto;
     justify-items: center;
-    justify-content: center;
+    justify-content: center;   
+    max-width: 100%;
+    max-height: 100%;
     textarea {
         // outline: solid 1px black;        
         border: 1px solid white;
@@ -20,7 +22,7 @@
         padding: 10px;
         resize: none;
         position: relative;
-        top: 40px;
+        top: 40px;        
     }
     .btn {
         // outline: solid 1px black;
@@ -30,23 +32,7 @@
         border-style: none;
         position: relative;
         top: 10px;
-        cursor: pointer;      
-
-        // position: relative;
-        // top: 10px;
-        // width: 100px;
-        // height: 40px;
-        // background-color: #212121;
-        // text-align: center;
-        // color: #fafafa;
-        // font-size: 20px;
-        // line-height: 40px;
-        // border-radius: 10px;
-        // &:hover {
-        //     background-color: #6d6d6d;
-        //     color: efebe9;
-        //     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-        // }
+        cursor: pointer;              
     }
 }
 .textList {
@@ -54,7 +40,9 @@
   border-radius: 5px;
   font-family: 'Gowun Dodum', sans-serif;
   position: relative;
-  top: -50px;
+  top: -50px;  
+  max-width: 100%;
+  max-height: 100%;
   .todoTextBox {
   // border: 1px solid black;
     display: grid; 
@@ -64,6 +52,8 @@
     // justify-content: center;
     position: relative;
     left: -20px;
+    max-width: 100%;
+    max-height: 100%;
     .todoText {
        font-size: 20px;
     }
@@ -76,24 +66,33 @@
           border-style: none;
           position: relative;
           left: -50px;
-          cursor: pointer;
-            // position: relative;
-            // background-color: #212121;
-            // text-align: center;
-            // color: #fafafa;
-            // width: 100px;
-            // height: 40px;
-            // font-size: 20px;
-            // line-height: 40px;
-            // border-radius: 10px;
-            // &:hover {
-            //     background-color: #6d6d6d;
-            //     color: efebe9;
-            //     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-            // }
+          cursor: pointer;            
         }
     }
 }
 }
 
-
+@media (max-width: 768px) {
+    .submitBox {
+      width: 600px;
+      .onText {
+        width: 600px;
+      }
+    }
+    .textList {
+      width: 600px;
+      .todoTextBox {
+        width: 550px;
+        left: -20px;
+        .todoText {
+          width: 600px;
+          font-size: 15px;
+        }
+        .todoDelete {
+          .todoBtn {
+            left: -280px;
+          }
+        }
+      }
+    }
+}
