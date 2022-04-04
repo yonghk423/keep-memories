@@ -144,5 +144,8 @@
         top: 100px;
       }
     }
+    .thumBox {
+      grid-template-columns: auto auto auto;
+    }
   }
 }
