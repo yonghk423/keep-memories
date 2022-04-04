@@ -73,7 +73,7 @@
 }
 
 @media (max-width: 768px) {
-    .submitBox {
+    .submitBox {      
       width: 600px;
       .onText {
         width: 600px;
@@ -82,17 +82,59 @@
     .textList {
       width: 600px;
       .todoTextBox {
+    // outline: solid 1px black;
+
         width: 550px;
         left: -20px;
         .todoText {
+    // outline: solid 1px black;
+
           width: 600px;
           font-size: 15px;
+          position: relative;
+          left: -90px;
         }
         .todoDelete {
           .todoBtn {
             left: -280px;
+            
           }
         }
       }
     }
+}
+
+@media (max-width: 420px) {
+  .submitBox {
+    width: 400px;
+
+    .onText {
+      width: 400px;
+    }
+  }
+
+  .textList {
+    width: 350px;
+    height: 200px;
+
+    .todoTextBox {
+      width: 350px;
+      position: relative;
+      left: -40px;
+
+      .todoText {
+        width: 350px;
+        font-size: 15px;
+        position: relative;
+        left: -225px;
+      }
+
+      .todoDelete {
+        .todoBtn {
+          // outline: solid 1px black;
+          left: -480px;
+        }
+      }
+    }
+  }
 }
