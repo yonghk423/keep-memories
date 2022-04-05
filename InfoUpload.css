@@ -1,0 +1,227 @@
+.infoItemBox {
+  background: url("https://i.pinimg.com/564x/1b/1d/19/1b1d1943fcd727dc1c824dbad4c6bb02.jpg");
+  background-size: cover;
+  max-width: 100%;
+  max-height: 100%;
+  height: 1000px;
+}
+
+.infoItemBox .submitInfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 200px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.infoItemBox .submitInfo .imgUrl {
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 250px;
+  height: 220px;
+}
+
+.infoItemBox .submitInfo .onFileChange {
+  width: 400px;
+}
+
+.infoItemBox .submitInfo .onNameChange {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.infoItemBox .submitInfo .onNameChange textarea {
+  outline: solid 1px black;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: 1px solid #ddd;
+  width: 390px;
+  height: 25px;
+  padding: 10px;
+  resize: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.infoItemBox .submitInfo .onNameChange .nameMessage {
+  color: #fcfcfc;
+  padding: 10px 8px;
+}
+
+.infoItemBox .submitInfo .onPriceChange {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.infoItemBox .submitInfo .onPriceChange textarea {
+  outline: solid 1px black;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: 1px solid #ddd;
+  width: 390px;
+  height: 25px;
+  padding: 10px;
+  resize: none;
+  position: relative;
+  top: 20px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.infoItemBox .submitInfo .onPriceChange .priceMessage {
+  color: #fcfcfc;
+  position: relative;
+  top: 20px;
+  padding: 10px 8px;
+}
+
+.infoItemBox .submitInfo .text textarea {
+  outline: solid 1px black;
+  -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 390px;
+  height: calc(50vh - 150px);
+  padding: 10px;
+  resize: none;
+  position: relative;
+  top: 40px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.infoItemBox .submitInfo .submit {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.infoItemBox .submitInfo .submit .submitBtn {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  top: 40px;
+}
+
+@media (max-width: 420px) {
+  .infoItemBox {
+    background: url("https://i.pinimg.com/564x/d3/47/e9/d347e974cfb6b2bc20c4d85114101575.jpg");
+    background-size: cover;
+    width: 420px;
+    height: 1000px;
+  }
+  .infoItemBox .submitInfo {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    top: 200px;
+  }
+  .infoItemBox .submitInfo .imgUrl {
+    -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 250px;
+    height: 220px;
+  }
+  .infoItemBox .submitInfo .onFileChange {
+    width: 350px;
+  }
+  .infoItemBox .submitInfo .onNameChange {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  .infoItemBox .submitInfo .onNameChange textarea {
+    outline: solid 1px black;
+    -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid #ddd;
+    width: 350px;
+    height: 25px;
+    padding: 10px;
+    resize: none;
+  }
+  .infoItemBox .submitInfo .onNameChange .nameMessage {
+    color: #fcfcfc;
+    padding: 10px 8px;
+  }
+  .infoItemBox .submitInfo .onPriceChange {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  .infoItemBox .submitInfo .onPriceChange textarea {
+    outline: solid 1px black;
+    -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid #ddd;
+    width: 350px;
+    height: 25px;
+    padding: 10px;
+    resize: none;
+    position: relative;
+    top: 20px;
+  }
+  .infoItemBox .submitInfo .onPriceChange .priceMessage {
+    color: #fcfcfc;
+    position: relative;
+    top: 20px;
+    padding: 10px 8px;
+  }
+  .infoItemBox .submitInfo .text textarea {
+    outline: solid 1px black;
+    -webkit-box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 350px;
+    height: calc(50vh - 150px);
+    padding: 10px;
+    resize: none;
+    position: relative;
+    top: 40px;
+  }
+  .infoItemBox .submitInfo .submit {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  .infoItemBox .submitInfo .submit .submitBtn {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top: 40px;
+  }
+}
+/*# sourceMappingURL=InfoUpload.css.map */

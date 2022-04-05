@@ -6,6 +6,7 @@
   display: grid;
   -ms-grid-columns: atuo;
       grid-template-columns: atuo;
+  border-radius: 10px;
 }
 
 .submitBoxControl .submitBox {
