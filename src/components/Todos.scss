@@ -1,140 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
 
-.submitBox {
+.submitBoxControl {
+  display: grid;
+  grid-template-columns: atuo;
+  .submitBox {
     font-family: 'Gowun Dodum',
-    sans-serif;
-    // border: 1px solid black;
-    width: 900px;
-    height: 250px;
+      sans-serif;
+    border: 1px solid black;
     display: grid;
     grid-template-columns: auto;
-    justify-items: center;
-    justify-content: center;   
-    max-width: 100%;
-    max-height: 100%;
-    textarea {
-        // outline: solid 1px black;        
-        border: 1px solid white;
-        outline-color: white;
-        margin-bottom: 20px;
-        width: 850px;
-        height: 100px;
-        padding: 10px;
-        resize: none;
-        position: relative;
-        top: 40px;        
-    }
-    .btn {
-        // outline: solid 1px black;
-        background-color: #d1c4e9;
-        width: 70px;
-        height: 70px;
-        border-style: none;
-        position: relative;
-        top: 10px;
-        cursor: pointer;              
-    }
-}
-.textList {
-  outline: solid 3px #65499c;
-  border-radius: 5px;
-  font-family: 'Gowun Dodum', sans-serif;
-  position: relative;
-  top: -50px;  
-  max-width: 100%;
-  max-height: 100%;
-  .todoTextBox {
-  // border: 1px solid black;
-    display: grid; 
-    grid-template-columns: 800px 100px;
-    justify-items: center;
-    width: 825px;
-    // justify-content: center;
-    position: relative;
-    left: -20px;
-    max-width: 100%;
-    max-height: 100%;
-    .todoText {
-       font-size: 20px;
-    }
-    .todoDelete {      
-        .todoBtn {
-          // outline: solid 1px black;
-          background-color: #d1c4e9;
-          width: 35px;
-          height: 35px;
-          border-style: none;
-          position: relative;
-          left: -50px;
-          cursor: pointer;            
-        }
-    }
-}
-}
-
-@media (max-width: 768px) {
-    .submitBox {      
-      width: 600px;
-      .onText {
-        width: 600px;
-      }
-    }
-    .textList {
-      width: 600px;
-      .todoTextBox {
-    // outline: solid 1px black;
-
-        width: 550px;
-        left: -20px;
-        .todoText {
-    // outline: solid 1px black;
-
-          width: 600px;
-          font-size: 15px;
-          position: relative;
-          left: -90px;
-        }
-        .todoDelete {
-          .todoBtn {
-            left: -280px;
-            
-          }
-        }
-      }
-    }
-}
-
-@media (max-width: 420px) {
-  .submitBox {
-    width: 400px;
+    justify-content: center;
+    
 
     .onText {
-      width: 400px;
+       outline : solid 1px black;       
+       border: 1px solid #ddd;
+       margin-bottom: 20px;
+       width: 650px;
+       height: 200px;
+       padding: 10px;
+       resize: none;
+       position: relative;
+       top: 40px;  
     }
-  }
 
-  .textList {
-    width: 350px;
-    height: 200px;
-
-    .todoTextBox {
-      width: 350px;
+    .btn {
+      outline: solid 1px black;
+      background-color: #d1c4e9;      
+      border-style: none;
       position: relative;
-      left: -40px;
-
-      .todoText {
-        width: 350px;
-        font-size: 15px;
-        position: relative;
-        left: -225px;
-      }
-
-      .todoDelete {
-        .todoBtn {
-          // outline: solid 1px black;
-          left: -480px;
-        }
-      }
+      top: 10px;      
+      cursor: pointer;
     }
   }
+.textList {
+  outline: solid 1px black;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+    .todoText {}
+
+    .todoDelete {
+      .todoBtn {
+        // outline: solid 1px black;
+        position: relative;
+        left: 350px;
+        top: -20px;                    
+      }
+    }
 }
+
+}
+
+
+//--------------------------------------------------------------------------------
+
+@media (max-width: 768px) {
+    
+}
+

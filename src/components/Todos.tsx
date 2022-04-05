@@ -33,7 +33,7 @@ const Todos = (todos:any) => {
 
   
   return (
-    <>
+    <div className='submitBoxControl'>
       <form className='submitBox' onSubmit={onSubmit}>
         <textarea className='onText'
           value={text}
@@ -45,7 +45,7 @@ const Todos = (todos:any) => {
         </button>
       </form>
       <TodoList todoss={todoss}/>
-    </>
+    </div>
   );
 }
 //-------------------------------------------------------------------------
@@ -67,10 +67,10 @@ const TodoList = React.memo(function TodoList(todoss:any) {
 
   return (
   todosss &&   
-    <ul className='textList'>
+    <div className='textList'>
       {todosss.map((todo:any) => (
-       <div className='todoTextBox' key={todo.id}>
-        <div className='todoText'>{todo.text}</div>
+        <>
+        <div className='todoText' key={todo.id} >{todo.text}</div>
         {todo.text === '' ? null :  
         <div className='todoDelete'>
           <button className='todoBtn' onClick={() => RemoveTextSetting(todo.id)}>
@@ -78,9 +78,9 @@ const TodoList = React.memo(function TodoList(todoss:any) {
           </button>
         </div>
         }
-      </div>       
+        </>
       ))}
-    </ul>
+    </div>
   );
 });
 

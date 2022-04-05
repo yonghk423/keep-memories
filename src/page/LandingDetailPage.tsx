@@ -9,8 +9,7 @@ const LandingDetailPage = ( ) => {
         <>
           <Header/>
           <DetailPage/>
-          <CartMain/>
-          <Footer/>
+          <CartMain/>          
         </>
     )
 }

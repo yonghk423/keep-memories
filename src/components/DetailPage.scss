@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
 
-.container {
-  // background: url('https://i.pinimg.com/750x/e5/23/76/e5237648be08b9577148ba3d6c8added.jpg');
-  // background-size: cover;
+.container {    
   background-color: #d1c4e9;
-  // border: 1px solid black;     
   .detailBox {
     font-family: 'Gowun Dodum',
     sans-serif;
@@ -12,36 +9,31 @@
     grid-template-columns: auto auto;
     justify-items: center;
     justify-content: center;
-    
-    .fullImg {
-      border: 1px solid black;
-      width: 450px;
+    .fullImg {      
       height: 450px;
-      max-width: 100%;
-      max-height: 100%;
+      width: 450px;
+      max-width:100%;
     }
     .infoBox {
       display: grid;
       grid-template-columns: auto;
       justify-items: center;
       border: 1px solid black;
-      width: 450px;
-      height: 450px;
-      max-width: 100%;
-      max-height: 100%;
+      width: 450px;      
       .name {
         position: relative;
         top: 50px;
-
       }
       .price {
         position: relative;
         top: 50px;
+        
 
       }
       .text {
         position: relative;
         top: 50px;
+        
 
       }
       .ItemBtn {
@@ -52,22 +44,25 @@
       position: relative;
       top: 50px;
       cursor: pointer;
+      
       }
     }    
   }
   .todos {
-    .todosTitle {
-      position: relative;
-      top: 50px;
-    }
     font-family: 'EB Garamond',
     serif;
     // border: 1px solid black;    
     display: grid;
     grid-template-columns: auto;
     justify-items: center;
-    justify-content: center;  
+    justify-content: center;
     height: 600px;
+    height: auto;
+    .todosTitle {
+      position: relative;
+      top: 20px;
+    }
+    
   }
 }
 
@@ -81,8 +76,9 @@
       }
       .infoBox {
         width: 500px;
-        height: 500px;
+        height: 500px;        
       }
     }
   }
 }
+

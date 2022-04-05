@@ -19,23 +19,44 @@
     /* border: 1px solid black; */
 }
 
-@media (max-width: 420px) {
-    .HeaderBox {
-        font-family: 'Gowun Dodum',
-            sans-serif;
-        background-color: #d1c4e9;
-        display: flex;
-        height: 70px;
-        width: 420px;
+// @media (max-width: 420px) {
+//     .HeaderBox {
+//         font-family: 'Gowun Dodum',
+//             sans-serif;
+//         background-color: #d1c4e9;
+//         display: flex;
+//         height: 70px;
+//         width: 420px;
 
-        .header {
-            position: relative;
-            padding: 16px 24px;
-            font-size: 20px;
-            font-size: 30px;
-            cursor: pointer;
-        }
+//         .header {
+//             position: relative;
+//             padding: 16px 24px;
+//             font-size: 20px;
+//             font-size: 30px;
+//             cursor: pointer;
+//         }
 
-        /* border: 1px solid black; */
-    }
-}
+//         /* border: 1px solid black; */
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .HeaderBox {
+//         font-family: 'Gowun Dodum',
+//             sans-serif;
+//         background-color: #d1c4e9;
+//         display: flex;
+//         height: 70px;
+//         width: 768px;
+
+//         .header {
+//             position: relative;
+//             padding: 16px 24px;
+//             font-size: 20px;
+//             font-size: 30px;
+//             cursor: pointer;
+//         }
+
+//         /* border: 1px solid black; */
+//     }
+// }

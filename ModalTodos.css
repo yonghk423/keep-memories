@@ -1,0 +1,45 @@
+.ModalSubmitBox {
+  border: 1px solid black;
+  width: 480px;
+  height: 350px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ModalSubmitBox textarea {
+  outline: solid 1px black;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 450px;
+  height: 100px;
+  padding: 10px;
+  resize: none;
+  position: relative;
+  top: 20px;
+}
+
+.ModalSubmitBox .ModalBtn {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  top: -70px;
+}
+
+.ModalTodoTextBox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px 100px;
+      grid-template-columns: 300px 100px;
+  justify-items: center;
+  width: 400px;
+  position: relative;
+  top: -140px;
+  left: -20px;
+}
+/*# sourceMappingURL=ModalTodos.css.map */

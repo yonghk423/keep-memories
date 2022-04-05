@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap");
+.container {
+  background-color: #d1c4e9;
+}
+
+.container .detailBox {
+  font-family: 'Gowun Dodum', sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .detailBox .fullImg {
+  height: 450px;
+  width: 450px;
+  max-width: 100%;
+}
+
+.container .detailBox .infoBox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  justify-items: center;
+  border: 1px solid black;
+  width: 450px;
+}
+
+.container .detailBox .infoBox .name {
+  position: relative;
+  top: 50px;
+}
+
+.container .detailBox .infoBox .price {
+  position: relative;
+  top: 50px;
+}
+
+.container .detailBox .infoBox .text {
+  position: relative;
+  top: 50px;
+}
+
+.container .detailBox .infoBox .ItemBtn {
+  background-color: #d1c4e9;
+  width: 100px;
+  height: 100px;
+  border-style: none;
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+}
+
+.container .todos {
+  font-family: 'EB Garamond', serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 600px;
+  height: auto;
+}
+
+.container .todos .todosTitle {
+  position: relative;
+  top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container .detailBox {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .container .detailBox .fullImg {
+    width: 500px;
+    height: 500px;
+  }
+  .container .detailBox .infoBox {
+    width: 500px;
+    height: 500px;
+  }
+}
+/*# sourceMappingURL=DetailPage.css.map */
