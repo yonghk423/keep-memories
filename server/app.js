@@ -100,7 +100,7 @@ let initialState = {
     {
       id: 7,
       name: "1",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/5c/d9/1b/5cd91b51a0b0d16375320b5a79be0dea.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -113,7 +113,7 @@ let initialState = {
     {
       id: 8,
       name: "2",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/62/f5/49/62f54935258dbf0107588030de471575.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -126,7 +126,7 @@ let initialState = {
     {
       id: 9,
       name: "3",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/a4/fe/0b/a4fe0bc1f03398380e551da6a650052a.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -139,7 +139,7 @@ let initialState = {
     {
       id: 10,
       name: "4",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/70/93/ce/7093ce46d081fe34647c8dfecffb97c1.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -152,7 +152,7 @@ let initialState = {
     {
       id: 11,
       name: "5",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/49/b2/54/49b254b52d6c3660dbe587d14cfc7b5a.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -165,7 +165,7 @@ let initialState = {
     {
       id: 12,
       name: "6",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/11/db/a2/11dba25f5e063b798f9dfa9cb53d6b18.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -178,7 +178,7 @@ let initialState = {
     {
       id: 13,
       name: "7",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/65/25/d9/6525d95f0a613f0f5ab78b3e655d5654.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -191,7 +191,7 @@ let initialState = {
     {
       id: 14,
       name: "8",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/79/a0/a7/79a0a72901eba4469b171ca4d358f03e.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -204,7 +204,7 @@ let initialState = {
     {
       id: 15,
       name: "9",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/736x/34/3b/74/343b74f28fa9a51ec5723e52e0a31f6d.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{
@@ -217,7 +217,7 @@ let initialState = {
     {
       id: 16,
       name: "10",
-      img: "https://images.velog.io/images/yonghk423/post/a6040640-2b42-428f-91ff-ed83013b8c8f/2.webp",
+      img: "https://i.pinimg.com/564x/c5/4d/03/c54d03aba76b54afd894105db10a39b7.jpg",
       price: 4900,
       text: 'Better the last smile than the first laughter',
       textBox: [{

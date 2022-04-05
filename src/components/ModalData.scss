@@ -4,14 +4,14 @@
     top: 35%;
     left: 50%;
     transform: translate(-50%, -35%);
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 500px;
     height: 550px;
-    background-color: antiquewhite;
+    background-color: #f3e5f5;
     margin: 0 auto;
     z-index: 999;
   .modalContent {
-    border: 1px solid black;
+    // border: 1px solid black;
     display: grid;
     grid-template-columns: auto;
     justify-items: center;
@@ -21,7 +21,7 @@
       left: -230px;
     }
     .modalData {
-        border: 1px solid black;
+        // border: 1px solid black;
         display: grid;
         justify-items: center;
 
@@ -29,17 +29,18 @@
 
         }
         .modalImg {
-        border: 1px solid black;
+        // border: 1px solid black;
         width: 250px;
         height: 220px;
         position: relative;
+        border-radius: 10px;
         }
         .modalPrice {
-        border: 1px solid black;
+        // border: 1px solid black;
 
         }
         .modalText {
-        border: 1px solid black;
+        // border: 1px solid black;
         }
     }
   }

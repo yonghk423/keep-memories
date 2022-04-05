@@ -2,7 +2,7 @@
 
 .container {    
   background-color: #d1c4e9;
-  .detailBox {
+  .detailBox {    
     font-family: 'Gowun Dodum',
     sans-serif;
     display: grid;
@@ -13,13 +13,17 @@
       height: 450px;
       width: 450px;
       max-width:100%;
+      box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+      transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     .infoBox {
       display: grid;
       grid-template-columns: auto;
       justify-items: center;
-      border: 1px solid black;
-      width: 450px;      
+      // border: 1px solid black;
+      width: 450px;
+      box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
+      transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
       .name {
         position: relative;
         top: 50px;
@@ -60,7 +64,8 @@
     height: auto;
     .todosTitle {
       position: relative;
-      top: 20px;
+      top: 30px;
+      font-size: 20px;
     }
     
   }

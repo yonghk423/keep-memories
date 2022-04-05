@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
 
 .submitBoxControl {
+  box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-columns: atuo;
   .submitBox {
     font-family: 'Gowun Dodum',
       sans-serif;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
+    height: 325px;
     
 
     .onText {
-       outline : solid 1px black;       
+      //  outline : solid 1px black;       
        border: 1px solid #ddd;
        margin-bottom: 20px;
        width: 650px;
@@ -22,19 +24,23 @@
        resize: none;
        position: relative;
        top: 40px;  
+       outline-color: #ec57ec;
     }
 
     .btn {
-      outline: solid 1px black;
+      // outline: solid 1px black;
       background-color: #d1c4e9;      
       border-style: none;
       position: relative;
-      top: 10px;      
+      top: 12px;      
+      width: 60px;
+      height: 55px;
       cursor: pointer;
+      margin: 0 auto;
     }
   }
 .textList {
-  outline: solid 1px black;
+  // outline: solid 1px black;
   display: grid;
   grid-template-columns: auto;
   justify-content: center;

@@ -20,7 +20,7 @@ const Main = () => {
   const mainImg = async () => {
   try {
     const response  = await axios.get('https://everycoding.herokuapp.com')
-    const mainImg = await response.data.items[1]    
+    const mainImg = await response.data.items[15]    
     console.log(mainImg)
     setFullImg(mainImg)
   } catch(err) {
