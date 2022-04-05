@@ -101,12 +101,10 @@
   }
   .CartContainer .CartImg {
     cursor: pointer;
-    border: 1px solid black;
     width: 500px;
     height: 500px;
   }
   .CartContainer .Item {
-    border: 1px solid black;
     display: -ms-grid;
     display: grid;
     justify-items: center;
@@ -118,7 +116,6 @@
     top: 50px;
   }
   .CartContainer .Setting {
-    border: 1px solid black;
     width: 500px;
     height: 100px;
     display: -ms-grid;
