@@ -22,7 +22,8 @@
 }
 
 .submitBoxControl .submitBox .onText {
-  border: 3px solid #f0cdea;
+  border: 5px solid #f0cdea;
+  border-radius: 10px;
   margin-bottom: 20px;
   width: 650px;
   height: 200px;
@@ -37,11 +38,12 @@
   background-color: #d1c4e9;
   border-style: none;
   position: relative;
-  top: 12px;
+  top: 10px;
   width: 60px;
-  height: 55px;
+  height: 50px;
   cursor: pointer;
   margin: 0 auto;
+  font-size: 12px;
 }
 
 .submitBoxControl .textList {
@@ -56,9 +58,17 @@
   top: 10px;
 }
 
-.submitBoxControl .textList .todoDelete .todoBtn {
+.submitBoxControl .textList .todoText {
+  font-size: 20px;
+  width: 600px;
   position: relative;
-  left: 350px;
+  left: -20px;
+}
+
+.submitBoxControl .textList .todoBtn {
+  position: relative;
+  left: 580px;
   top: -20px;
+  width: 40px;
 }
 /*# sourceMappingURL=Todos.css.map */

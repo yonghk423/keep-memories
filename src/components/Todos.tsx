@@ -72,11 +72,11 @@ const TodoList = React.memo(function TodoList(todoss:any) {
         <>
         <div className='todoText' key={todo.id} >{todo.text}</div>
         {todo.text === '' ? null :  
-        <div className='todoDelete'>
+        // <div className='todoDelete'>
           <button className='todoBtn' onClick={() => RemoveTextSetting(todo.id)}>
             <FontAwesomeIcon icon={faEraser} size="2x" />
           </button>
-        </div>
+        // </div>
         }
         </>
       ))}

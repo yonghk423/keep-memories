@@ -12,7 +12,8 @@
 }
 
 .ModalSubmitBox textarea {
-  border: 1px solid #ddd;
+  border: 5px solid #f0cdea;
+  border-radius: 10px;
   margin-bottom: 20px;
   width: 450px;
   height: 100px;
