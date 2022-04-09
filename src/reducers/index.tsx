@@ -2,6 +2,7 @@ import  { combineReducers } from 'redux';
 import ItemReducer from './ItemReducer';
 import notificationReducer from './notificationReducer';
 import SelectedReducer from './selectedReducer';
+// ------로컬 스토리지 저장 코드 입니다.---------
 // import { persistReducer } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 

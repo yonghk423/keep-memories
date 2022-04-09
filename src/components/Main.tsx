@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import './Main.scss';
 
 export interface ItemReducer {
-        ItemReducer : Array<object>
+        ItemReducer : object[]
 }
 
 const Main = () => {

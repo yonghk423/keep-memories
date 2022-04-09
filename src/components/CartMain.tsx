@@ -9,7 +9,7 @@ import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
 
 export interface ItemReducer {
-  ItemReducer : Array<object>
+  ItemReducer : number
 }
 
 export interface Property {
@@ -73,25 +73,6 @@ const CartMain = (todos:any) => {
       window.location.reload();
     }, 2000)
   } 
-  
-  // const handleAllCheck = (checked:boolean) => {
-  //   console.log(checked)
-  //   if(checked) {
-  //     setCheckedItems(cartItems.map((ele)=> (ele.id)))
-  //   }
-  //   else {
-  //     setCheckedItems([]);
-  //   }
-  // }
-
-  // const handleCheckChange = (checked:boolean, id:number) => {
-  //   if (checked) {
-  //     setCheckedItems([...checkedItems, id]);
-  //   }
-  //   else {
-  //     setCheckedItems(checkedItems.filter((ele) => ele !== id));
-  //   }
-  // };
 
   const openReq = () => {
       setShowReq(!showReq);
@@ -108,28 +89,12 @@ const CartMain = (todos:any) => {
   }
     return (
           <>           
-          <div className="TotalCheck">
-            {/* <input className='TotalCheckBtn'
-              type="checkbox" 
-              checked={
-                checkedItems.length === cartItems.length ? true : false
-              }
-              onChange={(e) => handleAllCheck(e.target.checked)}
-              /> */}
-            {/* <label className='TotalCheckText'>Select All</label> */}
+          <div className="TotalCheck">            
           </div>
           {cartItems &&           
               <>  
                 {MatchingItems.map((item:any) => {
-                return <div className="CartContainer" key={item.id}> 
-                  {/* <input 
-                    className="Check" 
-                    type="checkbox" 
-                    checked={checkedItems.includes(item.id) ? true : false}
-                    onChange={(e) => {
-                      handleCheckChange(e.target.checked, item.id)
-                    }}
-                  /> */}
+                return <div className="CartContainer" key={item.id}>                  
                 <div onClick={()=> {onClickModal(item.id)}}>  
                   <img className="CartImg" onClick={openReq} src={item.img} alt=""/>
                 </div>

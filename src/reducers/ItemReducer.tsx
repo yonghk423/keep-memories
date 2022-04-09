@@ -1,17 +1,15 @@
 import {SET_DATA, ADD_CART, REMOVE_CART, SET_QUANTITY, 
   ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT, 
-  // SELECTED_ITEM 
 } from "../actions/index"
 // import { initialState } from '../asset/data'
-import { Action } from "../actions/index"
-const  initialState = {
+// import { Action } from "../actions/index"
+
+const initialState = {
   items: [],
 
   cartItems: [], 
   
-  notifications: [
-
-  ]   
+  notifications: []   
 }
 
 const ItemReducer = (state:any = initialState, action:any) => {
@@ -19,10 +17,7 @@ const ItemReducer = (state:any = initialState, action:any) => {
     console.log(action);    
     switch (action.type) {         
         case SET_DATA:          
-          return Object.assign({}, state, action.payload)
-        // case SELECTED_ITEM:
-        //   console.log(action.payload)
-        //   return Object.assign({}, state, {items:[ action.payload ]})              
+          return Object.assign({}, state, action.payload)              
         case ADD_CART:
           console.log(action.addcart.data);
           return Object.assign({}, state, {cartItems: [action.addcart.data]})
@@ -96,8 +91,7 @@ const ItemReducer = (state:any = initialState, action:any) => {
               //할당 시켰다면 전체 데이터와 합쳐야 한다.               
               return Object.assign({}, state, { ...state.items })
           default: return state;
-        }
-    
+        }    
 }
 
 export default ItemReducer

@@ -16,14 +16,14 @@ export const REMOVE_ITEM = "REMOVE_ITEM" as const;
 export const REMOVE_TEXT ="REMOVE_TEXT" as const;
 
 //액션 생성 선언 함수
-export const SetData = (data:any) => {
+export const SetData = (data:object[]) => {
   console.log(data)
   return {
     type: SET_DATA,
     payload: data,
   }
 } 
-export const selectedItem = (data:any) => {
+export const selectedItem = (data:number) => {
   console.log(data);
   return {
     type: SELECTED_ITEM,
@@ -31,7 +31,7 @@ export const selectedItem = (data:any) => {
   }
 }
 
-export const removeSelectedItem = (data:any) => {
+export const removeSelectedItem = (data:number) => {
   console.log(data)
   return {
     type: REMOVE_SELECTED_ITEM, 
@@ -164,6 +164,6 @@ export type Action =
   | ReturnType<typeof RemoveItem>
   | ReturnType<typeof RemoveText>
   | ReturnType<typeof SetData>
-  |ReturnType<typeof selectedItem>
-  |ReturnType<typeof removeSelectedItem>;
+  | ReturnType<typeof selectedItem>
+  | ReturnType<typeof removeSelectedItem>;
   

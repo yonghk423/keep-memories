@@ -6,9 +6,7 @@ const  initialState = {
 
   cartItems: [], 
   
-  notifications: [
-
-  ]   
+  notifications: []   
 }
 
 const SelectedReducer = (state = initialState, action:any) => {
