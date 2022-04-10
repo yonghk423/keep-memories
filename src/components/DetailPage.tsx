@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { RootState } from '../reducers/index';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { AddCart, notify, selectedItem, SetData } from '../actions';
@@ -35,8 +36,8 @@ const DetailPage = () => {
 
   
 
-  const state:any = useSelector<SelectedReducer>(state => state.SelectedReducer);
-  const textState:any = useSelector<ItemReducer>(state => state.ItemReducer);
+  const state:any = useSelector((state:RootState) => state.SelectedReducer);
+  const textState:any = useSelector((state:RootState) => state.ItemReducer);
   console.log(textState);
   console.log(state);
   const dispatch = useDispatch();

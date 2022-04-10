@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { RootState } from '../reducers/index'
 import axios from 'axios';
 import { RemoveCart, SetData } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
@@ -36,7 +37,7 @@ export interface Item {
 }
 
 const CartMain = (todos:any) => {  
-  const state:any = useSelector<ItemReducer>(state=> state.ItemReducer)
+  const state:any = useSelector((state:RootState)=> state.ItemReducer)
   const dispatch = useDispatch();
   const {items, cartItems}:DataSetting = state;
   const [showReq, setShowReq] = useState<boolean>(false);
@@ -59,15 +60,8 @@ const CartMain = (todos:any) => {
   const MatchingItems:Array<object> = items.filter((ele) => cartItems.map((ele) => ele.id).indexOf(ele.id) > -1)
   console.log(MatchingItems);
   
-  // let data = cartItems.map((ele) => (ele.id))
-  // console.log(data);
-  
-  // const [checkedItems, setCheckedItems]= useState(data);
-  // console.log(checkedItems);
-
   const RemoveCartSetting = (id:number) => {
     console.log(id)
-    // setCheckedItems(checkedItems.filter((ele) => ele !== id))
     dispatch(RemoveCart(id))
     setTimeout(() => {
       window.location.reload();

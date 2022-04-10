@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { RootState } from '../reducers/index';
 import { useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import { SetData } from '../actions/index';
@@ -6,16 +7,25 @@ import { RemoveItem } from '../actions/index'
 import { useNavigate } from 'react-router-dom';
 import './Main.scss';
 
-export interface ItemReducer {
-        ItemReducer : object[]
+export interface ImgData {
+  id: number;
+    name: string;
+    img: string;
+    price: number;
+    text: string;
+    textBox: {
+        id: number;
+        name: string;
+        text: string;
+    }[];
 }
 
 const Main = () => {
   const navigate = useNavigate();  
-  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
+  const state = useSelector((state: RootState) => state.ItemReducer);
   const dispatch = useDispatch();  
   const thumImg = state.items
-  const [fullImg, setFullImg]:any = useState([]);
+  const [fullImg, setFullImg] = useState<ImgData | any>([]);
 //------------------------------------------------------------------------------- 
   const mainImg = async () => {
   try {
@@ -62,14 +72,14 @@ useEffect(() => {
     setFullImg(ele);    
   }
 
-  const RemoveItemSetting = (itemId:number) => {
+  const RemoveItemSetting = (itemId:number):void => {
     console.log(itemId)
     dispatch(RemoveItem(itemId))
     setTimeout(() => {
       window.location.reload();
     }, 2000)
   }
-  const onClick = () => {
+  const onClick = ():void => {
       navigate(`/DetailPage/${fullImg.id}`)
       window.location.reload()
     }   

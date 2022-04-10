@@ -97,7 +97,7 @@ export const dequeueNotification = () => {
   }
 }
 
-export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:Array<object>) => async (dispatch:any) => {
+export const addInfo = (name:string, imgUrl:string, price:string, text:string, textBox:object[]) => async (dispatch:any) => {
   try {
     const addinfo = await axios.post('https://everycoding.herokuapp.com/info', {
     id: Math.floor((Math.random()*1000)),
