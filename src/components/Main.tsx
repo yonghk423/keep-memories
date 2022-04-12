@@ -107,4 +107,4 @@ useEffect(() => {
         </div>    
     )
 }
-export default Main;
+export default React.memo(Main);

@@ -122,4 +122,4 @@ const DetailPage = () => {
       </div>  
     )
 }
-export default DetailPage;
+export default React.memo(DetailPage);

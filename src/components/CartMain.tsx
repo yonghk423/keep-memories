@@ -110,4 +110,4 @@ const CartMain = (todos:any) => {
     )
 }
 
-export default CartMain;
+export default React.memo(CartMain);

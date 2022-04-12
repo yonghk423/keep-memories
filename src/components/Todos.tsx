@@ -6,11 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePen } from "@fortawesome/free-solid-svg-icons";
 import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
-export interface ItemReducer {
-        ItemReducer : Array<object>
-}
-
-const Todos = (todos:any) => {  
+const Todos = React.memo(function Todos(todos:any) {  
   console.log(todos)  
   const todoss:string = todos.todos.textBox
   console.log(todoss)
@@ -29,7 +25,7 @@ const Todos = (todos:any) => {
     setTimeout(() => {
       window.location.reload();
     }, 2000)
-  };
+};
 
   
   return (
@@ -47,7 +43,7 @@ const Todos = (todos:any) => {
       <TodoList todoss={todoss}/>
     </div>
   );
-}
+})
 //-------------------------------------------------------------------------
 
 const TodoList = React.memo(function TodoList(todoss:any) {  
@@ -84,4 +80,4 @@ const TodoList = React.memo(function TodoList(todoss:any) {
   );
 });
 
-export default Todos;
+export default React.memo(Todos);

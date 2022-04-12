@@ -128,4 +128,4 @@ const InfoUpload = () => {
     
 }
 
-export default InfoUpload;
+export default React.memo(InfoUpload);

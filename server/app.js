@@ -222,7 +222,72 @@ let initialState = {
       text: 'Better the last smile than the first laughter',
       textBox: [{
                     id: 1,
+                    name: "10",
+                    text: '',
+                  }]
+    },  
+    
+    {
+      id: 17,
+      name: "11",
+      img: "https://i.pinimg.com/564x/a0/76/3c/a0763cd285248df0768157131130e2d5.jpg",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
                     name: "11",
+                    text: '',
+                  }]
+    },    
+
+    {
+      id: 18,
+      name: "12",
+      img: "https://i.pinimg.com/564x/3f/2e/c1/3f2ec15fa7b9f5e6ced853ccb49ce83d.jpg",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "12",
+                    text: '',
+                  }]
+    },    
+
+    {
+      id: 19,
+      name: "13",
+      img: "https://i.pinimg.com/564x/90/ea/ce/90eacea6667f113e31da3b7318cb8758.jpg",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "13",
+                    text: '',
+                  }]
+    },    
+
+    {
+      id: 20,
+      name: "14",
+      img: "https://i.pinimg.com/564x/cb/34/31/cb34317cad22e0e47bae60a9bdf8579c.jpg",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "14",
+                    text: '',
+                  }]
+    },    
+
+    {
+      id: 21,
+      name: "15",
+      img: "https://i.pinimg.com/564x/46/9e/e5/469ee5f202b0444b1380d71c1149f8ac.jpg",
+      price: 4900,
+      text: 'Better the last smile than the first laughter',
+      textBox: [{
+                    id: 1,
+                    name: "15",
                     text: '',
                   }]
     },    

@@ -77,4 +77,4 @@ const TodoList = React.memo(function TodoList(todoss:any) {
   );
 });
 
-export default ModalTodos;
+export default React.memo(ModalTodos);

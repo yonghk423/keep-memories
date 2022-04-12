@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Gowun+Dodum&family=Kirang+Haerang&family=Sunflower:wght@700&display=swap');
+
 .ModalSubmitBox {
     // border: 1px solid black;
+    font-family: 'Gowun Dodum',
+    sans-serif;
     width: 480px;
     height: 350px;
     display: grid;
@@ -9,6 +13,8 @@
 
     textarea {
         // outline: solid 1px black;
+        font-family: 'Gowun Dodum',
+        sans-serif;
         border: 5px solid rgb(240, 205, 234);
         border-radius: 10px;
         margin-bottom: 20px;
@@ -31,6 +37,10 @@
 
 .ModalTodoTextBox {
     // border: 1px solid black;
+    font-family: 'Gowun Dodum',
+    sans-serif;
+    font-family: 'Gowun Dodum',
+    sans-serif;
     display: grid;
     grid-template-columns: 300px 100px;
     justify-items: center;
