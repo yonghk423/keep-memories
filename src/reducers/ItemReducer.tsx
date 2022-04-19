@@ -2,9 +2,15 @@ import {SET_DATA, ADD_CART, REMOVE_CART, SET_QUANTITY,
   ADD_TODO, ADD_INFO, REMOVE_ITEM, REMOVE_TEXT, 
 } from "../actions/index"
 // import { initialState } from '../asset/data'
-// import { Action } from "../actions/index"
+import { Action } from "../actions/index"
 
-const initialState = {
+type StateType = {
+  items: object[];
+  cartItems: object[];
+  notifications: object[];
+}
+
+const initialState: StateType = {
   items: [],
 
   cartItems: [], 

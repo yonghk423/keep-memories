@@ -60,13 +60,15 @@ const InfoUpload = () => {
       setIsPrice(true);
     }
   }
-  //----------------------------------------------------------------------------
+  //----------------------------------------------------------------------------  
   const onFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const { files }:any  = e.target;
+    const { files }:any = e.target;
+    console.log(files)
     const file = files[0];
     upLoadFiles(file);      
   }
   const upLoadFiles = async (file:any) => {
+    console.log(file);
     if(!file) return
     const storageRef = ref(storage, `/files/${file.name}`); 
     const uploadTask = uploadBytesResumable(storageRef, file);

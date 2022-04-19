@@ -1,15 +1,12 @@
 import { useSelector } from 'react-redux';
+import { RootState } from '../reducers/index';
 import './ModalData.scss'
 import ModalTodos from './ModalTodos';
 
-interface props { open: boolean; close: () => void; modalNumber : any }
-
-export interface ItemReducer {
-        ItemReducer : Array<object>
-}
+interface props { open: boolean; close: () => void; modalNumber : number }
 
 const ModalData = (props: props) => {  
-  const state:any = useSelector<ItemReducer>(state => state.ItemReducer);
+  const state = useSelector((state: RootState) => state.ItemReducer);
   let { items }:any = state;
   console.log(items);
     const {open, close, modalNumber} = props; 

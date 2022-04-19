@@ -8,16 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import './Main.scss';
 
 export interface ImgData {
-  id: number;
-    name: string;
-    img: string;
-    price: number;
-    text: string;
-    textBox: {
-        id: number;
-        name: string;
-        text: string;
-    }[];
+    id: number;
+    img: string; 
 }
 
 const Main = () => {
@@ -25,7 +17,7 @@ const Main = () => {
   const state = useSelector((state: RootState) => state.ItemReducer);
   const dispatch = useDispatch();  
   const thumImg = state.items
-  const [fullImg, setFullImg] = useState<ImgData | any>([]);
+  const [fullImg, setFullImg] = useState<ImgData|any>([]);
 //------------------------------------------------------------------------------- 
   const mainImg = async () => {
   try {
