@@ -99,4 +99,4 @@ useEffect(() => {
         </div>    
     )
 }
-export default React.memo(Main);
+export default Main;
